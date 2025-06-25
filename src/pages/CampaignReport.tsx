@@ -299,11 +299,11 @@ export default function CampaignReport() {
               </div>
 
               {/* Email Template Card */}
-              <div className="flex w-[234px] h-[234px] flex-col items-start gap-1 aspect-square relative">
+              <div className="flex w-[234px] h-[234px] flex-col items-start gap-1 aspect-square relative -right-6 -bottom-5">
                 {/* Template Thumbnail */}
                 <div className="flex h-[234px] flex-col items-center gap-[8.667px] flex-shrink-0 self-stretch aspect-square rounded-t-[8.509px] bg-[#E2E9ED] relative">
                   {/* Clay email content */}
-                  <div className="flex h-[556.831px] pt-[43.333px] flex-col items-center gap-[16.781px] flex-shrink-0 self-stretch bg-[#6B8395] relative overflow-hidden">
+                  <div className="flex h-[556.831px] pt-10 flex-col items-center gap-[16.781px] flex-shrink-0 self-stretch aspect-[234/556.83] bg-[#6B8395] relative overflow-hidden">
                     {/* Clay Logo */}
                     <div className="flex flex-col justify-center items-center gap-[4.475px] relative">
                       <div className="w-[55.937px] h-[17.291px] bg-[#F3E8E2]"></div>
@@ -326,24 +326,17 @@ export default function CampaignReport() {
 
                     {/* Text Content */}
                     <div className="w-[204.726px] text-[#FDFDFD] text-center font-['Avenir'] text-[7.272px] font-normal leading-[140%]">
-                      Dear Mike, We're so glad you've joined us.
-                      <br />
-                      <br />
-                      CLAY is a leader in the field of ceramic arts, providing
-                      our students and artists unparalleled access to
-                      top-quality facilities, equipment, and instruction.
-                      <br />
-                      <br />
-                      We provide robust arts education programming, centered on
-                      hands-on experiences with clay, to diverse populations
-                      across our region with many programs at low cost, or no
-                      cost, to the participant.
-                      <br />
-                      <br />
-                      Clay enriches our community by helping individuals reach
-                      their potential for creativity and personal growth and
-                      connecting people from a variety of backgrounds and
-                      abilities.
+                      Dear Mike, We're so glad you've joined us. CLAY is a
+                      leader in the field of ceramic arts, providing our
+                      students and artists unparalleled access to top-quality
+                      facilities, equipment, and instruction. We provide robust
+                      arts education programming, centered on hands-on
+                      experiences with clay, to diverse populations across our
+                      region with many programs at low cost, or no cost, to the
+                      participant. Clay enriches our community by helping
+                      individuals reach their potential for creativity and
+                      personal growth and connecting people from a variety of
+                      backgrounds and abilities.
                     </div>
 
                     {/* Button */}
@@ -357,18 +350,11 @@ export default function CampaignReport() {
                     <div className="flex py-[17.415px] px-[17.415px] flex-col items-center gap-[14.803px] self-stretch bg-[#F3E8E2]">
                       <div className="w-[253.391px] h-[0.435px] bg-[#6B8395]"></div>
                       <div className="w-[253.391px] text-[#6B8395] text-center font-['Avenir_Next'] text-[10.833px] font-normal leading-[11.917px]">
-                        Clay Collective
-                        <br />
-                        <br />
-                        8550 White Fir St, Reno, NV 89523
-                        <br />
-                        <br />
-                        Set your gender, locale and frequency so we can send you
-                        emails that matter.
-                        <br />
-                        <br />
-                        This email was sent to mark.maynard@mailchimp.com | View
-                        on web | © 2023 Clay Collective LLC
+                        Clay Collective 8550 White Fir St, Reno, NV 89523 Set
+                        your gender, locale and frequency so we can send you
+                        emails that matter. This email was sent to
+                        mark.maynard@mailchimp.com | View on web | © 2023 Clay
+                        Collective LLC
                       </div>
                     </div>
                   </div>
