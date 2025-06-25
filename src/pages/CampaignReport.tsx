@@ -521,8 +521,85 @@ export default function CampaignReport() {
                 </div>
 
                 {/* Chart */}
-                <div className="px-4">
-                  <CampaignChart />
+                <div className="flex px-4 pb-4 items-end gap-2 self-stretch">
+                  {/* Y-axis labels */}
+                  <div className="flex w-5 h-[280px] pb-4 flex-col justify-between items-end">
+                    <div className="text-[#727E85] text-right text-[11px] font-normal leading-[140%]">
+                      40k
+                    </div>
+                    <div className="text-[#727E85] text-right text-[11px] font-normal leading-[140%]">
+                      30k
+                    </div>
+                    <div className="text-[#727E85] text-right text-[11px] font-normal leading-[140%]">
+                      20k
+                    </div>
+                    <div className="text-[#727E85] text-right text-[11px] font-normal leading-[140%]">
+                      10k
+                    </div>
+                    <div className="text-[#727E85] text-right text-[11px] font-normal leading-[140%]">
+                      0
+                    </div>
+                  </div>
+
+                  {/* Chart area with grid lines and dates */}
+                  <div className="flex h-[280px] pt-2 flex-col justify-between items-start flex-1">
+                    {/* Horizontal grid lines */}
+                    <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
+                    <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
+                    <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
+                    <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
+
+                    {/* Bottom section with final grid line and dates */}
+                    <div className="flex flex-col items-start gap-2 self-stretch">
+                      <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
+
+                      {/* Date labels */}
+                      <div className="flex justify-between items-center self-stretch">
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 4
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 6
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 8
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 10
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 12
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 14
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 16
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 18
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 20
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 22
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 24
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 26
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Feb 28
+                        </div>
+                        <div className="text-[#4C555B] text-[11px] font-normal leading-[140%] opacity-80">
+                          Mar 1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
