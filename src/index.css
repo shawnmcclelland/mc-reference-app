@@ -1,96 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   /**
-   * Tailwind CSS theme
-   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
-   * A different format will require also updating the theme in tailwind.config.ts.
-  */
+   * Mailchimp Design System Variables
+   */
   :root {
+    /* Mailchimp Colors */
+    --color-page-background-tertiary: #f0f4f6;
+    --color-action-special-use: #ffe01c;
+    --color-container-border-secondary: #d5dee3;
+    --color-container-background-primary: #fff;
+    --color-text-secondary: #4c555b;
+    --color-text-primary: #21262a;
+    --color-text-quaternary: #9aa7b0;
+    --color-text-inverse: #fff;
+    --color-container-border-primary: #e2e9ed;
+    --color-input-border-primary: #c3ced5;
+    --color-input-background-primary: #fff;
+    --color-action-passive-subtle-active: #e2e9ed;
+    --color-action-standard-subtle: #fff;
+    --brand-cavendish: #ffe01c;
+
+    /* Spacing */
+    --space-component-inline-padding-large: 10px;
+    --space-component-inline-padding-x-large: 12px;
+    --space-component-inline-padding-xxx-large: 20px;
+    --space-row-gap-x-small: 8px;
+    --space-component-inline-padding-small: 6px;
+    --space-component-inline-padding-x-small: 4px;
+    --space-component-inline-padding-medium: 8px;
+    --space-component-gap-medium: 8px;
+    --space-column-gap-xx-small: 4px;
+    --space-component-stack-padding-small: 4px;
+    --space-component-gap-small: 4px;
+    --space-component-stack-padding-medium: 6px;
+    --space-component-gap-large: 12px;
+    --space-row-gap-medium: 20px;
+    --space-container-padding-x-large: 32px;
+    --space-container-padding-xx-large: 40px;
+    --space-large: 24px;
+
+    /* Border Radius */
+    --Radius-small: 6px;
+    --Radius-action: 6px;
+    --Radius-full: 9999px;
+    --Radius-x-large: 16px;
+
+    /* Typography */
+    --Font-Family-Component:
+      "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+    --Font-Size-Component-Small: 14px;
+    --Font-Size-Component-X-small: 12px;
+    --Font-Name-Body: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+    --Font-Size-Body-2: 16px;
+
+    /* Legacy CSS variables for compatibility */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -101,6 +96,23 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-mailchimp-background-tertiary text-mailchimp-text-primary;
+    font-family: var(--Font-Family-Component);
+  }
+
+  /* Mailchimp Typography Classes */
+  .text-component-small {
+    font-size: var(--Font-Size-Component-Small);
+    line-height: 20px;
+  }
+
+  .text-component-x-small {
+    font-size: var(--Font-Size-Component-X-small);
+    line-height: 16px;
+  }
+
+  .text-body-2 {
+    font-size: var(--Font-Size-Body-2);
+    line-height: 140%;
   }
 }
