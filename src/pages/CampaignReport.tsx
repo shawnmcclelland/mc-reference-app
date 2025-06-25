@@ -299,62 +299,95 @@ export default function CampaignReport() {
               </div>
 
               {/* Email Template Card */}
-              <div className="flex flex-col gap-1 w-[234px] h-[234px] aspect-square relative">
-                <div className="flex flex-col items-center h-full rounded-t-lg bg-[#E2E9ED] relative overflow-hidden">
-                  <div className="flex flex-col items-center h-full bg-[#6B8395] text-[#F3E8E2] p-4 w-full">
-                    {/* Clay Logo Placeholder */}
-                    <div className="w-14 h-4 bg-[#F3E8E2] rounded mb-3 mt-6" />
+              <div className="flex flex-col items-start gap-1 w-[234px] h-[234px] aspect-square relative">
+                <div className="flex h-[234px] flex-col items-center gap-2 flex-shrink-0 self-stretch aspect-square rounded-t-[8.5px] bg-[#E2E9ED] relative">
+                  <div className="flex h-[556.83px] pt-[43.333px] flex-col items-center gap-4 flex-shrink-0 self-stretch aspect-[234/556.83] bg-[#6B8395] relative overflow-hidden">
+                    {/* Clay Logo */}
+                    <div className="flex flex-col justify-center items-center gap-1 relative">
+                      <div className="w-[55.937px] h-[17.291px] bg-[#F3E8E2] rounded"></div>
+                    </div>
 
                     {/* Welcome Text */}
-                    <div className="text-center text-[28px] font-normal leading-tight mb-1">
+                    <div className="self-stretch text-[#F3E8E2] text-center font-normal text-[33.562px] leading-[33.562px]">
                       Welcome to Clay
                     </div>
 
                     {/* Divider */}
-                    <div className="w-1 h-7 bg-[#F3E8E2] mb-3" />
+                    <div className="w-[3.827px] h-[29.849px] flex-shrink-0 bg-[#F3E8E2]"></div>
 
-                    {/* Image Placeholder */}
-                    <div className="w-[100px] h-[140px] bg-[#F3E8E2] rounded-t-[80px] mb-3" />
+                    {/* Image */}
+                    <img
+                      className="w-[124.514px] h-[185.783px] flex-shrink-0 rounded-t-[98.359px]"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/85ccae415b6fdd0252f047beb468f6d7f06c66ee"
+                      alt=""
+                    />
 
                     {/* Text Content */}
-                    <div className="text-[6px] text-center leading-tight opacity-90 mb-2 px-2">
+                    <div className="w-[204.726px] text-[#FDFDFD] text-center font-normal text-[7.272px] leading-[140%]">
                       Dear Mike, We're so glad you've joined us.
                       <br />
                       <br />
-                      CLAY is a leader in the field of ceramic arts...
+                      CLAY is a leader in the field of ceramic arts, providing
+                      our students and artists unparalleled access to
+                      top-quality facilities, equipment, and instruction.
+                      <br />
+                      <br />
+                      We provide robust arts education programming, centered on
+                      hands-on experiences with clay, to diverse populations
+                      across our region with many programs at low cost, or no
+                      cost, to the participant.
+                      <br />
+                      <br />
+                      Clay enriches our community by helping individuals reach
+                      their potential for creativity and personal growth and
+                      connecting people from a variety of backgrounds and
+                      abilities.
                     </div>
 
                     {/* Button */}
-                    <div className="px-4 py-1.5 bg-[#F3E8E2] rounded-lg">
-                      <span className="text-[6px] text-[#6B8395] font-semibold">
+                    <div className="flex py-[6.712px] px-[17.9px] items-start rounded-[14.054px] bg-[#F3E8E2]">
+                      <div className="text-[#6B8395] text-center font-semibold text-[6.712px] leading-[120%]">
                         Explore member benefits
-                      </span>
+                      </div>
                     </div>
 
                     {/* Footer */}
-                    <div className="mt-auto w-full bg-[#F3E8E2] text-[#6B8395] text-center p-2">
-                      <div className="w-full h-px bg-[#6B8395] mb-2" />
-                      <div className="text-[8px] leading-tight">
+                    <div className="flex p-[17.415px] flex-col items-center gap-[14.803px] self-stretch bg-[#F3E8E2]">
+                      <div className="w-[253.391px] h-[0.435px] bg-[#6B8395]"></div>
+                      <div className="w-[253.391px] text-[#6B8395] text-center font-normal text-[10.833px] leading-[11.917px]">
                         Clay Collective
                         <br />
+                        <br />
                         8550 White Fir St, Reno, NV 89523
+                        <br />
+                        <br />
+                        Set your gender, locale and frequency so we can send you
+                        emails that matter.
+                        <br />
+                        <br />
+                        This email was sent to mark.maynard@mailchimp.com | View
+                        on web | © 2023 Clay Collective LLC
                       </div>
                     </div>
                   </div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-[rgba(76,85,91,0.18)]" />
+                  <div className="absolute w-[300.083px] h-[489.667px] -right-[66.083px] -bottom-[255.667px] bg-[rgba(76,85,91,0.18)]"></div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex justify-between items-center px-2 relative -mt-2">
-                  <div className="flex gap-2">
-                    <button className="flex items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1 text-component-x-small text-mailchimp-text-primary">
-                      View clickmap
-                    </button>
-                    <button className="flex items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1 text-component-x-small text-mailchimp-text-primary">
-                      View details
-                    </button>
+                <div className="flex w-[234px] px-2 justify-between items-center relative top-2">
+                  <div className="flex items-center gap-[9.75px]">
+                    <div className="flex min-w-[52px] py-1 px-[10.833px] justify-center items-center gap-1 rounded-[6.382px] border border-[#D5DEE3] bg-white">
+                      <div className="text-[#21262A] font-normal text-[13px] leading-[17.333px]">
+                        View clickmap
+                      </div>
+                    </div>
+                    <div className="flex min-w-[52px] py-1 px-[10.833px] justify-center items-center gap-1 rounded-[6.382px] border border-[#D5DEE3] bg-white">
+                      <div className="text-[#21262A] font-normal text-[13px] leading-[17.333px]">
+                        View details
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
