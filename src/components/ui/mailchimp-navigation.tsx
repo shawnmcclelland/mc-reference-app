@@ -353,38 +353,70 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
   return (
     <div
       className={cn(
-        "flex w-60 flex-col bg-mailchimp-background-tertiary",
+        "flex w-60 flex-col items-start flex-shrink-0 self-stretch bg-[#F0F4F6]",
         className,
       )}
     >
       {/* Brand stripe */}
-      <div className="h-1 bg-mailchimp-cavendish" />
+      <div className="h-1 self-stretch bg-[#FFE01C]" />
 
       {/* Navigation switch */}
-      <div className="flex items-center justify-between p-3">
+      <div className="flex px-[10px] py-3 justify-between items-center self-stretch">
         <MailchimpLogo />
-        <MenuIcon />
+        <div className="flex w-6 h-6 justify-center items-center">
+          <MenuIcon />
+        </div>
       </div>
 
       {/* Primary navigation */}
-      <div className="flex flex-col gap-2 p-5 pt-0">
-        {navItems.map((item) => (
-          <div key={item.id} className="px-3">
-            <div
-              className={cn(
-                "flex items-center gap-2 rounded-mailchimp px-2 py-1.5 text-sm transition-colors",
-                item.isSpecial
-                  ? "border border-mailchimp-border-secondary bg-mailchimp-background-primary text-mailchimp-text-secondary"
-                  : item.isActive
-                    ? "bg-mailchimp-active-bg text-mailchimp-text-primary"
-                    : "text-mailchimp-text-secondary hover:bg-mailchimp-active-bg",
-              )}
-            >
-              <div className="w-5 h-5 text-current">{item.icon}</div>
-              <span className="flex-1 font-normal">{item.label}</span>
+      <div className="flex py-5 px-0 flex-col items-start gap-2 self-stretch">
+        {/* Create button */}
+        <div className="flex items-start self-stretch">
+          <div className="flex px-3 flex-col justify-center items-start flex-1">
+            <div className="flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp border border-[#D5DEE3] bg-white">
+              <div className="w-5 h-5 text-[#4C555B]">{navItems[0].icon}</div>
+              <div className="flex-1 text-[#4C555B] font-normal text-sm leading-5">
+                {navItems[0].label}
+              </div>
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Nav items */}
+        <div className="flex flex-col items-center gap-1 self-stretch">
+          {navItems.slice(1).map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-col items-start self-stretch"
+            >
+              <div className="flex px-3 flex-col justify-center items-start self-stretch">
+                <div
+                  className={cn(
+                    "flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp",
+                    item.isActive ? "bg-[#E2E9ED]" : "hover:bg-[#E2E9ED]",
+                  )}
+                >
+                  <div
+                    className={cn(
+                      "w-5 h-5",
+                      item.isActive ? "text-[#21262A]" : "text-[#5D686F]",
+                    )}
+                  >
+                    {item.icon}
+                  </div>
+                  <div
+                    className={cn(
+                      "flex-1 font-normal text-sm leading-5",
+                      item.isActive ? "text-[#21262A]" : "text-[#4C555B]",
+                    )}
+                  >
+                    {item.label}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
