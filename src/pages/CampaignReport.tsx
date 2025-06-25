@@ -541,13 +541,76 @@ export default function CampaignReport() {
                     </div>
                   </div>
 
-                  {/* Chart area with grid lines and dates */}
-                  <div className="flex h-[280px] pt-2 flex-col justify-between items-start flex-1">
+                  {/* Chart area with grid lines, line charts, and dates */}
+                  <div className="flex h-[280px] pt-2 flex-col justify-between items-start flex-1 relative">
                     {/* Horizontal grid lines */}
                     <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
                     <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
                     <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
                     <div className="w-full h-[1px] bg-[#ADBAC2]"></div>
+
+                    {/* Line Chart Visualization */}
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      viewBox="0 0 1180 280"
+                      preserveAspectRatio="none"
+                    >
+                      {/* Open Rate Line (Primary metric - thicker line) */}
+                      <path
+                        d="M 0 180 Q 84 160 168 140 T 336 100 Q 420 90 504 85 T 672 80 Q 756 78 840 75 T 1008 70 Q 1092 68 1180 65"
+                        fill="none"
+                        stroke="#FFE01C"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        opacity="0.9"
+                      />
+
+                      {/* Click Rate Line */}
+                      <path
+                        d="M 0 200 Q 84 190 168 185 T 336 175 Q 420 170 504 165 T 672 160 Q 756 158 840 155 T 1008 150 Q 1092 148 1180 145"
+                        fill="none"
+                        stroke="#009EAC"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        opacity="0.8"
+                      />
+
+                      {/* Bounce Rate Line */}
+                      <path
+                        d="M 0 220 Q 84 210 168 205 T 336 195 Q 420 190 504 188 T 672 185 Q 756 184 840 182 T 1008 180 Q 1092 179 1180 178"
+                        fill="none"
+                        stroke="#DB334D"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        opacity="0.7"
+                      />
+
+                      {/* Data points for interactivity */}
+                      <circle
+                        cx="1180"
+                        cy="65"
+                        r="4"
+                        fill="#FFE01C"
+                        opacity="0.9"
+                      />
+                      <circle
+                        cx="1180"
+                        cy="145"
+                        r="3"
+                        fill="#009EAC"
+                        opacity="0.8"
+                      />
+                      <circle
+                        cx="1180"
+                        cy="178"
+                        r="3"
+                        fill="#DB334D"
+                        opacity="0.7"
+                      />
+                    </svg>
 
                     {/* Bottom section with final grid line and dates */}
                     <div className="flex flex-col items-start gap-2 self-stretch">
