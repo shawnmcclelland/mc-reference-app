@@ -248,7 +248,7 @@ export default function CampaignReport() {
     <div className="flex min-h-screen flex-col">
       <div className="flex flex-1">
         <div className="flex-1 overflow-auto">
-          <div className="p-6 space-y-6">
+          <div className="bg-white rounded-2xl overflow-hidden p-6 space-y-6 border border-mailchimp-border-primary">
             {/* Email Details Header */}
             <div className="flex items-center gap-10 rounded-mailchimp bg-[#F8FAFB] p-8">
               <div className="flex flex-col gap-2 flex-1">
