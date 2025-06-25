@@ -299,16 +299,18 @@ export default function CampaignReport() {
               </div>
 
               {/* Email Template Card */}
-              <div className="flex flex-col items-start gap-1 w-[234px] h-[234px] aspect-square relative">
-                <div className="flex h-[234px] flex-col items-center gap-2 flex-shrink-0 self-stretch aspect-square rounded-t-[8.5px] bg-[#E2E9ED] relative">
-                  <div className="flex h-[556.83px] pt-[43.333px] flex-col items-center gap-4 flex-shrink-0 self-stretch aspect-[234/556.83] bg-[#6B8395] relative overflow-hidden">
+              <div className="flex w-[234px] h-[234px] flex-col items-start gap-1 aspect-square relative">
+                {/* Template Thumbnail */}
+                <div className="flex h-[234px] flex-col items-center gap-[8.667px] flex-shrink-0 self-stretch aspect-square rounded-t-[8.509px] bg-[#E2E9ED] relative">
+                  {/* Clay email content */}
+                  <div className="flex h-[556.831px] pt-[43.333px] flex-col items-center gap-[16.781px] flex-shrink-0 self-stretch bg-[#6B8395] relative overflow-hidden">
                     {/* Clay Logo */}
-                    <div className="flex flex-col justify-center items-center gap-1 relative">
-                      <div className="w-[55.937px] h-[17.291px] bg-[#F3E8E2] rounded"></div>
+                    <div className="flex flex-col justify-center items-center gap-[4.475px] relative">
+                      <div className="w-[55.937px] h-[17.291px] bg-[#F3E8E2]"></div>
                     </div>
 
                     {/* Welcome Text */}
-                    <div className="self-stretch text-[#F3E8E2] text-center font-normal text-[33.562px] leading-[33.562px]">
+                    <div className="self-stretch text-[#F3E8E2] text-center font-['Avenir_Next'] text-[33.562px] font-normal leading-[33.562px]">
                       Welcome to Clay
                     </div>
 
@@ -323,7 +325,7 @@ export default function CampaignReport() {
                     />
 
                     {/* Text Content */}
-                    <div className="w-[204.726px] text-[#FDFDFD] text-center font-normal text-[7.272px] leading-[140%]">
+                    <div className="w-[204.726px] text-[#FDFDFD] text-center font-['Avenir'] text-[7.272px] font-normal leading-[140%]">
                       Dear Mike, We're so glad you've joined us.
                       <br />
                       <br />
@@ -346,15 +348,15 @@ export default function CampaignReport() {
 
                     {/* Button */}
                     <div className="flex py-[6.712px] px-[17.9px] items-start rounded-[14.054px] bg-[#F3E8E2]">
-                      <div className="text-[#6B8395] text-center font-semibold text-[6.712px] leading-[120%]">
+                      <div className="text-[#6B8395] text-center font-['Avenir_Next'] text-[6.712px] font-semibold leading-[120%]">
                         Explore member benefits
                       </div>
                     </div>
 
                     {/* Footer */}
-                    <div className="flex p-[17.415px] flex-col items-center gap-[14.803px] self-stretch bg-[#F3E8E2]">
+                    <div className="flex py-[17.415px] px-[17.415px] flex-col items-center gap-[14.803px] self-stretch bg-[#F3E8E2]">
                       <div className="w-[253.391px] h-[0.435px] bg-[#6B8395]"></div>
-                      <div className="w-[253.391px] text-[#6B8395] text-center font-normal text-[10.833px] leading-[11.917px]">
+                      <div className="w-[253.391px] text-[#6B8395] text-center font-['Avenir_Next'] text-[10.833px] font-normal leading-[11.917px]">
                         Clay Collective
                         <br />
                         <br />
@@ -376,15 +378,15 @@ export default function CampaignReport() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex w-[234px] px-2 justify-between items-center relative top-2">
+                <div className="flex w-[234px] px-[8.667px] justify-between items-center relative top-[8.125px]">
                   <div className="flex items-center gap-[9.75px]">
-                    <div className="flex min-w-[52px] py-1 px-[10.833px] justify-center items-center gap-1 rounded-[6.382px] border border-[#D5DEE3] bg-white">
-                      <div className="text-[#21262A] font-normal text-[13px] leading-[17.333px]">
+                    <div className="flex min-w-[52px] py-[4.333px] px-[10.833px] justify-center items-center gap-[4.333px] rounded-[6.382px] border-[1.083px] border-[#D5DEE3] bg-white">
+                      <div className="text-[#21262A] font-['Graphik_Mailchimp'] text-[13px] font-normal leading-[17.333px]">
                         View clickmap
                       </div>
                     </div>
-                    <div className="flex min-w-[52px] py-1 px-[10.833px] justify-center items-center gap-1 rounded-[6.382px] border border-[#D5DEE3] bg-white">
-                      <div className="text-[#21262A] font-normal text-[13px] leading-[17.333px]">
+                    <div className="flex min-w-[52px] py-[4.333px] px-[10.833px] justify-center items-center gap-[4.333px] rounded-[6.382px] border-[1.083px] border-[#D5DEE3] bg-white">
+                      <div className="text-[#21262A] font-['Graphik_Mailchimp'] text-[13px] font-normal leading-[17.333px]">
                         View details
                       </div>
                     </div>
