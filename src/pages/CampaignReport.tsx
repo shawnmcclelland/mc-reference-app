@@ -1914,8 +1914,8 @@ export default function CampaignReport() {
                 <div className="flex flex-col items-start flex-1">
                   <div className="flex h-8 px-3 py-2 items-center self-stretch bg-[#F0F4F6]"></div>
                   {/* Gmail.com row */}
-                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white hover:bg-gray-50">
+                    <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
                       <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
                         <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
                           View insights
@@ -1937,8 +1937,8 @@ export default function CampaignReport() {
                     </div>
                   </div>
                   {/* Yahoo.com row */}
-                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white hover:bg-gray-50">
+                    <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
                       <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
                         <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
                           View insights
@@ -1960,8 +1960,8 @@ export default function CampaignReport() {
                     </div>
                   </div>
                   {/* Outlook.com row */}
-                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB] hover:bg-gray-50">
+                    <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
                       <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
                         <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
                           View insights
@@ -1983,8 +1983,8 @@ export default function CampaignReport() {
                     </div>
                   </div>
                   {/* Claycollective.com row */}
-                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch bg-white">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch bg-white hover:bg-gray-50">
+                    <div className="opacity-0 hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
                       <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
                         <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
                           View insights
