@@ -249,43 +249,113 @@ export default function CampaignReport() {
       <div className="flex flex-1">
         <div className="flex-1 overflow-auto">
           <div className="p-6 space-y-6">
-            {/* Campaign Header */}
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="flex items-center gap-4 mb-2">
-                  <h1 className="text-xl font-normal text-mailchimp-text-primary">
-                    Fired & Formed - Annual Silent Auction
-                  </h1>
-                  <div className="flex gap-2">
-                    <button className="flex items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1 text-component-small text-mailchimp-text-primary">
-                      <ViewDetailsIcon />
-                      View clickmap
-                    </button>
-                    <button className="flex items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1 text-component-small text-mailchimp-text-primary">
-                      <ViewDetailsIcon />
-                      View details
-                    </button>
+            {/* Email Details Header */}
+            <div className="flex items-center gap-10 rounded-mailchimp bg-[#F8FAFB] p-8">
+              <div className="flex flex-col gap-2 flex-1">
+                <h1 className="text-[34px] font-medium text-mailchimp-text-primary leading-[120%] tracking-[-0.68px]">
+                  Fired & Formed - Annual Silent Auction
+                </h1>
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-1 pt-2">
+                    <span className="text-component-x-small text-[#727E85]">
+                      Recipients
+                    </span>
+                    <span className="text-component-x-small text-mailchimp-text-primary">
+                      23,019
+                    </span>
                   </div>
-                </div>
-                <div className="text-component-small text-mailchimp-text-secondary space-y-1">
-                  <div>Recipients: 22,576</div>
-                  <div>Audience: Clay Collective</div>
-                  <div>
-                    Subject: Fired & Formed: Clay Collective Silent Auction
+                  <div className="flex items-center gap-1 pt-2 border-t border-mailchimp-border-primary">
+                    <span className="text-component-x-small text-[#727E85]">
+                      Audience
+                    </span>
+                    <span className="text-component-x-small text-mailchimp-text-primary">
+                      Clay Collective
+                    </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span>Sent: Jun 21, 2023 • 3:33 pm</span>
-                    <div className="h-2 w-2 rounded-full bg-green-500" />
-                    <span className="text-green-600">Sent</span>
+                  <div className="flex items-center gap-1 pt-2 border-t border-mailchimp-border-primary">
+                    <span className="text-component-x-small text-[#727E85]">
+                      Subject
+                    </span>
+                    <span className="text-component-x-small text-mailchimp-text-primary">
+                      Fired & Formed: Clay Collective Silent Auction
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 pt-2 border-t border-mailchimp-border-primary">
+                    <span className="text-component-x-small text-[#727E85]">
+                      Status
+                    </span>
+                    <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center px-1.5 py-0.5 rounded-mailchimp bg-[#D2F8D5]">
+                        <span className="text-component-x-small text-mailchimp-text-primary">
+                          Sent
+                        </span>
+                      </div>
+                      <span className="text-component-x-small text-mailchimp-text-primary">
+                        Tue Jan 21, 2025 • 3:53 pm
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="rounded-mailchimp bg-gradient-to-br from-purple-400 to-blue-400 p-6 text-white">
-                <div className="text-center">
-                  <div className="text-2xl font-light mb-2">🎨</div>
-                  <div className="text-lg font-medium">Welcome</div>
-                  <div className="text-lg font-medium">to Clay</div>
-                  <div className="text-sm opacity-90 mt-2">|</div>
+
+              {/* Email Template Card */}
+              <div className="flex flex-col gap-1 w-[234px] h-[234px] aspect-square relative">
+                <div className="flex flex-col items-center h-full rounded-t-lg bg-[#E2E9ED] relative overflow-hidden">
+                  <div className="flex flex-col items-center h-full bg-[#6B8395] text-[#F3E8E2] p-4 w-full">
+                    {/* Clay Logo Placeholder */}
+                    <div className="w-14 h-4 bg-[#F3E8E2] rounded mb-3 mt-6" />
+
+                    {/* Welcome Text */}
+                    <div className="text-center text-[28px] font-normal leading-tight mb-1">
+                      Welcome to Clay
+                    </div>
+
+                    {/* Divider */}
+                    <div className="w-1 h-7 bg-[#F3E8E2] mb-3" />
+
+                    {/* Image Placeholder */}
+                    <div className="w-[100px] h-[140px] bg-[#F3E8E2] rounded-t-[80px] mb-3" />
+
+                    {/* Text Content */}
+                    <div className="text-[6px] text-center leading-tight opacity-90 mb-2 px-2">
+                      Dear Mike, We're so glad you've joined us.
+                      <br />
+                      <br />
+                      CLAY is a leader in the field of ceramic arts...
+                    </div>
+
+                    {/* Button */}
+                    <div className="px-4 py-1.5 bg-[#F3E8E2] rounded-lg">
+                      <span className="text-[6px] text-[#6B8395] font-semibold">
+                        Explore member benefits
+                      </span>
+                    </div>
+
+                    {/* Footer */}
+                    <div className="mt-auto w-full bg-[#F3E8E2] text-[#6B8395] text-center p-2">
+                      <div className="w-full h-px bg-[#6B8395] mb-2" />
+                      <div className="text-[8px] leading-tight">
+                        Clay Collective
+                        <br />
+                        8550 White Fir St, Reno, NV 89523
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-[rgba(76,85,91,0.18)]" />
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex justify-between items-center px-2 relative -mt-2">
+                  <div className="flex gap-2">
+                    <button className="flex items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1 text-component-x-small text-mailchimp-text-primary">
+                      View clickmap
+                    </button>
+                    <button className="flex items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1 text-component-x-small text-mailchimp-text-primary">
+                      View details
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
