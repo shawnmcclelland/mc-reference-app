@@ -18,7 +18,35 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        mailchimp: [
+          '"Graphik Mailchimp"',
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
+      },
       colors: {
+        // Mailchimp Color System
+        mailchimp: {
+          cavendish: "#FFE01C",
+          "background-tertiary": "#F0F4F6",
+          "background-primary": "#FFF",
+          "text-primary": "#21262A",
+          "text-secondary": "#4C555B",
+          "text-quaternary": "#9AA7B0",
+          "text-inverse": "#FFF",
+          "border-primary": "#E2E9ED",
+          "border-secondary": "#D5DEE3",
+          "input-border": "#C3CED5",
+          "active-bg": "#E2E9ED",
+          "gray-900": "#21262A",
+          "gray-700": "#4C555B",
+          "gray-500": "#5D686F",
+          "gray-400": "#9AA7B0",
+        },
+        // Keep existing for compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -63,10 +91,18 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      spacing: {
+        "4.5": "1.125rem",
+        "13": "3.25rem",
+        "15": "3.75rem",
+        "18": "4.5rem",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        mailchimp: "6px",
+        "mailchimp-lg": "16px",
       },
       keyframes: {
         "accordion-down": {
