@@ -1731,24 +1731,24 @@ export default function CampaignReport() {
                       </span>
                     </div>
                   </div>
-                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                  <div className="group flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
                     <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
                       gmail.com
                     </span>
                   </div>
-                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                  <div className="group flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
                     <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
                       yahoo.com
                     </span>
                   </div>
-                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                  <div className="group flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
                     <div className="flex flex-col justify-center items-start gap-0.5 flex-1">
                       <span className="self-stretch text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
                         outlook.com
                       </span>
                     </div>
                   </div>
-                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch bg-white">
+                  <div className="group flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch bg-white">
                     <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
                       claycollective.com
                     </span>
