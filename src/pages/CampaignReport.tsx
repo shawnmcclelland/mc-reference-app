@@ -723,7 +723,7 @@ export default function CampaignReport() {
               {/* Event Tracker */}
               <div className="flex gap-6">
                 {/* Event Tracker Section */}
-                <div className="flex w-[830px] py-6 px-2 flex-col items-start gap-2 rounded-mailchimp border border-mailchimp-border-primary bg-white">
+                <div className="flex flex-1 py-6 px-2 flex-col items-start gap-2 rounded-mailchimp border border-mailchimp-border-primary bg-white">
                   <div className="flex px-4 flex-col items-start gap-1 self-stretch">
                     <div className="flex items-start gap-6 self-stretch">
                       <div className="flex items-center gap-4 flex-1">
