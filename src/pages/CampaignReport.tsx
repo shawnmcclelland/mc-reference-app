@@ -1913,10 +1913,9 @@ export default function CampaignReport() {
                 {/* Table Column 7 - Actions */}
                 <div className="flex flex-col items-start flex-1">
                   <div className="flex h-8 px-3 py-2 items-center self-stretch bg-[#F0F4F6]"></div>
-                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
-                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
-                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
-                    <div className="flex items-center gap-[-1px]">
+                  {/* Gmail.com row */}
+                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
                       <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
                         <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
                           View insights
@@ -1937,7 +1936,75 @@ export default function CampaignReport() {
                       </button>
                     </div>
                   </div>
-                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch bg-white"></div>
+                  {/* Yahoo.com row */}
+                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                      <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
+                        <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
+                          View insights
+                        </span>
+                      </button>
+                      <button className="flex px-1 py-1 justify-center items-center gap-2.5 rounded-r-mailchimp border border-[#D5DEE3] bg-white">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.0096 10.6786C7.9219 10.6786 7.83506 10.6613 7.75407 10.6277C7.67307 10.594 7.59951 10.5448 7.5376 10.4826L3.54293 6.47665C3.48099 6.41466 3.43186 6.34109 3.39836 6.26012C3.36485 6.17915 3.34763 6.09237 3.34766 6.00475C3.34769 5.91712 3.36498 5.83035 3.39854 5.74941C3.4321 5.66846 3.48128 5.59492 3.54326 5.53298C3.60525 5.47104 3.67882 5.42192 3.75979 5.38841C3.84076 5.35491 3.92754 5.33768 4.01517 5.33771C4.10279 5.33774 4.18956 5.35503 4.2705 5.38859C4.35145 5.42215 4.42499 5.47133 4.48693 5.53331L8.01093 9.06665L11.5443 5.54331C11.6694 5.4184 11.8391 5.34833 12.016 5.34851C12.1928 5.3487 12.3623 5.41913 12.4873 5.54431C12.6122 5.6695 12.6823 5.83917 12.6821 6.01602C12.6819 6.19287 12.6114 6.3624 12.4863 6.48731L8.48026 10.484C8.35532 10.6086 8.18607 10.6786 8.0096 10.6786Z"
+                            fill="#21262A"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  {/* Outlook.com row */}
+                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                      <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
+                        <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
+                          View insights
+                        </span>
+                      </button>
+                      <button className="flex px-1 py-1 justify-center items-center gap-2.5 rounded-r-mailchimp border border-[#D5DEE3] bg-white">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.0096 10.6786C7.9219 10.6786 7.83506 10.6613 7.75407 10.6277C7.67307 10.594 7.59951 10.5448 7.5376 10.4826L3.54293 6.47665C3.48099 6.41466 3.43186 6.34109 3.39836 6.26012C3.36485 6.17915 3.34763 6.09237 3.34766 6.00475C3.34769 5.91712 3.36498 5.83035 3.39854 5.74941C3.4321 5.66846 3.48128 5.59492 3.54326 5.53298C3.60525 5.47104 3.67882 5.42192 3.75979 5.38841C3.84076 5.35491 3.92754 5.33768 4.01517 5.33771C4.10279 5.33774 4.18956 5.35503 4.2705 5.38859C4.35145 5.42215 4.42499 5.47133 4.48693 5.53331L8.01093 9.06665L11.5443 5.54331C11.6694 5.4184 11.8391 5.34833 12.016 5.34851C12.1928 5.3487 12.3623 5.41913 12.4873 5.54431C12.6122 5.6695 12.6823 5.83917 12.6821 6.01602C12.6819 6.19287 12.6114 6.3624 12.4863 6.48731L8.48026 10.484C8.35532 10.6086 8.18607 10.6786 8.0096 10.6786Z"
+                            fill="#21262A"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  {/* Claycollective.com row */}
+                  <div className="group flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch bg-white">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-[-1px]">
+                      <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
+                        <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
+                          View insights
+                        </span>
+                      </button>
+                      <button className="flex px-1 py-1 justify-center items-center gap-2.5 rounded-r-mailchimp border border-[#D5DEE3] bg-white">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.0096 10.6786C7.9219 10.6786 7.83506 10.6613 7.75407 10.6277C7.67307 10.594 7.59951 10.5448 7.5376 10.4826L3.54293 6.47665C3.48099 6.41466 3.43186 6.34109 3.39836 6.26012C3.36485 6.17915 3.34763 6.09237 3.34766 6.00475C3.34769 5.91712 3.36498 5.83035 3.39854 5.74941C3.4321 5.66846 3.48128 5.59492 3.54326 5.53298C3.60525 5.47104 3.67882 5.42192 3.75979 5.38841C3.84076 5.35491 3.92754 5.33768 4.01517 5.33771C4.10279 5.33774 4.18956 5.35503 4.2705 5.38859C4.35145 5.42215 4.42499 5.47133 4.48693 5.53331L8.01093 9.06665L11.5443 5.54331C11.6694 5.4184 11.8391 5.34833 12.016 5.34851C12.1928 5.3487 12.3623 5.41913 12.4873 5.54431C12.6122 5.6695 12.6823 5.83917 12.6821 6.01602C12.6819 6.19287 12.6114 6.3624 12.4863 6.48731L8.48026 10.484C8.35532 10.6086 8.18607 10.6786 8.0096 10.6786Z"
+                            fill="#21262A"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
