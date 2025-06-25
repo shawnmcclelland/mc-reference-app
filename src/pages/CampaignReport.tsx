@@ -1032,7 +1032,7 @@ export default function CampaignReport() {
             {/* Demographics Row */}
             <div className="flex gap-6">
               {/* Predicted demographics */}
-              <div className="w-[830px] min-h-[140px] p-6 flex flex-col gap-4 rounded-mailchimp border border-mailchimp-border-primary bg-white">
+              <div className="flex-1 min-h-[140px] p-6 flex flex-col gap-4 rounded-mailchimp border border-mailchimp-border-primary bg-white">
                 <div className="flex flex-col gap-1">
                   <div className="flex items-start gap-6 self-stretch">
                     <div className="flex items-center gap-4 flex-1">
