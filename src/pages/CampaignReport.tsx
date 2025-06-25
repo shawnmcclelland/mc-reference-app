@@ -555,61 +555,18 @@ export default function CampaignReport() {
                       viewBox="0 0 1180 280"
                       preserveAspectRatio="none"
                     >
-                      {/* Open Rate Line (Primary metric - thicker line) */}
+                      {/* Single Blue Line */}
                       <path
-                        d="M 0 180 Q 84 160 168 140 T 336 100 Q 420 90 504 85 T 672 80 Q 756 78 840 75 T 1008 70 Q 1092 68 1180 65"
+                        d="M 0 200 Q 84 180 168 160 T 336 120 Q 420 110 504 100 T 672 90 Q 756 85 840 80 T 1008 75 Q 1092 72 1180 70"
                         fill="none"
-                        stroke="#FFE01C"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        opacity="0.9"
-                      />
-
-                      {/* Click Rate Line */}
-                      <path
-                        d="M 0 200 Q 84 190 168 185 T 336 175 Q 420 170 504 165 T 672 160 Q 756 158 840 155 T 1008 150 Q 1092 148 1180 145"
-                        fill="none"
-                        stroke="#009EAC"
+                        stroke="#205EA3"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        opacity="0.8"
                       />
 
-                      {/* Bounce Rate Line */}
-                      <path
-                        d="M 0 220 Q 84 210 168 205 T 336 195 Q 420 190 504 188 T 672 185 Q 756 184 840 182 T 1008 180 Q 1092 179 1180 178"
-                        fill="none"
-                        stroke="#DB334D"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        opacity="0.7"
-                      />
-
-                      {/* Data points for interactivity */}
-                      <circle
-                        cx="1180"
-                        cy="65"
-                        r="4"
-                        fill="#FFE01C"
-                        opacity="0.9"
-                      />
-                      <circle
-                        cx="1180"
-                        cy="145"
-                        r="3"
-                        fill="#009EAC"
-                        opacity="0.8"
-                      />
-                      <circle
-                        cx="1180"
-                        cy="178"
-                        r="3"
-                        fill="#DB334D"
-                        opacity="0.7"
-                      />
+                      {/* Data point */}
+                      <circle cx="1180" cy="70" r="3" fill="#205EA3" />
                     </svg>
 
                     {/* Bottom section with final grid line and dates */}
