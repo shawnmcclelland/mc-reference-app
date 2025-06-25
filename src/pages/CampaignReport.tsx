@@ -299,7 +299,7 @@ export default function CampaignReport() {
               </div>
 
               {/* Email Template Card */}
-              <div className="flex w-[234px] h-[234px] flex-col items-start gap-1 aspect-square relative right-6 bottom-5">
+              <div className="flex w-[234px] h-[234px] flex-col items-start gap-1 aspect-square relative right-6 -bottom-[21px]">
                 {/* Template Thumbnail */}
                 <div className="flex h-[234px] flex-col items-center gap-[8.667px] flex-shrink-0 self-stretch aspect-square rounded-t-[8.509px] bg-[#E2E9ED] relative overflow-hidden">
                   {/* Clay email content */}
