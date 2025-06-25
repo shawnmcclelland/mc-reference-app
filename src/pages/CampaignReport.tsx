@@ -299,7 +299,7 @@ export default function CampaignReport() {
               </div>
 
               {/* Email Template Card */}
-              <div className="flex w-[234px] h-[234px] flex-col items-start aspect-square relative right-6 -bottom-[21px]">
+              <div className="flex w-[234px] h-[234px] flex-col items-stretch aspect-square relative right-6 -bottom-[21px]">
                 {/* Template Thumbnail */}
                 <div className="flex h-[234px] flex-col items-center gap-[8.667px] flex-shrink-0 self-stretch aspect-square rounded-t-[8.509px] bg-[#E2E9ED] relative overflow-hidden">
                   {/* Action Buttons Overlay */}
