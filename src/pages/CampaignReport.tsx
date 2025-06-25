@@ -930,198 +930,1046 @@ export default function CampaignReport() {
               </div>
             </div>
 
-            {/* Demographics */}
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-normal text-mailchimp-text-primary">
-                  Predicted demographics
-                </h2>
-                <div className="flex gap-4 text-component-small">
-                  <button className="text-blue-600 border-b border-blue-600">
-                    Opens
-                  </button>
-                  <button className="text-mailchimp-text-secondary">
-                    Clicks
-                  </button>
-                  <button className="text-mailchimp-text-secondary">
-                    Recipients
-                  </button>
-                  <OptionsIcon />
+            {/* Demographics Row */}
+            <div className="flex gap-6">
+              {/* Predicted demographics */}
+              <div className="w-[830px] min-h-[140px] p-6 flex flex-col gap-4 rounded-mailchimp border border-mailchimp-border-primary bg-white">
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-start gap-6 self-stretch">
+                    <div className="flex items-center gap-4 flex-1">
+                      <h2 className="text-[20px] font-medium text-mailchimp-text-primary leading-[120%] tracking-[-0.4px]">
+                        Predicted demographics
+                      </h2>
+                    </div>
+                    <div className="flex h-6 justify-end items-center gap-2">
+                      <div className="flex items-start">
+                        <div className="flex p-0.5 items-center gap-0.5 rounded-mailchimp bg-[#F0F4F6]">
+                          <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded bg-white shadow-[0px_1px_4px_0px_rgba(76,85,91,0.2)]">
+                            <span className="flex-1 text-mailchimp-text-primary text-center text-component-x-small font-normal leading-4">
+                              Opens
+                            </span>
+                          </div>
+                          <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded">
+                            <span className="flex-1 text-[#727E85] text-center text-component-x-small font-normal leading-4">
+                              Clicks
+                            </span>
+                          </div>
+                          <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded">
+                            <span className="flex-1 text-[#727E85] text-center text-component-x-small font-normal leading-4">
+                              Recipients
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <button className="flex flex-col justify-center items-start">
+                        <div className="flex p-1 justify-center items-center rounded-mailchimp border border-[#D5DEE3] bg-white">
+                          <OptionsIcon />
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex max-w-[600px] pr-15 justify-center items-center gap-2.5 self-stretch">
+                    <p className="flex-1 text-[#4C555B] text-component-x-small font-normal leading-4">
+                      Based on user interests and behavior data science predicts
+                      age and gender of contacts to identify key characteristics
+                      of your audience.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-start gap-4 self-stretch">
+                  <div className="flex items-start gap-6 self-stretch">
+                    {/* Gender Chart */}
+                    <div className="flex flex-col items-start gap-2 flex-1">
+                      <h3 className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px] self-stretch">
+                        Gender
+                      </h3>
+                      <div className="flex h-[168px] items-center gap-4 self-stretch">
+                        <svg
+                          className="w-[150px] h-[150px] aspect-square"
+                          width="154"
+                          height="154"
+                          viewBox="0 0 154 154"
+                          fill="none"
+                        >
+                          <path
+                            d="M113.687 142.413C128.21 134.268 139.609 121.522 146.088 106.184C152.568 90.8463 153.759 73.7883 149.474 57.6986C145.19 41.6088 135.673 27.4024 122.423 17.3181C109.174 7.23391 92.9455 1.84535 76.2958 2.00171L76.507 24.5007C88.1619 24.3913 99.5217 28.1633 108.796 35.2222C118.071 42.2812 124.733 52.2257 127.732 63.4885C130.731 74.7513 129.897 86.692 125.362 97.4286C120.826 108.165 112.847 117.087 102.681 122.789L113.687 142.413Z"
+                            fill="#205EA3"
+                            stroke="white"
+                            strokeWidth="4"
+                          />
+                          <path
+                            d="M77.0232 1.9984C65.3273 1.99479 53.7926 4.72663 43.3407 9.97566C32.8888 15.2247 23.8094 22.8454 16.8278 32.2291C9.84619 41.6127 5.15596 52.4991 3.1318 64.0185C1.10764 75.538 1.80566 87.3712 5.17009 98.5727L26.7191 92.1004C24.364 84.2593 23.8754 75.9761 25.2923 67.9125C26.7092 59.8489 29.9924 52.2284 34.8795 45.6599C39.7666 39.0913 46.1222 33.7568 53.4385 30.0825C60.7549 26.4082 68.8291 24.4959 77.0163 24.4984L77.0232 1.9984Z"
+                            fill="#F7576C"
+                            stroke="white"
+                            strokeWidth="4"
+                          />
+                          <path
+                            d="M39.8147 11.8674C29.6575 17.6663 20.9974 25.7603 14.5261 35.5028C8.05476 45.2454 3.95169 56.3664 2.54465 67.9774C1.13761 79.5884 2.46561 91.3675 6.42254 102.374C10.3795 113.38 16.8557 123.308 25.3337 131.365L40.8336 115.056C34.899 109.416 30.3656 102.466 27.5958 94.7616C24.8259 87.0572 23.8963 78.8118 24.8812 70.6842C25.8662 62.5565 28.7383 54.7718 33.2682 47.952C37.7981 41.1322 43.8603 35.4664 50.9703 31.4072L39.8147 11.8674Z"
+                            fill="#E56C1D"
+                            stroke="white"
+                            strokeWidth="4"
+                          />
+                          <path
+                            d="M5.81601 100.619C9.60305 112.032 16.0791 122.368 24.6981 130.754C33.3171 139.14 43.8262 145.331 55.3393 148.804C66.8523 152.277 79.0318 152.931 90.8505 150.71C102.669 148.489 113.781 143.459 123.248 136.044L109.373 118.331C102.746 123.521 94.9684 127.042 86.6953 128.597C78.4222 130.152 69.8966 129.694 61.8375 127.263C53.7783 124.832 46.4219 120.498 40.3886 114.628C34.3554 108.758 29.8221 101.523 27.1712 93.5331L5.81601 100.619Z"
+                            fill="#009EAC"
+                            stroke="white"
+                            strokeWidth="4"
+                          />
+                        </svg>
+                        <div className="flex flex-col justify-center items-start flex-1 self-stretch">
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#205EA3"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                Female
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  58.3%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#009EAC"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                Male
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  14.8%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#E56C1D"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                Another identity
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  6.3%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#F7576C"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                Unknown
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  20.6%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Age Range Chart */}
+                    <div className="flex flex-col items-start gap-2 flex-1">
+                      <h3 className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px] self-stretch">
+                        Age Range
+                      </h3>
+                      <div className="flex items-center gap-4 self-stretch">
+                        <img
+                          className="w-[150px] h-[150px] aspect-square"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/f8cc099edd11ee3c5977cf52a570b84796938f57"
+                          alt="donut chart"
+                        />
+                        <div className="flex flex-col justify-center items-start flex-1 self-stretch">
+                          <div className="flex p-1 items-center gap-2 self-stretch rounded bg-[#F8FAFB]">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#205EA3"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                18-24
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  26.9%
+                                </span>
+                                <button className="flex p-1 justify-center items-center rounded-mailchimp bg-[#E2E9ED]">
+                                  <svg
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    fill="none"
+                                  >
+                                    <path
+                                      d="M8.00008 9.33332C8.73646 9.33332 9.33341 8.73637 9.33341 7.99999C9.33341 7.26361 8.73646 6.66666 8.00008 6.66666C7.2637 6.66666 6.66675 7.26361 6.66675 7.99999C6.66675 8.73637 7.2637 9.33332 8.00008 9.33332Z"
+                                      fill="#21262A"
+                                    ></path>
+                                    <path
+                                      d="M4.00008 9.33332C4.73646 9.33332 5.33341 8.73637 5.33341 7.99999C5.33341 7.26361 4.73646 6.66666 4.00008 6.66666C3.2637 6.66666 2.66675 7.26361 2.66675 7.99999C2.66675 8.73637 3.2637 9.33332 4.00008 9.33332Z"
+                                      fill="#21262A"
+                                    ></path>
+                                    <path
+                                      d="M12.0001 9.33332C12.7365 9.33332 13.3334 8.73637 13.3334 7.99999C13.3334 7.26361 12.7365 6.66666 12.0001 6.66666C11.2637 6.66666 10.6667 7.26361 10.6667 7.99999C10.6667 8.73637 11.2637 9.33332 12.0001 9.33332Z"
+                                      fill="#21262A"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#009EAC"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                25-34
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  14.8%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#E56C1D"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                35-44
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  6.3%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#F7576C"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                45-54
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  6.9%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#A275FF"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                55-64
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  2.9%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex p-1 items-center gap-2 self-stretch">
+                            <svg
+                              className="flex h-5 items-center gap-2.5"
+                              width="12"
+                              height="20"
+                              viewBox="0 0 12 20"
+                              fill="none"
+                            >
+                              <circle
+                                cx="6"
+                                cy="10"
+                                r="6"
+                                fill="#8F1229"
+                              ></circle>
+                            </svg>
+                            <div className="flex justify-between items-center flex-1">
+                              <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                                65+
+                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                                  10.7%
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="text-component-small text-mailchimp-text-secondary mb-6">
-                Based on our inference and behavior data website predicts age
-                and gender of contacts to identify key characteristics of your
-                audience.
-              </div>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="grid grid-cols-3 gap-8">
-                  <DemographicsChart title="Gender" data={genderData} />
-                  <DemographicsChart title="Age Range" data={ageData} />
-                  <DemographicsChart
-                    title="Top locations"
-                    data={locationData}
-                  />
+
+              {/* Top locations */}
+              <div className="w-[402px] min-h-[140px] p-6 flex flex-col items-start gap-4 self-stretch rounded-mailchimp border border-mailchimp-border-primary bg-white">
+                <div className="flex flex-col items-start gap-1 self-stretch">
+                  <div className="flex items-start gap-6 self-stretch">
+                    <div className="flex items-center gap-4 flex-1">
+                      <h2 className="text-[20px] font-medium text-mailchimp-text-primary leading-[120%] tracking-[-0.4px]">
+                        Top locations
+                      </h2>
+                    </div>
+                    <div className="flex h-6 justify-end items-center gap-2">
+                      <div className="flex h-6 flex-col items-end">
+                        <div className="flex flex-col items-start">
+                          <button className="flex min-w-12 px-1.5 py-1 justify-center items-center gap-0.5 self-stretch rounded-mailchimp border border-[#D5DEE3] bg-white">
+                            <span className="text-component-x-small text-mailchimp-text-primary font-normal leading-4">
+                              Opens
+                            </span>
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <path
+                                d="M8.00935 10.6787C7.92165 10.6787 7.83482 10.6613 7.75382 10.6277C7.67283 10.5941 7.59927 10.5448 7.53735 10.4827L3.54269 6.47668C3.48075 6.41469 3.43162 6.34112 3.39811 6.26015C3.36461 6.17918 3.34738 6.0924 3.34741 6.00478C3.34744 5.91715 3.36473 5.83038 3.3983 5.74944C3.43186 5.66849 3.48103 5.59495 3.54302 5.53301C3.605 5.47107 3.67858 5.42195 3.75955 5.38844C3.84052 5.35494 3.92729 5.33771 4.01492 5.33774C4.10255 5.33777 4.18931 5.35506 4.27026 5.38862C4.3512 5.42218 4.42474 5.47136 4.48669 5.53334L8.01068 9.06668L11.544 5.54334C11.6692 5.41843 11.8389 5.34836 12.0157 5.34854C12.1926 5.34873 12.3621 5.41916 12.487 5.54434C12.6119 5.66953 12.682 5.8392 12.6818 6.01605C12.6816 6.1929 12.6112 6.36243 12.486 6.48734L8.48002 10.484C8.35508 10.6086 8.18582 10.6786 8.00935 10.6787Z"
+                                fill="#21262A"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <button className="flex flex-col justify-center items-start">
+                          <div className="flex p-1 justify-center items-center rounded-mailchimp border border-[#D5DEE3] bg-white">
+                            <OptionsIcon />
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex max-w-[600px] pr-15 justify-center items-center gap-2.5 self-stretch">
+                    <p className="flex-1 text-[#4C555B] text-component-x-small font-normal leading-4">
+                      Geolocation estimates where contacts are located, to
+                      target emails for specific regions or time zones.
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="text-base font-normal text-mailchimp-text-primary">
-                    18-24
-                  </div>
-                  <div className="text-component-small text-mailchimp-text-secondary">
-                    26.9%
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-component-small text-mailchimp-text-secondary">
-                      Add to custom import
-                    </div>
-                    <div className="text-component-small text-mailchimp-text-secondary">
-                      Create segment
-                    </div>
-                    <div className="text-component-small text-mailchimp-text-secondary">
-                      Create tag
-                    </div>
-                    <div className="text-component-small text-mailchimp-text-secondary">
-                      Target in campaign
+                <div className="flex flex-col justify-center items-center gap-4 self-stretch rounded-mailchimp">
+                  <div className="flex py-[37px] px-0 items-center gap-4 self-stretch">
+                    <svg
+                      className="w-[150px] h-[150px] aspect-square"
+                      width="154"
+                      height="154"
+                      viewBox="0 0 154 154"
+                      fill="none"
+                    >
+                      <path
+                        d="M113.687 142.413C128.209 134.268 139.609 121.522 146.088 106.184C152.568 90.8463 153.759 73.7883 149.474 57.6986C145.189 41.6088 135.673 27.4024 122.423 17.3181C109.174 7.23391 92.9454 1.84535 76.2956 2.00171L76.5069 24.5007C88.1617 24.3913 99.5216 28.1633 108.796 35.2222C118.071 42.2812 124.733 52.2257 127.732 63.4885C130.731 74.7513 129.897 86.692 125.362 97.4286C120.826 108.165 112.847 117.087 102.681 122.789L113.687 142.413Z"
+                        fill="#205EA3"
+                        stroke="white"
+                        strokeWidth="4"
+                      />
+                      <path
+                        d="M77.0232 1.9984C65.3273 1.99479 53.7926 4.72663 43.3407 9.97566C32.8888 15.2247 23.8094 22.8454 16.8278 32.2291C9.84619 41.6127 5.15596 52.4991 3.1318 64.0185C1.10764 75.538 1.80566 87.3712 5.17009 98.5727L26.7191 92.1004C24.364 84.2593 23.8754 75.9761 25.2923 67.9125C26.7092 59.8489 29.9924 52.2284 34.8795 45.6599C39.7666 39.0913 46.1222 33.7568 53.4385 30.0825C60.7549 26.4082 68.8291 24.4959 77.0163 24.4984L77.0232 1.9984Z"
+                        fill="#F7576C"
+                        stroke="white"
+                        strokeWidth="4"
+                      />
+                      <path
+                        d="M39.8148 11.8674C29.6577 17.6663 20.9975 25.7603 14.5262 35.5028C8.05489 45.2454 3.95181 56.3664 2.54478 67.9774C1.13774 79.5884 2.46573 91.3675 6.42267 102.374C10.3796 113.38 16.8558 123.308 25.3338 131.365L40.8337 115.056C34.8991 109.416 30.3657 102.466 27.5959 94.7616C24.826 87.0572 23.8964 78.8118 24.8814 70.6842C25.8663 62.5565 28.7384 54.7718 33.2684 47.952C37.7983 41.1322 43.8604 35.4664 50.9704 31.4072L39.8148 11.8674Z"
+                        fill="#E56C1D"
+                        stroke="white"
+                        strokeWidth="4"
+                      />
+                      <path
+                        d="M5.81614 100.619C9.60318 112.032 16.0792 122.368 24.6982 130.754C33.3172 139.14 43.8263 145.331 55.3394 148.804C66.8525 152.277 79.0319 152.931 90.8506 150.71C102.669 148.489 113.781 143.459 123.248 136.044L109.373 118.331C102.746 123.521 94.9685 127.042 86.6954 128.597C78.4223 130.152 69.8968 129.694 61.8376 127.263C53.7784 124.832 46.422 120.498 40.3888 114.628C34.3555 108.758 29.8222 101.523 27.1713 93.5331L5.81614 100.619Z"
+                        fill="#009EAC"
+                        stroke="white"
+                        strokeWidth="4"
+                      />
+                    </svg>
+                    <div className="flex flex-col justify-center items-start flex-1 self-stretch">
+                      <div className="flex p-1 items-center gap-2 self-stretch">
+                        <svg
+                          className="flex h-5 items-center gap-2.5"
+                          width="12"
+                          height="20"
+                          viewBox="0 0 12 20"
+                          fill="none"
+                        >
+                          <circle cx="6" cy="10" r="6" fill="#205EA3"></circle>
+                        </svg>
+                        <div className="flex justify-between items-center flex-1">
+                          <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                            United States
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                              92.8%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex p-1 items-center gap-2 self-stretch">
+                        <svg
+                          className="flex h-5 items-center gap-2.5"
+                          width="12"
+                          height="20"
+                          viewBox="0 0 12 20"
+                          fill="none"
+                        >
+                          <circle cx="6" cy="10" r="6" fill="#009EAC"></circle>
+                        </svg>
+                        <div className="flex justify-between items-center flex-1">
+                          <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                            Australia
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                              1.6%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex p-1 items-center gap-2 self-stretch">
+                        <svg
+                          className="flex h-5 items-center gap-2.5"
+                          width="12"
+                          height="20"
+                          viewBox="0 0 12 20"
+                          fill="none"
+                        >
+                          <circle cx="6" cy="10" r="6" fill="#E56C1D"></circle>
+                        </svg>
+                        <div className="flex justify-between items-center flex-1">
+                          <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                            Singapore
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                              1.8%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex p-1 items-center gap-2 self-stretch">
+                        <svg
+                          className="flex h-5 items-center gap-2.5"
+                          width="12"
+                          height="20"
+                          viewBox="0 0 12 20"
+                          fill="none"
+                        >
+                          <circle cx="6" cy="10" r="6" fill="#F7576C"></circle>
+                        </svg>
+                        <div className="flex justify-between items-center flex-1">
+                          <span className="text-component-small font-medium text-mailchimp-text-primary leading-[140%] tracking-[-0.14px]">
+                            Other
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-component-small text-mailchimp-text-primary text-right leading-[140%]">
+                              3.8%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Domain Performance */}
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-normal text-mailchimp-text-primary">
-                  Domain performance
-                </h2>
-                <div className="flex gap-4 text-component-small">
-                  <span className="text-mailchimp-text-secondary">Clients</span>
-                  <button className="text-blue-600 border-b border-blue-600">
-                    Providers
-                  </button>
-                  <OptionsIcon />
+            {/* Domain performance */}
+            <div className="flex w-full h-[321px] p-6 flex-col items-start gap-4 rounded-mailchimp border border-mailchimp-border-primary bg-white">
+              <div className="flex flex-col items-start gap-1 self-stretch">
+                <div className="flex items-start gap-6 self-stretch">
+                  <div className="flex items-center gap-4 flex-1">
+                    <h2 className="text-[20px] font-medium text-mailchimp-text-primary leading-[120%] tracking-[-0.4px]">
+                      Domain performance
+                    </h2>
+                  </div>
+                  <div className="flex h-6 justify-end items-center gap-2">
+                    <div className="flex items-start">
+                      <div className="flex p-0.5 items-center gap-0.5 rounded-mailchimp bg-[#F0F4F6]">
+                        <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded bg-white shadow-[0px_1px_4px_0px_rgba(76,85,91,0.2)]">
+                          <span className="flex-1 text-mailchimp-text-primary text-center text-component-x-small font-normal leading-4">
+                            Counts
+                          </span>
+                        </div>
+                        <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded">
+                          <span className="flex-1 text-[#727E85] text-center text-component-x-small font-normal leading-4">
+                            Percentages
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <button className="flex h-6 justify-end items-start">
+                      <div className="flex flex-col justify-center items-start">
+                        <div className="flex p-1 justify-center items-center rounded-mailchimp border border-[#D5DEE3] bg-white">
+                          <OptionsIcon />
+                        </div>
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div className="rounded-mailchimp border border-mailchimp-border-primary bg-mailchimp-background-primary overflow-hidden">
-                <table className="w-full">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
+              <div className="flex items-start self-stretch">
+                {/* Table Column 1 - Segment name */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 items-center self-stretch bg-[#F0F4F6]">
+                    <div className="flex justify-center items-center">
+                      <span className="text-[#727E85] text-component-x-small font-normal leading-4">
                         Segment name
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Delivered
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Unique opens
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Clicked
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Bounced
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Unsubscribed
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {domainPerformanceData.map((row, index) => (
-                      <tr key={index} className="border-t border-gray-100">
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.domain}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.delivered}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.opened}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.clicked}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.bounced}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.unsubscribed}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      gmail.com
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      yahoo.com
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex flex-col justify-center items-start gap-0.5 flex-1">
+                      <span className="self-stretch text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                        outlook.com
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      claycollective.com
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 2 - Deliveries */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Deliveries
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      18,103
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      3,522
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex flex-col justify-center items-end gap-0.5 flex-1">
+                      <span className="self-stretch text-mailchimp-text-primary text-right text-component-small font-normal leading-5">
+                        1,729
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      3
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 3 - Unique opens */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Unique opens
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      3,780
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      625
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex flex-col justify-center items-end gap-0.5 flex-1">
+                      <span className="self-stretch text-mailchimp-text-primary text-right text-component-small font-normal leading-5">
+                        326
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      3
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 4 - Clicked */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Clicked
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      431
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      179
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex flex-col justify-center items-end gap-0.5 flex-1">
+                      <span className="self-stretch text-mailchimp-text-primary text-right text-component-small font-normal leading-5">
+                        51
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      3
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 5 - Bounced */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Bounced
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      97
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      23
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex flex-col justify-center items-end gap-0.5 flex-1">
+                      <span className="self-stretch text-mailchimp-text-primary text-right text-component-small font-normal leading-5">
+                        11
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      0
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 6 - Unsubscribed */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Unsubscribed
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      462
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      60
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex flex-col justify-center items-end gap-0.5 flex-1">
+                      <span className="self-stretch text-mailchimp-text-primary text-right text-component-small font-normal leading-5">
+                        20
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      0
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 7 - Actions */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 items-center self-stretch bg-[#F0F4F6]"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-[#F8FAFB]">
+                    <div className="flex items-center gap-[-1px]">
+                      <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-2.5 rounded-l-mailchimp border border-[#D5DEE3] bg-white">
+                        <span className="text-mailchimp-text-primary text-component-x-small font-normal leading-4">
+                          View insights
+                        </span>
+                      </button>
+                      <button className="flex px-1 py-1 justify-center items-center gap-2.5 rounded-r-mailchimp border border-[#D5DEE3] bg-white">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.0096 10.6786C7.9219 10.6786 7.83506 10.6613 7.75407 10.6277C7.67307 10.594 7.59951 10.5448 7.5376 10.4826L3.54293 6.47665C3.48099 6.41466 3.43186 6.34109 3.39836 6.26012C3.36485 6.17915 3.34763 6.09237 3.34766 6.00475C3.34769 5.91712 3.36498 5.83035 3.39854 5.74941C3.4321 5.66846 3.48128 5.59492 3.54326 5.53298C3.60525 5.47104 3.67882 5.42192 3.75979 5.38841C3.84076 5.35491 3.92754 5.33768 4.01517 5.33771C4.10279 5.33774 4.18956 5.35503 4.2705 5.38859C4.35145 5.42215 4.42499 5.47133 4.48693 5.53331L8.01093 9.06665L11.5443 5.54331C11.6694 5.4184 11.8391 5.34833 12.016 5.34851C12.1928 5.3487 12.3623 5.41913 12.4873 5.54431C12.6122 5.6695 12.6823 5.83917 12.6821 6.01602C12.6819 6.19287 12.6114 6.3624 12.4863 6.48731L8.48026 10.484C8.35532 10.6086 8.18607 10.6786 8.0096 10.6786Z"
+                            fill="#21262A"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch bg-white"></div>
+                </div>
               </div>
             </div>
 
-            {/* Targeted Performance */}
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-normal text-mailchimp-text-primary">
-                  Targeted performance
-                </h2>
-                <div className="flex gap-4 text-component-small">
-                  <button className="text-blue-600 border-b border-blue-600">
-                    Segments
-                  </button>
-                  <button className="text-mailchimp-text-secondary">
-                    Tags
-                  </button>
-                  <button className="text-mailchimp-text-secondary">
-                    Groups
-                  </button>
-                  <OptionsIcon />
+            {/* Targeted performance */}
+            <div className="flex w-full h-[321px] p-6 flex-col items-start gap-4 rounded-mailchimp border border-mailchimp-border-primary bg-white">
+              <div className="flex flex-col items-start gap-1 self-stretch">
+                <div className="flex items-start gap-6 self-stretch">
+                  <div className="flex items-center gap-4 flex-1">
+                    <h2 className="text-[20px] font-medium text-mailchimp-text-primary leading-[120%] tracking-[-0.4px]">
+                      Targeted performance
+                    </h2>
+                  </div>
+                  <div className="flex h-6 justify-end items-center gap-2">
+                    <div className="flex items-start">
+                      <div className="flex p-0.5 items-center gap-0.5 rounded-mailchimp bg-[#F0F4F6]">
+                        <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded bg-white shadow-[0px_1px_4px_0px_rgba(76,85,91,0.2)]">
+                          <span className="flex-1 text-mailchimp-text-primary text-center text-component-x-small font-normal leading-4">
+                            Segments
+                          </span>
+                        </div>
+                        <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded">
+                          <span className="flex-1 text-[#727E85] text-center text-component-x-small font-normal leading-4">
+                            Tags
+                          </span>
+                        </div>
+                        <div className="flex min-w-12 px-2.5 py-0.5 justify-center items-center gap-1 rounded">
+                          <span className="flex-1 text-[#727E85] text-center text-component-x-small font-normal leading-4">
+                            Groups
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <button className="flex flex-col justify-center items-start">
+                        <div className="flex p-1 justify-center items-center rounded-mailchimp border border-[#D5DEE3] bg-white">
+                          <OptionsIcon />
+                        </div>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="rounded-mailchimp border border-mailchimp-border-primary bg-mailchimp-background-primary overflow-hidden">
-                <table className="w-full">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
+              <div className="flex items-start self-stretch">
+                {/* Table Column 1 - Segment name */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 items-center self-stretch bg-[#F0F4F6]">
+                    <div className="flex justify-center items-center">
+                      <span className="text-[#727E85] text-component-x-small font-normal leading-4">
                         Segment name
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Delivered
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Unique opens
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Clicked
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Bounced
-                      </th>
-                      <th className="px-4 py-2 text-left text-component-small text-mailchimp-text-secondary">
-                        Unsubscribed
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {targetedPerformanceData.map((row, index) => (
-                      <tr key={index} className="border-t border-gray-100">
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.segment}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.delivered}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.opened}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.clicked}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.bounced}
-                        </td>
-                        <td className="px-4 py-3 text-component-small text-mailchimp-text-primary">
-                          {row.unsubscribed}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      New subscribers
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      Previous buyers
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      High spenders
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 items-center gap-0.5 self-stretch bg-white">
+                    <span className="flex-1 text-mailchimp-text-primary text-component-small font-medium leading-5 tracking-[-0.14px]">
+                      Students
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 2 - Deliveries */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Deliveries
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      7,203
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      11,119
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      4,492
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      2,842
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 3 - Unique opens */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Unique opens
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      1,454
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      2,423
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      933
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      434
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 4 - Clicked */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Clicked
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      265
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      429
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      192
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      105
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 5 - Bounced */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Bounced
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      82
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      2
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      7
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      19
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 6 - Unsubscribed */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 justify-end items-center self-stretch bg-[#F0F4F6]">
+                    <span className="text-[#727E85] text-component-x-small font-normal leading-[140%]">
+                      Unsubscribed
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      12
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      37
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      10
+                    </span>
+                  </div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center gap-0.5 self-stretch bg-white">
+                    <span className="text-mailchimp-text-primary text-right text-component-small font-normal leading-[140%]">
+                      2
+                    </span>
+                  </div>
+                </div>
+
+                {/* Table Column 7 - Actions */}
+                <div className="flex flex-col items-start flex-1">
+                  <div className="flex h-8 px-3 py-2 items-center self-stretch bg-[#F0F4F6]"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch border-b border-mailchimp-border-primary bg-white"></div>
+                  <div className="flex h-[52px] px-3 py-2.5 justify-end items-center self-stretch bg-white"></div>
+                </div>
               </div>
             </div>
           </div>
