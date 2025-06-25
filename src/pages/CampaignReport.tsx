@@ -34,7 +34,7 @@ const OptionsIcon = () => (
 
 const EventTrackerData = [
   {
-    icon: "🛒",
+    icon: "���",
     label: "Purchased from email",
     count: "121",
     subtext: "198 total purchased",
@@ -302,81 +302,48 @@ export default function CampaignReport() {
               <div className="flex w-[234px] h-[234px] flex-col items-start gap-1 aspect-square relative right-6 -bottom-[21px]">
                 {/* Template Thumbnail */}
                 <div className="flex h-[234px] flex-col items-center gap-[8.667px] flex-shrink-0 self-stretch aspect-square rounded-t-[8.509px] bg-[#E2E9ED] relative overflow-hidden">
-                  {/* Clay email content */}
-                  <div className="flex h-[556.831px] pt-[43.333px] flex-col items-center gap-[16.781px] flex-shrink-0 self-stretch aspect-[234/556.83] bg-[#6B8395] relative">
+                  {/* Action Buttons Overlay */}
+                  <div className="absolute top-2 left-2 right-2 z-10 flex justify-between items-start">
+                    <div className="flex items-center gap-[9.75px]">
+                      <div className="flex min-w-[52px] py-[4.333px] px-[10.833px] justify-center items-center gap-[4.333px] rounded-[6.382px] border-[1.083px] border-[#D5DEE3] bg-white">
+                        <div className="text-[#21262A] font-['Graphik_Mailchimp'] text-[13px] font-normal leading-[17.333px]">
+                          View clickmap
+                        </div>
+                      </div>
+                      <div className="flex min-w-[52px] py-[4.333px] px-[10.833px] justify-center items-center gap-[4.333px] rounded-[6.382px] border-[1.083px] border-[#D5DEE3] bg-white">
+                        <div className="text-[#21262A] font-['Graphik_Mailchimp'] text-[13px] font-normal leading-[17.333px]">
+                          View details
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Clay email content - scaled down */}
+                  <div className="flex flex-col items-center bg-[#6B8395] self-stretch h-full relative overflow-hidden">
                     {/* Clay Logo */}
-                    <div className="flex flex-col justify-center items-center gap-[4.475px] relative">
-                      <div className="w-[55.937px] h-[17.291px] bg-[#F3E8E2]"></div>
+                    <div className="flex flex-col justify-center items-center gap-1 relative mt-6">
+                      <div className="w-12 h-4 bg-[#F3E8E2] rounded-sm"></div>
                     </div>
 
                     {/* Welcome Text */}
-                    <div className="self-stretch text-[#F3E8E2] text-center font-['Avenir_Next'] text-[33.562px] font-normal leading-[33.562px]">
-                      Welcome to Clay
+                    <div className="text-[#F3E8E2] text-center font-['Avenir_Next'] text-lg font-normal mt-2">
+                      CLVY
+                    </div>
+                    <div className="text-[#F3E8E2] text-center font-['Avenir_Next'] text-2xl font-normal leading-tight">
+                      Welcome
+                      <br />
+                      to Clay
                     </div>
 
                     {/* Divider */}
-                    <div className="w-[3.827px] h-[29.849px] flex-shrink-0 bg-[#F3E8E2]"></div>
+                    <div className="w-1 h-6 bg-[#F3E8E2] mt-2"></div>
 
-                    {/* Image */}
-                    <img
-                      className="w-[124.514px] h-[185.783px] flex-shrink-0 rounded-t-[98.359px]"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/85ccae415b6fdd0252f047beb468f6d7f06c66ee"
-                      alt=""
-                    />
-
-                    {/* Text Content */}
-                    <div className="w-[204.726px] text-[#FDFDFD] text-center font-['Avenir'] text-[7.272px] font-normal leading-[140%]">
-                      Dear Mike, We're so glad you've joined us. CLAY is a
-                      leader in the field of ceramic arts, providing our
-                      students and artists unparalleled access to top-quality
-                      facilities, equipment, and instruction. We provide robust
-                      arts education programming, centered on hands-on
-                      experiences with clay, to diverse populations across our
-                      region with many programs at low cost, or no cost, to the
-                      participant. Clay enriches our community by helping
-                      individuals reach their potential for creativity and
-                      personal growth and connecting people from a variety of
-                      backgrounds and abilities.
-                    </div>
-
-                    {/* Button */}
-                    <div className="flex py-[6.712px] px-[17.9px] items-start rounded-[14.054px] bg-[#F3E8E2]">
-                      <div className="text-[#6B8395] text-center font-['Avenir_Next'] text-[6.712px] font-semibold leading-[120%]">
-                        Explore member benefits
-                      </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="flex py-[17.415px] px-[17.415px] flex-col items-center gap-[14.803px] self-stretch bg-[#F3E8E2]">
-                      <div className="w-[253.391px] h-[0.435px] bg-[#6B8395]"></div>
-                      <div className="w-[253.391px] text-[#6B8395] text-center font-['Avenir_Next'] text-[10.833px] font-normal leading-[11.917px]">
-                        Clay Collective 8550 White Fir St, Reno, NV 89523 Set
-                        your gender, locale and frequency so we can send you
-                        emails that matter. This email was sent to
-                        mark.maynard@mailchimp.com | View on web | © 2023 Clay
-                        Collective LLC
-                      </div>
-                    </div>
+                    {/* Image - small preview */}
+                    <div className="w-16 h-20 bg-gray-300 rounded-t-full mt-2"></div>
                   </div>
 
                   {/* Overlay */}
                   <div className="absolute w-[300.083px] h-[489.667px] -right-[66.083px] -bottom-[255.667px] bg-[rgba(76,85,91,0.18)]"></div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex w-[234px] px-[8.667px] justify-between items-center relative top-[8.125px]">
-                  <div className="flex items-center gap-[9.75px]">
-                    <div className="flex min-w-[52px] py-[4.333px] px-[10.833px] justify-center items-center gap-[4.333px] rounded-[6.382px] border-[1.083px] border-[#D5DEE3] bg-white">
-                      <div className="text-[#21262A] font-['Graphik_Mailchimp'] text-[13px] font-normal leading-[17.333px]">
-                        View clickmap
-                      </div>
-                    </div>
-                    <div className="flex min-w-[52px] py-[4.333px] px-[10.833px] justify-center items-center gap-[4.333px] rounded-[6.382px] border-[1.083px] border-[#D5DEE3] bg-white">
-                      <div className="text-[#21262A] font-['Graphik_Mailchimp'] text-[13px] font-normal leading-[17.333px]">
-                        View details
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
