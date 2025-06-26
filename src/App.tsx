@@ -57,6 +57,22 @@ const App = () => (
               </MailchimpLayout>
             }
           />
+          <Route
+            path="/audience"
+            element={
+              <MailchimpLayout>
+                <Audience />
+              </MailchimpLayout>
+            }
+          />
+          <Route
+            path="/audience/contacts"
+            element={
+              <MailchimpLayout>
+                <Audience />
+              </MailchimpLayout>
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
