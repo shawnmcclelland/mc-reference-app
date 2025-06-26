@@ -1,0 +1,158 @@
+/* Design Tokens CSS Variables */
+:root {
+  /* Colors - Action */
+  --color-action-complementary: #6b6c72;
+  --color-action-complementary-active: rgba(107, 108, 114, 0.75);
+  --color-action-complementary-border: #ffffff;
+  --color-action-complementary-focus: #6b6c72;
+  --color-action-complementary-hover: rgba(107, 108, 114, 0.85);
+  --color-action-complementary-subtle: rgba(255, 255, 255, 0);
+  --color-action-complementary-subtle-active: rgba(255, 255, 255, 0.2);
+  --color-action-complementary-subtle-focus: rgba(255, 255, 255, 0);
+  --color-action-complementary-subtle-hover: rgba(255, 255, 255, 0.1);
+  --color-action-negative: #b61a37;
+  --color-action-negative-active: #8f1229;
+  --color-action-negative-focus: #8f1229;
+  --color-action-negative-hover: #8f1229;
+  --color-action-negative-subtle: #e2e9ed;
+  --color-action-negative-subtle-active: #c3ced5;
+  --color-action-negative-subtle-focus: #d5dee3;
+  --color-action-negative-subtle-hover: #d5dee3;
+  --color-action-passive: #e2e9ed;
+  --color-action-passive-active: #c3ced5;
+  --color-action-passive-border: #d5dee3;
+  --color-action-passive-focus: #d5dee3;
+  --color-action-passive-hover: #d5dee3;
+  --color-action-positive: #00892e;
+  --color-action-positive-active: #006b24;
+  --color-action-positive-focus: #006b24;
+  --color-action-positive-hover: #006b24;
+  --color-action-positive-subtle: #e2e9ed;
+  --color-action-positive-subtle-active: #c3ced5;
+  --color-action-positive-subtle-focus: #d5dee3;
+  --color-action-positive-subtle-hover: #d5dee3;
+  --color-action-primary: #007c89;
+  --color-action-primary-active: #005f67;
+  --color-action-primary-focus: #005f67;
+  --color-action-primary-hover: #005f67;
+  --color-action-primary-subtle: #e2e9ed;
+  --color-action-primary-subtle-active: #c3ced5;
+  --color-action-primary-subtle-focus: #d5dee3;
+  --color-action-primary-subtle-hover: #d5dee3;
+  --color-action-secondary: #4c555b;
+  --color-action-secondary-active: #3c4348;
+  --color-action-secondary-focus: #3c4348;
+  --color-action-secondary-hover: #3c4348;
+  --color-action-secondary-subtle: #e2e9ed;
+  --color-action-secondary-subtle-active: #c3ced5;
+  --color-action-secondary-subtle-focus: #d5dee3;
+  --color-action-secondary-subtle-hover: #d5dee3;
+  --color-action-standard-subtle: #fff;
+  --color-action-standard-subtle-active: #e2e9ed;
+  --color-action-standard-subtle-focus: #f0f4f6;
+  --color-action-standard-subtle-hover: #f0f4f6;
+
+  /* Colors - Container Background */
+  --color-container-background-accent: #e0edff;
+  --color-container-background-accent-active: #a0cfff;
+  --color-container-background-accent-focus: #c5e1ff;
+  --color-container-background-accent-hover: #c5e1ff;
+  --color-container-background-accent-selected: #a0cfff;
+  --color-container-background-attention: #ffeac7;
+  --color-container-background-beta: #ffe6f4;
+  --color-container-background-complementary: #ffffff;
+  --color-container-background-info: #f0e9ff;
+  --color-container-background-inverse: #21262a;
+  --color-container-background-negative: #ffe7e7;
+  --color-container-background-neutral: #e2e9ed;
+  --color-container-background-new: #ffe6f4;
+  --color-container-background-positive: #d8ffdb;
+  --color-container-background-primary: #ffffff;
+  --color-container-background-quaternary: #e3e5e8;
+  --color-container-background-secondary: #f0f4f6;
+  --color-container-background-special-use-1: #7cbcff;
+  --color-container-background-special-use-2: #00d5b0;
+  --color-container-background-special-use-3: #ff808c;
+  --color-container-background-special-use-4: #d5dee3;
+  --color-container-background-tertiary: #f0f4f6;
+
+  /* Colors - Container Border */
+  --color-container-border-accent: #00828d;
+  --color-container-border-attention: #d99536;
+  --color-container-border-complementary: #21262a;
+  --color-container-border-info: #0077c5;
+  --color-container-border-negative: #b61a37;
+  --color-container-border-positive: #00892e;
+  --color-container-border-primary: #e2e9ed;
+  --color-container-border-secondary: #d5dee3;
+  --color-container-border-tertiary: #c3ced5;
+  --color-container-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Colors - Text */
+  --color-text-accent: #00828d;
+  --color-text-complementary: #ffffff;
+  --color-text-disabled: #859299;
+  --color-text-highlight: #a0cfff;
+  --color-text-inverse: #ffffff;
+  --color-text-primary: #21262a;
+  --color-text-quaternary: #5d686f;
+  --color-text-secondary: #3c4348;
+  --color-text-tertiary: #4c555b;
+
+  /* Spacing */
+  --space-column-gap-large: 24px;
+  --space-column-gap-medium: 20px;
+  --space-column-gap-small: 16px;
+  --space-column-gap-x-large: 40px;
+  --space-column-gap-x-small: 8px;
+  --space-column-gap-xx-small: 4px;
+  --space-component-gap-large: 12px;
+  --space-component-gap-medium: 8px;
+  --space-component-gap-small: 4px;
+  --space-component-gap-x-small: 2px;
+  --space-component-inline-padding-large: 10px;
+  --space-component-inline-padding-medium: 8px;
+  --space-component-inline-padding-small: 6px;
+  --space-component-inline-padding-x-large: 12px;
+  --space-component-inline-padding-x-small: 4px;
+  --space-component-inline-padding-xx-large: 16px;
+  --space-component-inline-padding-xx-small: 2px;
+  --space-component-inline-padding-xxx-large: 20px;
+  --space-component-inline-padding-xxx-small: 0;
+  --space-component-stack-padding-large: 8px;
+  --space-component-stack-padding-medium: 6px;
+  --space-component-stack-padding-small: 4px;
+  --space-component-stack-padding-x-large: 10px;
+  --space-component-stack-padding-x-small: 2px;
+  --space-component-stack-padding-xx-small: 0;
+  --space-container-padding-large: 24px;
+  --space-container-padding-medium: 20px;
+  --space-container-padding-small: 16px;
+  --space-container-padding-x-large: 32px;
+  --space-container-padding-x-small: 12px;
+  --space-container-padding-xx-large: 40px;
+  --space-container-padding-xx-small: 8px;
+  --space-container-padding-xxx-large: 60px;
+  --space-container-padding-xxx-small: 4px;
+  --space-large: 24px;
+  --space-medium: 16px;
+  --space-page-inline: 20px;
+  --space-row-gap-large: 40px;
+  --space-row-gap-medium: 20px;
+  --space-row-gap-small: 12px;
+  --space-row-gap-x-large: 60px;
+  --space-row-gap-x-small: 8px;
+  --space-small: 12px;
+  --space-x-large: 40px;
+  --space-x-small: 8px;
+
+  /* Border Radius */
+  --radius-action: 6px;
+  --radius-full: 9999px;
+  --radius-large: 12px;
+  --radius-medium: 8px;
+  --radius-none: 0;
+  --radius-small: 6px;
+  --radius-x-large: 16px;
+  --radius-x-small: 4px;
+}
