@@ -58,10 +58,10 @@ const DataWellCard = ({
             key={index}
             className="flex min-w-10 flex-col items-start gap-1 flex-1"
           >
-            <div className="text-mailchimp-text-tertiary font-mailchimp text-[11px] font-normal leading-4">
+            <div className="text-[#727E85] font-mailchimp text-[11px] font-normal leading-4">
               {item.label}
             </div>
-            <div className="text-mailchimp-text-primary font-mailchimp text-xs font-medium leading-4 tracking-[-0.12px]">
+            <div className="text-mailchimp-text-primary font-mailchimp text-xs font-semibold leading-4 tracking-[-0.12px]">
               {item.value}
             </div>
           </div>
