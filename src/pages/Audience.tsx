@@ -465,7 +465,7 @@ export default function Audience() {
         </div>
 
         {/* Data Wells */}
-        <div className="flex items-start content-start self-stretch flex-wrap bg-white">
+        <div className="flex items-start align-content-start self-stretch flex-wrap bg-white">
           <DataWellCard
             title="Total contacts"
             value="24,255"
