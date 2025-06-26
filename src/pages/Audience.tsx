@@ -587,28 +587,26 @@ export default function Audience() {
 
           {/* Name & Email Column */}
           <div className="flex w-[376px] flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  Name & Email
-                </div>
+            <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                Name & Email
               </div>
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-2 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center gap-3 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 <Avatar className="w-10 h-10 rounded-full bg-[#E0EDFF]">
-                  <AvatarFallback className="text-mailchimp-text-primary font-medium text-sm leading-[140%] tracking-[-0.14px]">
+                  <AvatarFallback className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]">
                     {contact.initials}
                   </AvatarFallback>
                 </Avatar>
-                <div className="flex flex-col justify-center items-start gap-0.5 flex-1">
-                  <div className="text-mailchimp-text-primary font-medium text-sm leading-5 tracking-[-0.14px]">
+                <div className="flex flex-col justify-center items-start gap-1 flex-1">
+                  <div className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]">
                     {contact.name}
                   </div>
-                  <div className="self-stretch text-mailchimp-text-secondary font-normal text-xs leading-4">
+                  <div className="self-stretch text-mailchimp-text-secondary font-mailchimp font-normal text-xs leading-4">
                     {contact.email}
                   </div>
                 </div>
