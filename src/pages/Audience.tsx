@@ -116,10 +116,14 @@ const TrendChart = () => (
           type="matrix"
           values="0 0 0 0 0.203922 0 0 0 0 0.572549 0 0 0 0 0.937255 0 0 0 1 0"
         />
-        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_trend" />
+        <feBlend
+          mode="normal"
+          in2="shape"
+          result="effect1_innerShadow_20_14980"
+        />
       </filter>
       <linearGradient
-        id="paint0_linear_trend"
+        id="paint0_linear_20_14980"
         x1="41.9048"
         y1="0"
         x2="41.9048"
@@ -132,7 +136,6 @@ const TrendChart = () => (
     </defs>
   </svg>
 );
-
 // Contact data
 const contacts = [
   {
