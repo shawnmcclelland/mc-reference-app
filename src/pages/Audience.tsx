@@ -572,13 +572,13 @@ export default function Audience() {
         <div className="flex items-start self-stretch">
           {/* Checkbox Column */}
           <div className="flex flex-col items-start">
-            <div className="flex px-2 py-1 pl-3 items-center self-stretch rounded-l-mailchimp bg-mailchimp-background-tertiary">
+            <div className="flex w-12 h-8 px-2 py-2 items-center justify-center rounded-l-mailchimp bg-mailchimp-background-tertiary">
               <Checkbox />
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-2 py-2.5 pl-3 items-center gap-2 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex w-12 h-16 px-2 py-4 items-center justify-center border-b border-mailchimp-border-primary bg-white"
               >
                 <Checkbox />
               </div>
