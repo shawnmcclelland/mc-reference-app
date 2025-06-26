@@ -327,7 +327,7 @@ const CalendarIcon = () => (
 
 export default function Audience() {
   return (
-    <div className="flex w-[1560px] max-w-[1560px] p-8 pt-5 flex-col items-start gap-6 self-stretch rounded-mailchimp-lg rounded-b-none border border-mailchimp-border-primary bg-white">
+    <div className="flex w-full max-w-none p-8 pt-5 flex-col items-start gap-6 self-stretch rounded-mailchimp-lg rounded-b-none border border-mailchimp-border-primary bg-white">
       {/* Page Header */}
       <div className="flex justify-between items-center self-stretch">
         {/* Left */}
