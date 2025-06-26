@@ -350,7 +350,8 @@ export default function Audience() {
           <div className="flex items-start">
             <Button
               variant="outline"
-              className="relative flex p-1.5 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white"
+              size="icon"
+              className="relative flex h-8 w-8 p-1.5 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white"
             >
               <svg
                 width="20"
