@@ -144,7 +144,6 @@ const navItems = [
         />
       </svg>
     ),
-    isActive: true,
   },
   {
     id: "automations",
