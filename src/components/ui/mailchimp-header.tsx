@@ -156,15 +156,14 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
         <div className="flex items-center gap-2.5">
           <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
             <span className="text-component-x-small text-mailchimp-text-primary">
-              Campaigns
+              Audience
             </span>
           </div>
           <SlashIcon />
           <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
             <span className="text-component-x-small text-mailchimp-text-primary">
-              Fired & Formed - An...
+              Contacts
             </span>
-            <ChevronDownIcon />
           </div>
         </div>
 
