@@ -37,7 +37,7 @@ const App = () => (
             path="/"
             element={
               <MailchimpLayout>
-                <CampaignReport />
+                <Audience />
               </MailchimpLayout>
             }
           />
