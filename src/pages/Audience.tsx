@@ -429,7 +429,7 @@ export default function Audience() {
       {/* Data Well */}
       <div className="flex w-[1256px] p-2 flex-col items-start gap-2 rounded-mailchimp border border-mailchimp-border-primary bg-white">
         {/* Actions */}
-        <div className="flex justify-end items-center gap-1.5 absolute top-2 right-2 z-10">
+        <div className="flex justify-end items-center gap-1.5 relative -mr-2 -mt-2">
           {/* Settings */}
           <div className="flex flex-col justify-center items-start">
             <button className="flex p-1 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white">
