@@ -30,7 +30,7 @@ const DataWellCard = ({
       <div className="flex min-w-[146px] justify-between items-start self-stretch">
         <div className="flex min-h-6 items-center gap-1 flex-1">
           <div className="flex flex-col justify-center items-start gap-0.5">
-            <div className="text-mailchimp-text-secondary font-normal text-xs leading-4 underline decoration-dotted decoration-[#ADBAC2] underline-offset-[3px]">
+            <div className="text-mailchimp-text-secondary font-mailchimp text-xs font-normal leading-4 underline decoration-dotted decoration-[#ADBAC2] underline-offset-[3px] decoration-auto">
               {title}
             </div>
           </div>
@@ -39,7 +39,7 @@ const DataWellCard = ({
       <div className="flex items-center gap-2 self-stretch">
         <div className="flex min-w-[120px] flex-col justify-center items-start gap-1 flex-1">
           <div className="flex items-center gap-1">
-            <div className="text-mailchimp-text-primary font-medium text-2xl leading-8 tracking-[-0.48px]">
+            <div className="text-mailchimp-text-primary font-mailchimp text-2xl font-medium leading-8 tracking-[-0.48px]">
               {value}
             </div>
           </div>
@@ -58,10 +58,10 @@ const DataWellCard = ({
             key={index}
             className="flex min-w-10 flex-col items-start gap-1 flex-1"
           >
-            <div className="text-[#727E85] font-normal text-[11px] leading-4">
+            <div className="text-[#727E85] font-mailchimp text-[11px] font-normal leading-4">
               {item.label}
             </div>
-            <div className="text-mailchimp-text-primary font-medium text-xs leading-4 tracking-[-0.12px]">
+            <div className="text-mailchimp-text-primary font-mailchimp text-xs font-medium leading-4 tracking-[-0.12px]">
               {item.value}
             </div>
           </div>
