@@ -525,7 +525,7 @@ export default function Audience() {
         <div className="flex h-8 justify-between items-center self-stretch rounded-mailchimp bg-white">
           <div className="flex items-center gap-2">
             {/* Search */}
-            <div className="flex w-[200px] h-8 min-w-40 max-w-[400px] px-2.5 py-1 items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white">
+            <div className="flex w-[240px] h-8 px-3 py-2 items-center gap-2 rounded-mailchimp border border-mailchimp-border-secondary bg-white">
               <div className="flex h-4 w-4 items-center">
                 <SearchIcon />
               </div>
@@ -536,12 +536,12 @@ export default function Audience() {
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
               {["Tags", "Segments", "Status", "Quick filters"].map((filter) => (
                 <Button
                   key={filter}
                   variant="outline"
-                  className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
+                  className="flex h-8 px-3 py-2 justify-center items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
                 >
                   <span>{filter}</span>
                   <ChevronDownIcon />
