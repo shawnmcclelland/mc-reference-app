@@ -394,7 +394,10 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
           {navItems.slice(1).map((item) => (
             <div
               key={item.id}
-              className="flex flex-col items-start self-stretch"
+              className={cn(
+                "flex flex-col items-center self-stretch",
+                item.hasSubNav && "pb-0.5",
+              )}
             >
               <div className="flex px-3 flex-col justify-center items-start self-stretch">
                 <div
@@ -413,14 +416,34 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
                   </div>
                   <div
                     className={cn(
-                      "flex-1 font-normal text-sm leading-5",
-                      item.isActive ? "text-[#21262A]" : "text-[#4C555B]",
+                      "flex-1 font-medium text-sm leading-5",
+                      item.isActive
+                        ? "text-[#21262A] font-medium tracking-[-0.14px]"
+                        : "text-[#4C555B] font-normal",
                     )}
                   >
                     {item.label}
                   </div>
                 </div>
               </div>
+
+              {/* Sub-navigation items */}
+              {item.hasSubNav && item.subNavItems && (
+                <>
+                  {item.subNavItems.map((subItem, index) => (
+                    <div
+                      key={index}
+                      className="flex w-60 px-3 flex-col justify-center items-start"
+                    >
+                      <div className="flex py-1.5 px-1 pr-1 pl-9 justify-center items-center gap-2 self-stretch rounded-mailchimp">
+                        <div className="flex-1 text-[#4C555B] font-normal text-sm leading-5">
+                          {subItem.label}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
           ))}
         </div>
