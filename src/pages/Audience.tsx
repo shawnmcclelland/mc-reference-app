@@ -520,28 +520,28 @@ export default function Audience() {
       </div>
 
       {/* Contacts Table */}
-      <div className="flex flex-col items-start gap-3 self-stretch bg-white">
+      <div className="flex flex-col items-start gap-2 self-stretch bg-white">
         {/* Table Action Bar */}
         <div className="flex h-8 justify-between items-center self-stretch rounded-mailchimp bg-white">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {/* Search */}
-            <div className="flex w-[200px] h-8 min-w-40 max-w-[400px] max-h-8 px-2.5 py-1.5 items-center gap-1 rounded-mailchimp border border-mailchimp-input-border bg-white">
-              <div className="flex h-6 items-center">
+            <div className="flex w-[200px] h-8 min-w-40 max-w-[400px] px-2.5 py-1 items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white">
+              <div className="flex h-4 w-4 items-center">
                 <SearchIcon />
               </div>
               <input
-                className="flex flex-col justify-center flex-1 self-stretch text-mailchimp-text-quaternary font-normal text-xs leading-4 bg-transparent outline-none"
+                className="flex flex-col justify-center flex-1 self-stretch text-mailchimp-text-quaternary font-mailchimp font-normal text-xs leading-4 bg-transparent outline-none"
                 placeholder="Search contacts..."
               />
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1">
               {["Tags", "Segments", "Status", "Quick filters"].map((filter) => (
                 <Button
                   key={filter}
                   variant="outline"
-                  className="flex min-w-12 px-3 py-2 justify-center items-center gap-0.5 self-stretch rounded-mailchimp border border-mailchimp-border-secondary bg-white text-mailchimp-text-primary text-xs font-normal leading-4"
+                  className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
                 >
                   <span>{filter}</span>
                   <ChevronDownIcon />
@@ -550,10 +550,10 @@ export default function Audience() {
             </div>
           </div>
 
-          <div className="flex items-center gap-0.5">
+          <div className="flex items-center gap-1">
             <Button
               variant="ghost"
-              className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-0.5 self-stretch rounded-mailchimp text-mailchimp-text-primary text-xs font-normal leading-4"
+              className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-1 rounded-mailchimp text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
             >
               <span>Sort by</span>
               <ChevronDownIcon />
