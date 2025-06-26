@@ -615,23 +615,21 @@ export default function Audience() {
           </div>
 
           {/* Email Marketing Column */}
-          <div className="flex flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  Email Marketing
-                </div>
+          <div className="flex min-w-[140px] flex-col items-start">
+            <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                Email Marketing
               </div>
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 {contact.emailStatus && (
                   <Badge
                     className={cn(
-                      "flex px-1.5 py-0.5 justify-center items-start gap-1 rounded-mailchimp text-mailchimp-text-primary text-xs font-normal leading-4",
+                      "flex px-1.5 py-0.5 justify-center items-center gap-1 rounded-mailchimp text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4",
                       contact.emailStatus === "Subscribed"
                         ? "bg-[#D2F8D5]"
                         : "bg-[#FFEAC7]",
@@ -645,23 +643,21 @@ export default function Audience() {
           </div>
 
           {/* SMS Marketing Column */}
-          <div className="flex flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  SMS Marketing
-                </div>
+          <div className="flex min-w-[120px] flex-col items-start">
+            <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                SMS Marketing
               </div>
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 {contact.smsStatus && (
                   <Badge
                     className={cn(
-                      "flex px-1.5 py-0.5 justify-center items-start gap-1 rounded-mailchimp text-mailchimp-text-primary text-xs font-normal leading-4",
+                      "flex px-1.5 py-0.5 justify-center items-center gap-1 rounded-mailchimp text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4",
                       contact.smsStatus === "Subscribed"
                         ? "bg-[#D2F8D5]"
                         : contact.smsStatus === "Unsubscribed"
