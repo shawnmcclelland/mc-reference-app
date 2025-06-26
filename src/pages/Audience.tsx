@@ -25,7 +25,7 @@ const DataWellCard = ({
   breakdown: Array<{ label: string; value: string }>;
   chart?: React.ReactNode;
 }) => (
-  <div className="flex min-w-[160px] p-4 flex-col items-end gap-2 flex-1 bg-white">
+  <div className="flex min-w-[160px] p-4 flex-col items-end gap-2 flex-1 bg-white border-0">
     <div className="flex flex-col justify-center items-start gap-0.5 self-stretch">
       <div className="flex min-w-[146px] justify-between items-start self-stretch">
         <div className="flex min-h-6 items-center gap-1 flex-1">
