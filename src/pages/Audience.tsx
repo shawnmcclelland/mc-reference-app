@@ -760,9 +760,6 @@ export default function Audience() {
               </div>
             ))}
           </div>
-
-          {/* Scroll hint */}
-          <div className="w-[102px] h-[608px] bg-gradient-to-l from-white to-transparent"></div>
         </div>
       </div>
     </div>
