@@ -74,21 +74,22 @@ const DataWellCard = ({
 // Trend Chart SVG Component
 const TrendChart = () => (
   <svg
+    className="flex max-w-[180px] flex-col items-start gap-[-16px] flex-1 self-stretch"
     width="88"
     height="32"
     viewBox="0 0 88 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g filter="url(#filter0_i_trend)">
+    <g filter="url(#filter0_i_20_14980)">
       <path
         d="M16.0661 12.438L0 13.3283V32H88V0L71.6154 4.51855L59.814 9.3876L51.628 8.62563L44.761 10.52L31.0489 9.3876L16.0661 12.438Z"
-        fill="url(#paint0_linear_trend)"
+        fill="url(#paint0_linear_20_14980)"
       />
     </g>
     <defs>
       <filter
-        id="filter0_i_trend"
+        id="filter0_i_20_14980"
         x="0"
         y="0"
         width="88"
