@@ -327,12 +327,30 @@ const CalendarIcon = () => (
 
 export default function Audience() {
   return (
-    <div className="flex w-full max-w-none p-8 pt-5 flex-col items-start gap-6 self-stretch rounded-mailchimp-lg rounded-b-none border border-mailchimp-border-primary bg-white">
+    <div
+      className="flex w-full max-w-none flex-col items-start self-stretch rounded-b-none"
+      style={{
+        padding: `var(--space-container-padding-x-large) var(--space-container-padding-x-large) var(--space-container-padding-medium)`,
+        gap: `var(--space-large)`,
+        borderRadius: `var(--radius-x-large) var(--radius-x-large) 0 0`,
+        border: `1px solid var(--color-container-border-primary)`,
+        backgroundColor: `var(--color-container-background-primary)`,
+      }}
+    >
       {/* Page Header */}
       <div className="flex justify-between items-center self-stretch">
         {/* Left */}
-        <div className="flex items-center gap-2">
-          <h1 className="text-mailchimp-text-primary font-mailchimp text-2xl font-medium leading-[120%] tracking-[-0.48px]">
+        <div
+          className="flex items-center"
+          style={{ gap: `var(--space-column-gap-x-small)` }}
+        >
+          <h1
+            className="font-medium leading-[120%] tracking-[-0.48px]"
+            style={{
+              color: `var(--color-text-primary)`,
+              fontSize: `24px`,
+            }}
+          >
             Contacts
           </h1>
         </div>
