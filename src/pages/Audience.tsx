@@ -717,7 +717,7 @@ export default function Audience() {
           </div>
 
           {/* Tags Column */}
-          <div className="flex min-w-[100px] flex-col items-start">
+          <div className="flex flex-1 min-w-[120px] flex-col items-start">
             <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
               <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
                 Tags
