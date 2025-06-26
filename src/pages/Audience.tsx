@@ -356,12 +356,29 @@ export default function Audience() {
         </div>
 
         {/* Right */}
-        <div className="flex items-end gap-2 self-stretch">
+        <div
+          className="flex items-end self-stretch"
+          style={{ gap: `var(--space-column-gap-x-small)` }}
+        >
           {/* Date range select */}
-          <div className="flex min-h-8 flex-col justify-center items-end gap-1 rounded-mailchimp">
+          <div
+            className="flex min-h-8 flex-col justify-center items-end"
+            style={{
+              gap: `var(--space-component-gap-small)`,
+              borderRadius: `var(--radius-action)`,
+            }}
+          >
             <Button
               variant="outline"
-              className="flex min-w-16 px-3 py-1.5 justify-center items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white text-mailchimp-text-primary font-mailchimp text-sm font-normal leading-5"
+              className="flex min-w-16 justify-center items-center text-sm font-normal leading-5"
+              style={{
+                padding: `var(--space-component-stack-padding-small) var(--space-component-inline-padding-x-large)`,
+                gap: `var(--space-component-gap-small)`,
+                borderRadius: `var(--radius-action)`,
+                border: `1px solid var(--color-container-border-secondary)`,
+                backgroundColor: `var(--color-container-background-primary)`,
+                color: `var(--color-text-primary)`,
+              }}
             >
               All time
               <CalendarIcon />
