@@ -9,6 +9,7 @@ import { MailchimpNavigation } from "@/components/ui/mailchimp-navigation";
 import { MailchimpHeader } from "@/components/ui/mailchimp-header";
 import CampaignReport from "./pages/CampaignReport";
 import Index from "./pages/Index";
+import Audience from "./pages/Audience";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
