@@ -25,9 +25,9 @@ const DataWellCard = ({
   breakdown: Array<{ label: string; value: string }>;
   chart?: React.ReactNode;
 }) => (
-  <div className="flex min-w-[160px] p-4 flex-col items-end gap-2 flex-1 bg-white">
+  <div className="flex p-4 flex-col items-end gap-2 flex-1 bg-white">
     <div className="flex flex-col justify-center items-start gap-0.5 self-stretch">
-      <div className="flex min-w-[146px] justify-between items-start self-stretch">
+      <div className="flex justify-between items-start self-stretch">
         <div className="flex min-h-6 items-center gap-1 flex-1">
           <div className="flex flex-col justify-center items-start gap-0.5">
             <div className="text-mailchimp-text-secondary font-mailchimp text-xs font-normal leading-4 underline decoration-dotted decoration-[#ADBAC2] underline-offset-[3px] decoration-auto">
