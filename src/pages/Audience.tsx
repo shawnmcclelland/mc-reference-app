@@ -378,7 +378,7 @@ export default function Audience() {
             <Button
               variant="outline"
               size="icon"
-              className="flex h-8 w-8 p-1.5 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white"
+              className="flex p-1.5 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white"
             >
               <svg
                 width="20"
