@@ -674,21 +674,19 @@ export default function Audience() {
 
           {/* Location Column */}
           <div className="flex w-[180px] flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  Location
-                </div>
+            <div className="flex h-8 px-4 py-2 items-center justify-between self-stretch bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                Location
               </div>
               <SortAscendingIcon />
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center self-stretch border-b border-mailchimp-border-primary bg-white"
               >
-                <div className="flex flex-col justify-center items-start gap-0.5 flex-1">
-                  <div className="self-stretch text-mailchimp-text-primary font-normal text-sm leading-5">
+                <div className="flex flex-col justify-center items-start flex-1">
+                  <div className="self-stretch text-mailchimp-text-primary font-mailchimp font-normal text-sm leading-5">
                     {contact.location}
                   </div>
                 </div>
@@ -698,21 +696,19 @@ export default function Audience() {
 
           {/* Phone Column */}
           <div className="flex w-[162px] flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  Phone
-                </div>
+            <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                Phone
               </div>
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center gap-2 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 {contact.phone && <MobileIcon />}
-                <div className="flex flex-col justify-center items-start gap-0.5 flex-1">
-                  <div className="self-stretch text-mailchimp-text-primary font-normal text-sm leading-5">
+                <div className="flex flex-col justify-center items-start flex-1">
+                  <div className="self-stretch text-mailchimp-text-primary font-mailchimp font-normal text-sm leading-5">
                     {contact.phone}
                   </div>
                 </div>
@@ -721,23 +717,21 @@ export default function Audience() {
           </div>
 
           {/* Tags Column */}
-          <div className="flex flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  Tags
-                </div>
+          <div className="flex min-w-[100px] flex-col items-start">
+            <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                Tags
               </div>
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 {contact.tags.map((tag, index) => (
                   <Badge
                     key={index}
-                    className="flex px-1.5 py-0.5 justify-center items-start gap-1 rounded-mailchimp bg-[#F0E9FF] text-mailchimp-text-primary text-xs font-normal leading-4"
+                    className="flex px-1.5 py-0.5 justify-center items-center gap-1 rounded-mailchimp bg-[#F0E9FF] text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
                   >
                     {tag}
                   </Badge>
@@ -748,20 +742,18 @@ export default function Audience() {
 
           {/* Last Updated Column */}
           <div className="flex w-[130px] flex-col items-start">
-            <div className="flex h-8 px-3 items-center self-stretch rounded-r-mailchimp bg-mailchimp-background-tertiary">
-              <div className="flex justify-center items-center">
-                <div className="text-[#727E85] font-normal text-xs leading-4">
-                  Last updated
-                </div>
+            <div className="flex h-8 px-4 py-2 items-center self-stretch rounded-r-mailchimp bg-mailchimp-background-tertiary">
+              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+                Last updated
               </div>
             </div>
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="flex h-16 px-3 py-2.5 items-center gap-0.5 self-stretch border-b border-mailchimp-border-primary bg-white"
+                className="flex h-16 px-4 py-2 items-center self-stretch border-b border-mailchimp-border-primary bg-white"
               >
-                <div className="flex flex-col justify-center items-start gap-0.5 flex-1">
-                  <div className="self-stretch text-mailchimp-text-primary font-normal text-sm leading-5">
+                <div className="flex flex-col justify-center items-start flex-1">
+                  <div className="self-stretch text-mailchimp-text-primary font-mailchimp font-normal text-sm leading-5">
                     {contact.lastUpdated}
                   </div>
                 </div>
