@@ -430,7 +430,7 @@ export default function Audience() {
       <div className="flex w-[1256px] p-2 flex-col items-start gap-2 rounded-mailchimp border border-mailchimp-border-primary bg-white">
         {/* Actions */}
         <div
-          className="flex justify-end items-center gap-1.5 w-full"
+          className="flex justify-end items-center gap-1.5 w-full -mb-2"
           style={{ position: "relative", right: "8px", top: "8px" }}
         >
           {/* Settings */}
