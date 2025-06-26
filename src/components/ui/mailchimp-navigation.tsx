@@ -221,6 +221,14 @@ const navItems = [
         </defs>
       </svg>
     ),
+    isActive: true,
+    hasSubNav: true,
+    subNavItems: [
+      { label: "Segments", href: "/audience/segments" },
+      { label: "Tags", href: "/audience/tags" },
+      { label: "Groups", href: "/audience/groups" },
+      { label: "Inbox", href: "/audience/inbox" },
+    ],
   },
   {
     id: "analytics",
