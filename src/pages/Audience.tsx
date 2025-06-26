@@ -37,7 +37,7 @@ const DataWellCard = ({
         </div>
       </div>
       <div className="flex items-center gap-2 self-stretch">
-        <div className="flex min-w-[120px] flex-col justify-center items-start gap-1 flex-1">
+        <div className="flex flex-col justify-center items-start gap-1 flex-1">
           <div className="flex items-center gap-1">
             <div className="text-mailchimp-text-primary font-mailchimp text-2xl font-medium leading-8 tracking-[-0.48px]">
               {value}
