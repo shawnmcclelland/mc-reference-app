@@ -549,7 +549,13 @@ export default function Audience() {
 
           {/* Add contacts button */}
           <div className="flex items-start">
-            <Button className="flex min-w-16 px-3 py-1.5 justify-center items-center gap-1 rounded-mailchimp bg-[#017E89] text-white font-mailchimp text-sm font-normal leading-5 hover:bg-[#015A63]">
+            <Button
+              className="flex min-w-16 px-3 py-1.5 justify-center items-center gap-1 text-white font-mailchimp text-sm font-normal leading-5"
+              style={{
+                borderRadius: "var(--radius-action)",
+                backgroundColor: "var(--color-action-standard)",
+              }}
+            >
               Add contacts
               <ChevronDownIcon />
             </Button>
