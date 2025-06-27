@@ -737,10 +737,21 @@ export default function Audience() {
             </div>
           </div>
 
-          <div className="flex items-center gap-1">
+          <div
+            className="flex items-center"
+            style={{
+              gap: `var(--space-component-gap-small)`,
+            }}
+          >
             <Button
               variant="ghost"
-              className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-1 rounded-mailchimp text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
+              className="flex min-w-12 justify-center items-center text-xs font-normal leading-4"
+              style={{
+                padding: `var(--space-component-stack-padding-small) var(--space-component-inline-padding-large)`,
+                gap: `var(--space-component-gap-small)`,
+                borderRadius: `var(--radius-action)`,
+                color: `var(--color-text-primary)`,
+              }}
             >
               <span>Sort by</span>
               <ChevronDownIcon />
@@ -748,7 +759,11 @@ export default function Audience() {
             <Button
               variant="ghost"
               size="sm"
-              className="flex p-1 justify-center items-center rounded-mailchimp"
+              className="flex justify-center items-center"
+              style={{
+                padding: `var(--space-component-gap-small)`,
+                borderRadius: `var(--radius-action)`,
+              }}
             >
               <SortAscendingIcon />
             </Button>
