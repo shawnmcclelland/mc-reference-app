@@ -805,7 +805,12 @@ export default function Audience() {
                 key={contact.id}
                 className="flex h-16 px-4 py-2 items-center gap-3 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
-                <Avatar className="w-10 h-10 rounded-full bg-[#E0EDFF]">
+                <Avatar
+                  className="w-10 h-10 rounded-full"
+                  style={{
+                    backgroundColor: "var(--color-container-background-accent)",
+                  }}
+                >
                   <AvatarFallback className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]">
                     {contact.initials}
                   </AvatarFallback>
