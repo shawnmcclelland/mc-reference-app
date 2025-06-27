@@ -64,10 +64,30 @@ const DataWellCard = ({
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 self-stretch">
-        <div className="flex flex-col justify-center items-start gap-1 flex-1">
-          <div className="flex items-center gap-1">
-            <div className="text-mailchimp-text-primary font-mailchimp text-2xl font-medium leading-8 tracking-[-0.48px]">
+      <div
+        className="flex items-center self-stretch"
+        style={{
+          gap: `var(--space-column-gap-x-small)`,
+        }}
+      >
+        <div
+          className="flex flex-col justify-center items-start flex-1"
+          style={{
+            gap: `var(--space-component-gap-small)`,
+          }}
+        >
+          <div
+            className="flex items-center"
+            style={{
+              gap: `var(--space-component-gap-small)`,
+            }}
+          >
+            <div
+              className="text-2xl font-medium leading-8 tracking-[-0.48px]"
+              style={{
+                color: `var(--color-text-primary)`,
+              }}
+            >
               {value}
             </div>
           </div>
