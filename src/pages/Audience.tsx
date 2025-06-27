@@ -759,7 +759,7 @@ export default function Audience() {
                 className="flex flex-col justify-center flex-1 self-stretch text-xs leading-4 bg-transparent outline-none font-normal"
                 placeholder="Search contacts..."
                 style={{
-                  color: `var(--color-text-quaternary)`,
+                  color: `var(--color-text-quaternary, #BABEC5)`,
                 }}
               />
             </div>
