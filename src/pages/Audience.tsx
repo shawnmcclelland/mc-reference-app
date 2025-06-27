@@ -99,17 +99,40 @@ const DataWellCard = ({
         )}
       </div>
     </div>
-    <div className="flex flex-col items-start gap-2 self-stretch">
-      <div className="flex items-start content-start gap-1.5 self-stretch flex-wrap">
+    <div
+      className="flex flex-col items-start self-stretch"
+      style={{
+        gap: `var(--space-column-gap-x-small)`,
+      }}
+    >
+      <div
+        className="flex items-start content-start self-stretch flex-wrap"
+        style={{
+          gap: `var(--space-component-inline-padding-small)`,
+        }}
+      >
         {breakdown.map((item, index) => (
           <div
             key={index}
-            className="flex min-w-10 flex-col items-start gap-1 flex-1"
+            className="flex min-w-10 flex-col items-start flex-1"
+            style={{
+              gap: `var(--space-component-gap-small)`,
+            }}
           >
-            <div className="text-[#727E85] font-mailchimp text-[11px] font-normal leading-4">
+            <div
+              className="text-[11px] font-normal leading-4"
+              style={{
+                color: `var(--color-text-tertiary)`,
+              }}
+            >
               {item.label}
             </div>
-            <div className="text-mailchimp-text-primary font-mailchimp text-xs font-semibold leading-4 tracking-[-0.12px]">
+            <div
+              className="text-xs font-semibold leading-4 tracking-[-0.12px]"
+              style={{
+                color: `var(--color-text-primary)`,
+              }}
+            >
               {item.value}
             </div>
           </div>
