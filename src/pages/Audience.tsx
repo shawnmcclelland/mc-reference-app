@@ -25,12 +25,40 @@ const DataWellCard = ({
   breakdown: Array<{ label: string; value: string }>;
   chart?: React.ReactNode;
 }) => (
-  <div className="flex p-4 flex-col items-end gap-2 flex-1 bg-white">
-    <div className="flex flex-col justify-center items-start gap-0.5 self-stretch">
+  <div
+    className="flex flex-col items-end flex-1"
+    style={{
+      padding: `var(--space-component-inline-padding-xx-large)`,
+      gap: `var(--space-column-gap-x-small)`,
+      backgroundColor: `var(--color-container-background-primary)`,
+    }}
+  >
+    <div
+      className="flex flex-col justify-center items-start self-stretch"
+      style={{
+        gap: `var(--space-component-gap-x-small)`,
+      }}
+    >
       <div className="flex justify-between items-start self-stretch">
-        <div className="flex min-h-6 items-center gap-1 flex-1">
-          <div className="flex flex-col justify-center items-start gap-0.5">
-            <div className="text-mailchimp-text-secondary font-mailchimp text-xs font-normal leading-4 underline decoration-dotted decoration-[#ADBAC2] underline-offset-[3px] decoration-auto">
+        <div
+          className="flex min-h-6 items-center flex-1"
+          style={{
+            gap: `var(--space-component-gap-small)`,
+          }}
+        >
+          <div
+            className="flex flex-col justify-center items-start"
+            style={{
+              gap: `var(--space-component-gap-x-small)`,
+            }}
+          >
+            <div
+              className="text-xs font-normal leading-4 underline decoration-dotted underline-offset-[3px] decoration-auto"
+              style={{
+                color: `var(--color-text-secondary)`,
+                textDecorationColor: `var(--color-container-border-tertiary)`,
+              }}
+            >
               {title}
             </div>
           </div>
