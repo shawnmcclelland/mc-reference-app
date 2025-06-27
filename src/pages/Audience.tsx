@@ -976,7 +976,13 @@ export default function Audience() {
           {/* Location Column */}
           <div className="flex w-[180px] flex-col items-start">
             <div className="flex h-8 px-4 py-2 items-center justify-between self-stretch bg-mailchimp-background-tertiary">
-              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+              <div
+                className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4"
+                style={{
+                  color: "var(--color-text-tertiary, #4C555B)",
+                  font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                }}
+              >
                 Location
               </div>
               <SortAscendingIcon />
