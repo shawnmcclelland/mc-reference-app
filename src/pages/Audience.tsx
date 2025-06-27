@@ -1042,7 +1042,13 @@ export default function Audience() {
           {/* Tags Column */}
           <div className="flex flex-1 min-w-[120px] flex-col items-start">
             <div className="flex h-8 px-4 py-2 items-center self-stretch bg-mailchimp-background-tertiary">
-              <div className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4">
+              <div
+                className="text-mailchimp-text-tertiary font-mailchimp font-normal text-xs leading-4"
+                style={{
+                  color: "var(--color-text-tertiary, #4C555B)",
+                  font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                }}
+              >
                 Tags
               </div>
             </div>
