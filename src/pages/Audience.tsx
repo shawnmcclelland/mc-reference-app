@@ -882,7 +882,12 @@ export default function Audience() {
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col justify-center items-start gap-1 flex-1">
-                  <div className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]">
+                  <div
+                    className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]"
+                    style={{
+                      font: "600 var(--font-size-component-small, 14px)/20px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                    }}
+                  >
                     {contact.name}
                   </div>
                   <div className="self-stretch text-mailchimp-text-secondary font-mailchimp font-normal text-xs leading-4">
