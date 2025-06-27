@@ -410,8 +410,20 @@ export default function Audience() {
                   fill="#21262A"
                 />
               </svg>
-              <div className="absolute -top-1.5 -right-1.5 flex min-w-4 min-h-4 flex-col justify-center items-center gap-2 rounded-full bg-mailchimp-gray-500">
-                <span className="text-white text-center font-mailchimp text-[9px] font-medium leading-[10px]">
+              <div
+                className="absolute -top-1.5 -right-1.5 flex min-w-4 min-h-4 flex-col justify-center items-center rounded-full"
+                style={{
+                  gap: `var(--space-component-gap-x-small)`,
+                  borderRadius: `var(--radius-full)`,
+                  backgroundColor: `var(--color-text-quaternary)`,
+                }}
+              >
+                <span
+                  className="text-center text-[9px] font-medium leading-[10px]"
+                  style={{
+                    color: `var(--color-text-inverse)`,
+                  }}
+                >
                   3
                 </span>
               </div>
