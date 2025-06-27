@@ -808,7 +808,13 @@ export default function Audience() {
                 color: `var(--color-text-primary)`,
               }}
             >
-              <span>Sort by</span>
+              <span
+                style={{
+                  font: "400 var(--font-size-component-x-small, 12px) var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                }}
+              >
+                Sort by
+              </span>
               <ChevronDownIcon />
             </Button>
             <Button
