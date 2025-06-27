@@ -737,7 +737,7 @@ export default function Audience() {
           >
             {/* Search */}
             <div
-              className="flex w-[240px] h-8 items-center bg-transparent outline-none"
+              className="flex w-[240px] h-10 items-center bg-transparent outline-none"
               style={{
                 padding: `var(--space-component-inline-padding-x-large) var(--space-component-inline-padding-x-large)`,
                 gap: `var(--space-column-gap-x-small)`,
