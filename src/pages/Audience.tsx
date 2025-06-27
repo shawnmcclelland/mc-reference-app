@@ -638,6 +638,8 @@ export default function Audience() {
             style={{
               borderRadius: "var(--radius-action)",
               border: "1px solid var(--color-container-border-secondary)",
+              color: "var(--color-text-primary, #21262A)",
+              font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
             }}
           >
             <div
