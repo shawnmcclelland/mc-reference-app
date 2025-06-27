@@ -87,6 +87,7 @@ const DataWellCard = ({
               className="text-2xl font-medium leading-8 tracking-[-0.48px]"
               style={{
                 color: `var(--color-text-primary)`,
+                font: "400 var(--font-size-heading-5, 24px)/32px var(--font-family-heading, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
               }}
             >
               {value}
