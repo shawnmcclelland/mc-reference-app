@@ -614,8 +614,20 @@ export default function Audience() {
             </button>
           </div>
           {/* Analytics Button */}
-          <button className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white">
-            <div className="text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4">
+          <button
+            className="flex min-w-12 px-2.5 py-1 justify-center items-center gap-1 bg-white"
+            style={{
+              borderRadius: "var(--radius-action)",
+              border: "1px solid var(--color-container-border-secondary)",
+            }}
+          >
+            <div
+              className="text-xs font-normal leading-4"
+              style={{
+                color: "var(--color-text-primary)",
+                fontFamily: "var(--font-family-component)",
+              }}
+            >
               Analytics
             </div>
           </button>
