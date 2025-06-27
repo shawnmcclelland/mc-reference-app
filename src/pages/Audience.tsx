@@ -680,25 +680,55 @@ export default function Audience() {
             backgroundColor: `var(--color-container-background-primary)`,
           }}
         >
-          <div className="flex items-center gap-2">
+          <div
+            className="flex items-center"
+            style={{
+              gap: `var(--space-column-gap-x-small)`,
+            }}
+          >
             {/* Search */}
-            <div className="flex w-[240px] h-8 px-3 py-2 items-center gap-2 rounded-mailchimp border border-mailchimp-border-secondary bg-white">
+            <div
+              className="flex w-[240px] h-8 items-center bg-transparent outline-none"
+              style={{
+                padding: `var(--space-component-inline-padding-x-large) var(--space-component-inline-padding-x-large)`,
+                gap: `var(--space-column-gap-x-small)`,
+                borderRadius: `var(--radius-action)`,
+                border: `1px solid var(--color-container-border-secondary)`,
+                backgroundColor: `var(--color-container-background-primary)`,
+              }}
+            >
               <div className="flex h-4 w-4 items-center">
                 <SearchIcon />
               </div>
               <input
-                className="flex flex-col justify-center flex-1 self-stretch text-mailchimp-text-quaternary font-mailchimp font-normal text-xs leading-4 bg-transparent outline-none"
+                className="flex flex-col justify-center flex-1 self-stretch text-xs leading-4 bg-transparent outline-none font-normal"
                 placeholder="Search contacts..."
+                style={{
+                  color: `var(--color-text-quaternary)`,
+                }}
               />
             </div>
 
             {/* Filters */}
-            <div className="flex items-center gap-2">
+            <div
+              className="flex items-center"
+              style={{
+                gap: `var(--space-column-gap-x-small)`,
+              }}
+            >
               {["Tags", "Segments", "Status", "Quick filters"].map((filter) => (
                 <Button
                   key={filter}
                   variant="outline"
-                  className="flex h-8 px-3 py-2 justify-center items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-white text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
+                  className="flex h-8 justify-center items-center text-xs font-normal leading-4"
+                  style={{
+                    padding: `var(--space-component-stack-padding-small) var(--space-component-inline-padding-x-large)`,
+                    gap: `var(--space-component-gap-small)`,
+                    borderRadius: `var(--radius-action)`,
+                    border: `1px solid var(--color-container-border-secondary)`,
+                    backgroundColor: `var(--color-container-background-primary)`,
+                    color: `var(--color-text-primary)`,
+                  }}
                 >
                   <span>{filter}</span>
                   <ChevronDownIcon />
