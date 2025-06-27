@@ -55,8 +55,9 @@ const DataWellCard = ({
             <div
               className="text-xs font-normal leading-4 underline decoration-dotted underline-offset-[3px] decoration-auto"
               style={{
-                color: `var(--color-text-secondary)`,
+                color: `var(--color-text-secondary, #3C4348)`,
                 textDecorationColor: `var(--color-container-border-tertiary)`,
+                font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
               }}
             >
               {title}
