@@ -993,7 +993,12 @@ export default function Audience() {
                 className="flex h-16 px-4 py-2 items-center self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 <div className="flex flex-col justify-center items-start flex-1">
-                  <div className="self-stretch text-mailchimp-text-primary font-mailchimp font-normal text-sm leading-5">
+                  <div
+                    className="self-stretch text-mailchimp-text-primary font-mailchimp font-normal text-sm leading-5"
+                    style={{
+                      font: "400 var(--font-size-component-small, 14px)/20px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                    }}
+                  >
                     {contact.location}
                   </div>
                 </div>
