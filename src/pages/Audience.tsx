@@ -153,7 +153,7 @@ const TrendChart = () => (
     width="88"
     height="32"
     viewBox="0 0 88 32"
-    fill="none"
+    fill="var(--Color-Icon-Primary)"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g filter="url(#filter0_i_20_14980)">
