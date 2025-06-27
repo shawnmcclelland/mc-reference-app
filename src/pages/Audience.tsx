@@ -497,7 +497,7 @@ export default function Audience() {
                 style={{
                   gap: `var(--space-component-gap-x-small)`,
                   borderRadius: `var(--radius-full)`,
-                  backgroundColor: `var(--color-text-quaternary)`,
+                  backgroundColor: `var(--color-ui-neutral, #5D686F)`,
                 }}
               >
                 <span
