@@ -545,7 +545,18 @@ export default function Audience() {
                   fontFamily: "var(--font-family-component)",
                 }}
               >
-                <SelectValue placeholder="Audience Clay Collective" />
+                <SelectValue
+                  placeholder={
+                    <span
+                      style={{
+                        fontFamily:
+                          "var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                      }}
+                    >
+                      <b>Audience</b> Clay Collective
+                    </span>
+                  }
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="clay-collective">
