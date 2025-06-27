@@ -890,7 +890,12 @@ export default function Audience() {
                   >
                     {contact.name}
                   </div>
-                  <div className="self-stretch text-mailchimp-text-secondary font-mailchimp font-normal text-xs leading-4">
+                  <div
+                    className="self-stretch text-mailchimp-text-secondary font-mailchimp font-normal text-xs leading-4"
+                    style={{
+                      font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                    }}
+                  >
                     {contact.email}
                   </div>
                 </div>
