@@ -859,14 +859,13 @@ export default function Audience() {
               >
                 {contact.smsStatus && (
                   <Badge
-                    className={cn(
-                      "flex px-1.5 py-0.5 justify-center items-center gap-1 rounded-mailchimp text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4",
+                    variant={
                       contact.smsStatus === "Subscribed"
-                        ? "bg-[#D2F8D5]"
+                        ? "success"
                         : contact.smsStatus === "Unsubscribed"
-                          ? "bg-[#FFEAC7]"
-                          : "bg-[#E2E9ED]",
-                    )}
+                          ? "warning"
+                          : "pending"
+                    }
                   >
                     {contact.smsStatus}
                   </Badge>
