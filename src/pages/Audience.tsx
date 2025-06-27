@@ -931,10 +931,7 @@ export default function Audience() {
                 className="flex h-16 px-4 py-2 items-center gap-1 self-stretch border-b border-mailchimp-border-primary bg-white"
               >
                 {contact.tags.map((tag, index) => (
-                  <Badge
-                    key={index}
-                    className="flex px-1.5 py-0.5 justify-center items-center gap-1 rounded-mailchimp bg-[#F0E9FF] text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4"
-                  >
+                  <Badge key={index} variant="info">
                     {tag}
                   </Badge>
                 ))}
