@@ -779,7 +779,13 @@ export default function Audience() {
                     color: `var(--color-text-primary)`,
                   }}
                 >
-                  <span>{filter}</span>
+                  <span
+                    style={{
+                      font: "400 var(--font-size-component-x-small, 12px) var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                    }}
+                  >
+                    {filter}
+                  </span>
                   <ChevronDownIcon />
                 </Button>
               ))}
