@@ -1,6 +1,119 @@
-/* Design Tokens CSS Variables */
+/* Design Tokens CSS Variables - Comprehensive from Figma */
 :root {
-  /* Colors - Action */
+  /* Page Background Colors */
+  --color-page-background-primary: #fff;
+  --color-page-background-secondary: #f0f4f6;
+  --color-page-background-tertiary: #f0f4f6;
+
+  /* Action Colors - Special Use */
+  --color-action-special-use: #ffe01c;
+  --brand-cavendish: #ffe01c;
+
+  /* Container Background Colors */
+  --color-container-background-accent: #e0edff;
+  --color-container-background-attention: #ffeac7;
+  --color-container-background-info: #f0e9ff;
+  --color-container-background-neutral: #e2e9ed;
+  --color-container-background-positive: #d2f8d5;
+  --color-container-background-primary: #fff;
+  --color-container-background-secondary: #f0f4f6;
+  --color-container-background-tertiary: #f0f4f6;
+
+  /* Container Border Colors */
+  --color-container-border-primary: #e2e9ed;
+  --color-container-border-secondary: #d5dee3;
+  --color-container-border-tertiary: #adbac2;
+
+  /* Input Colors */
+  --color-input-border-primary: #c3ced5;
+  --color-input-border-tertiary: #859299;
+  --color-input-background-primary: #fff;
+  --color-input-background-tertiary: #fff;
+
+  /* Text Colors */
+  --color-text-primary: #21262a;
+  --color-text-secondary: #4c555b;
+  --color-text-tertiary: #727e85;
+  --color-text-quaternary: #9aa7b0;
+  --color-text-inverse: #fff;
+  --color-ui-neutral: #5d686f;
+  --text-secondary: #4c555b;
+  --divider-secondary: #adbac2;
+
+  /* Action Colors */
+  --color-action-passive-subtle: rgba(248, 250, 251, 0);
+  --color-action-passive-subtle-active: #e2e9ed;
+  --color-action-standard: #017e89;
+  --color-action-standard-subtle: #fff;
+
+  /* Component Spacing - Inline Padding */
+  --space-component-inline-padding-small: 6px;
+  --space-component-inline-padding-medium: 8px;
+  --space-component-inline-padding-large: 10px;
+  --space-component-inline-padding-x-large: 12px;
+  --space-component-inline-padding-xx-large: 16px;
+  --space-component-inline-padding-xxx-large: 20px;
+  --space-component-inline-padding-x-small: 4px;
+
+  /* Component Spacing - Stack Padding */
+  --space-component-stack-padding-x-small: 2px;
+  --space-component-stack-padding-small: 4px;
+  --space-component-stack-padding-medium: 6px;
+  --space-component-stack-padding-large: 8px;
+  --space-component-stack-padding-x-large: 10px;
+
+  /* Component Spacing - Gaps */
+  --space-component-gap-x-small: 2px;
+  --space-component-gap-small: 4px;
+  --space-component-gap-medium: 8px;
+  --space-component-gap-large: 12px;
+  --space-column-gap-xx-small: 4px;
+  --space-column-gap-x-small: 8px;
+  --space-row-gap-x-small: 8px;
+
+  /* Container Spacing */
+  --space-container-padding-xxx-small: 4px;
+  --space-container-padding-xx-small: 8px;
+  --space-container-padding-medium: 20px;
+  --space-container-padding-x-large: 32px;
+
+  /* General Spacing */
+  --space-x-small: 8px;
+  --space-large: 24px;
+
+  /* Border Radius */
+  --radius-small: 6px;
+  --radius-action: 6px;
+  --radius-x-large: 16px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-family-component: "Graphik Mailchimp";
+  --font-name-body: "Graphik Mailchimp";
+  --font-name-heading: "Graphik Mailchimp";
+
+  /* Font Sizes */
+  --font-size-component-small: 14px;
+  --font-size-component-x-small: 12px;
+  --font-size-body-2: 16px;
+  --font-size-body-3: 14px;
+  --font-size-body-4: 12px;
+  --font-size-body-5: 11px;
+  --font-size-heading-5: 24px;
+
+  /* Additional Design Tokens for Components */
+  --Space-Component-Inline-Gap-Small: 4px;
+  --Space-Component-Stack-Padding-Large: 8px;
+  --Space-Component-Inline-Padding-Large: 10px;
+  --Radius-Small: 6px;
+  --Color-Input-Border-Primary: #c3ced5;
+  --Color-Input-Background-Primary: #fff;
+  --Color-Text-Primary: #21262a;
+  --Color-Text-Quaternary: #9aa7b0;
+  --Space-Component-Stack-Padding-Medium: 6px;
+  --Space-Component-Inline-Padding-Small: 6px;
+
+  /* Legacy support for existing tokens */
   --color-action-complementary: #6b6c72;
   --color-action-complementary-active: rgba(107, 108, 114, 0.75);
   --color-action-complementary-border: #ffffff;
@@ -47,112 +160,56 @@
   --color-action-secondary-subtle-active: #c3ced5;
   --color-action-secondary-subtle-focus: #d5dee3;
   --color-action-secondary-subtle-hover: #d5dee3;
-  --color-action-standard-subtle: #fff;
   --color-action-standard-subtle-active: #e2e9ed;
   --color-action-standard-subtle-focus: #f0f4f6;
   --color-action-standard-subtle-hover: #f0f4f6;
-
-  /* Colors - Container Background */
-  --color-container-background-accent: #e0edff;
   --color-container-background-accent-active: #a0cfff;
   --color-container-background-accent-focus: #c5e1ff;
   --color-container-background-accent-hover: #c5e1ff;
   --color-container-background-accent-selected: #a0cfff;
-  --color-container-background-attention: #ffeac7;
   --color-container-background-beta: #ffe6f4;
   --color-container-background-complementary: #ffffff;
-  --color-container-background-info: #f0e9ff;
   --color-container-background-inverse: #21262a;
   --color-container-background-negative: #ffe7e7;
-  --color-container-background-neutral: #e2e9ed;
   --color-container-background-new: #ffe6f4;
-  --color-container-background-positive: #d8ffdb;
-  --color-container-background-primary: #ffffff;
   --color-container-background-quaternary: #e3e5e8;
-  --color-container-background-secondary: #f0f4f6;
   --color-container-background-special-use-1: #7cbcff;
   --color-container-background-special-use-2: #00d5b0;
   --color-container-background-special-use-3: #ff808c;
   --color-container-background-special-use-4: #d5dee3;
-  --color-container-background-tertiary: #f0f4f6;
-
-  /* Colors - Container Border */
   --color-container-border-accent: #00828d;
   --color-container-border-attention: #d99536;
   --color-container-border-complementary: #21262a;
   --color-container-border-info: #0077c5;
   --color-container-border-negative: #b61a37;
   --color-container-border-positive: #00892e;
-  --color-container-border-primary: #e2e9ed;
-  --color-container-border-secondary: #d5dee3;
-  --color-container-border-tertiary: #c3ced5;
   --color-container-overlay: rgba(0, 0, 0, 0.5);
-
-  /* Colors - Text */
   --color-text-accent: #00828d;
   --color-text-complementary: #ffffff;
   --color-text-disabled: #859299;
   --color-text-highlight: #a0cfff;
-  --color-text-inverse: #ffffff;
-  --color-text-primary: #21262a;
-  --color-text-quaternary: #5d686f;
-  --color-text-secondary: #3c4348;
-  --color-text-tertiary: #4c555b;
-
-  /* Spacing */
   --space-column-gap-large: 24px;
   --space-column-gap-medium: 20px;
   --space-column-gap-small: 16px;
   --space-column-gap-x-large: 40px;
-  --space-column-gap-x-small: 8px;
-  --space-column-gap-xx-small: 4px;
-  --space-component-gap-large: 12px;
-  --space-component-gap-medium: 8px;
-  --space-component-gap-small: 4px;
-  --space-component-gap-x-small: 2px;
-  --space-component-inline-padding-large: 10px;
-  --space-component-inline-padding-medium: 8px;
-  --space-component-inline-padding-small: 6px;
-  --space-component-inline-padding-x-large: 12px;
-  --space-component-inline-padding-x-small: 4px;
-  --space-component-inline-padding-xx-large: 16px;
   --space-component-inline-padding-xx-small: 2px;
-  --space-component-inline-padding-xxx-large: 20px;
   --space-component-inline-padding-xxx-small: 0;
-  --space-component-stack-padding-large: 8px;
-  --space-component-stack-padding-medium: 6px;
-  --space-component-stack-padding-small: 4px;
-  --space-component-stack-padding-x-large: 10px;
-  --space-component-stack-padding-x-small: 2px;
   --space-component-stack-padding-xx-small: 0;
   --space-container-padding-large: 24px;
-  --space-container-padding-medium: 20px;
   --space-container-padding-small: 16px;
-  --space-container-padding-x-large: 32px;
   --space-container-padding-x-small: 12px;
   --space-container-padding-xx-large: 40px;
-  --space-container-padding-xx-small: 8px;
   --space-container-padding-xxx-large: 60px;
-  --space-container-padding-xxx-small: 4px;
-  --space-large: 24px;
   --space-medium: 16px;
   --space-page-inline: 20px;
   --space-row-gap-large: 40px;
   --space-row-gap-medium: 20px;
   --space-row-gap-small: 12px;
   --space-row-gap-x-large: 60px;
-  --space-row-gap-x-small: 8px;
   --space-small: 12px;
   --space-x-large: 40px;
-  --space-x-small: 8px;
-
-  /* Border Radius */
-  --radius-action: 6px;
-  --radius-full: 9999px;
   --radius-large: 12px;
   --radius-medium: 8px;
   --radius-none: 0;
-  --radius-small: 6px;
-  --radius-x-large: 16px;
   --radius-x-small: 4px;
 }
