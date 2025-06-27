@@ -486,11 +486,26 @@ export default function Audience() {
         </div>
       </div>
       {/* Data Well */}
-      <div className="flex w-full max-w-none p-2 flex-col items-start gap-2 rounded-mailchimp border border-mailchimp-border-primary bg-white">
+      <div
+        className="flex w-full max-w-none flex-col items-start"
+        style={{
+          padding: `var(--space-container-padding-xx-small)`,
+          gap: `var(--space-column-gap-x-small)`,
+          borderRadius: `var(--radius-small)`,
+          border: `1px solid var(--color-container-border-primary)`,
+          backgroundColor: `var(--color-container-background-primary)`,
+        }}
+      >
         {/* Actions */}
         <div
-          className="flex justify-end items-center gap-1.5 w-full -mb-2"
-          style={{ position: "relative", right: "8px", top: "8px" }}
+          className="flex justify-end items-center w-full"
+          style={{
+            gap: `var(--space-component-inline-padding-small)`,
+            position: "relative",
+            right: `var(--space-container-padding-xx-small)`,
+            top: `var(--space-container-padding-xx-small)`,
+            marginBottom: `calc(-1 * var(--space-column-gap-x-small))`,
+          }}
         >
           {/* Settings */}
           <div className="flex flex-col justify-center items-start">
