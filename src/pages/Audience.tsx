@@ -435,7 +435,13 @@ export default function Audience() {
             <Button
               variant="outline"
               size="icon"
-              className="flex p-1.5 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white"
+              className="flex justify-center items-center"
+              style={{
+                padding: `var(--space-component-inline-padding-small)`,
+                borderRadius: `var(--radius-action)`,
+                border: `1px solid var(--color-container-border-secondary)`,
+                backgroundColor: `var(--color-container-background-primary)`,
+              }}
             >
               <svg
                 width="20"
