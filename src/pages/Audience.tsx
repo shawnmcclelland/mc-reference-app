@@ -830,12 +830,13 @@ export default function Audience() {
               >
                 {contact.emailStatus && (
                   <Badge
-                    className={cn(
-                      "flex px-1.5 py-0.5 justify-center items-center gap-1 rounded-mailchimp text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4",
+                    variant={
                       contact.emailStatus === "Subscribed"
-                        ? "bg-[#D2F8D5]"
-                        : "bg-[#FFEAC7]",
-                    )}
+                        ? "success"
+                        : contact.emailStatus === "Unsubscribed"
+                          ? "warning"
+                          : "pending"
+                    }
                   >
                     {contact.emailStatus}
                   </Badge>
