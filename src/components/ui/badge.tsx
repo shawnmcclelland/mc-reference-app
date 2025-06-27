@@ -82,9 +82,7 @@ function Badge({ className, variant, size, ...props }: BadgeProps) {
         padding:
           "var(--space-component-stack-padding-x-small) var(--space-component-inline-padding-small)",
         borderRadius: "var(--radius-action)",
-        fontFamily: "var(--font-family-component)",
-        fontSize: "var(--font-size-component-x-small)",
-        lineHeight: "16px",
+        font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
       }}
       {...props}
     />
