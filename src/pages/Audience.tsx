@@ -455,7 +455,14 @@ export default function Audience() {
                 color: `var(--color-text-primary)`,
               }}
             >
-              All time
+              <span
+                style={{
+                  color: "var(--color-text-primary, #21262A)",
+                  font: "var(--font-size-component-small, 14px) var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                }}
+              >
+                All time
+              </span>
               <CalendarIcon />
             </Button>
           </div>
