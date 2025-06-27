@@ -536,7 +536,15 @@ export default function Audience() {
           {/* Audience select */}
           <div className="flex items-start">
             <Select>
-              <SelectTrigger className="flex w-[200px] px-2.5 py-2 items-center gap-1 rounded-mailchimp border border-mailchimp-input-border bg-white text-mailchimp-text-primary font-mailchimp text-xs font-normal leading-4 tracking-[-0.12px]">
+              <SelectTrigger
+                className="flex w-[200px] px-2.5 py-2 items-center gap-1 bg-white text-xs font-normal leading-4 tracking-[-0.12px]"
+                style={{
+                  borderRadius: "var(--radius-action)",
+                  border: "1px solid var(--color-input-border-primary)",
+                  color: "var(--color-text-primary)",
+                  fontFamily: "var(--font-family-component)",
+                }}
+              >
                 <SelectValue placeholder="Audience Clay Collective" />
               </SelectTrigger>
               <SelectContent>
