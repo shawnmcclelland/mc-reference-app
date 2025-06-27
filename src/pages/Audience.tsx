@@ -421,8 +421,8 @@ export default function Audience() {
           <h1
             className="font-medium leading-[120%] tracking-[-0.48px]"
             style={{
-              color: `var(--color-text-primary)`,
-              fontSize: `24px`,
+              color: "var(--color-text-primary, #21262A)",
+              font: "400 var(--font-size-heading-5, 24px)/28.8px var(--font-family-heading, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
             }}
           >
             Contacts
