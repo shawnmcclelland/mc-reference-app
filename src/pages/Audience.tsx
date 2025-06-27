@@ -665,9 +665,21 @@ export default function Audience() {
       </div>
 
       {/* Contacts Table */}
-      <div className="flex flex-col items-start gap-2 self-stretch bg-white">
+      <div
+        className="flex flex-col items-start self-stretch"
+        style={{
+          gap: `var(--space-column-gap-x-small)`,
+          backgroundColor: `var(--color-container-background-primary)`,
+        }}
+      >
         {/* Table Action Bar */}
-        <div className="flex h-8 justify-between items-center self-stretch rounded-mailchimp bg-white">
+        <div
+          className="flex h-8 justify-between items-center self-stretch"
+          style={{
+            borderRadius: `var(--radius-action)`,
+            backgroundColor: `var(--color-container-background-primary)`,
+          }}
+        >
           <div className="flex items-center gap-2">
             {/* Search */}
             <div className="flex w-[240px] h-8 px-3 py-2 items-center gap-2 rounded-mailchimp border border-mailchimp-border-secondary bg-white">
