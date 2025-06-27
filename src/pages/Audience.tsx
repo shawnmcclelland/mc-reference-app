@@ -872,7 +872,12 @@ export default function Audience() {
                     backgroundColor: "var(--color-container-background-accent)",
                   }}
                 >
-                  <AvatarFallback className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]">
+                  <AvatarFallback
+                    className="text-mailchimp-text-primary font-mailchimp font-medium text-sm leading-5 tracking-[-0.14px]"
+                    style={{
+                      font: "600 var(--font-size-body-3, 14px)/20px var(--font-family-body, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+                    }}
+                  >
                     {contact.initials}
                   </AvatarFallback>
                 </Avatar>
