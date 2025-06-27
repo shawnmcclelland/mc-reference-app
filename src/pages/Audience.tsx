@@ -124,7 +124,8 @@ const DataWellCard = ({
             <div
               className="text-[11px] font-normal leading-4"
               style={{
-                color: `var(--color-text-tertiary)`,
+                color: `var(--color-text-tertiary, #4C555B)`,
+                font: "400 var(--font-size-body-4, 12px)/16px var(--font-family-body, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
               }}
             >
               {item.label}
