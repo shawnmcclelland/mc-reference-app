@@ -586,7 +586,13 @@ export default function Audience() {
         >
           {/* Settings */}
           <div className="flex flex-col justify-center items-start">
-            <button className="flex p-1 justify-center items-center rounded-mailchimp border border-mailchimp-border-secondary bg-white">
+            <button
+              className="flex p-1 justify-center items-center bg-white"
+              style={{
+                borderRadius: "var(--radius-action)",
+                border: "1px solid var(--color-container-border-secondary)",
+              }}
+            >
               <div className="flex w-4 h-4 justify-center items-center">
                 <svg
                   width="16"
