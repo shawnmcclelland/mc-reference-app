@@ -475,7 +475,7 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
             <div className="flex items-center gap-2 mb-1">
               <h3 className={cn(
                 "font-semibold text-gray-900 truncate",
-                isMobile ? "text-sm" : "text-base"
+                isMobile ? "text-component-small" : "text-body-2"
               )}>{customer.name}</h3>
               {customer.isVip && (
                 <Star className="w-4 h-4 text-yellow-500 fill-current flex-shrink-0" />
