@@ -412,102 +412,113 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
   };
 
   return (
-    <div
-      className={cn(
-        "flex flex-col items-start flex-shrink-0 self-stretch bg-[#F0F4F6] transition-all duration-300",
-        isCollapsed && isMobile ? "w-0 overflow-hidden" : "w-60",
-        isMobile && isCollapsed && "absolute z-50 h-full",
-        className,
+    <>
+      {/* Mobile overlay when navigation is open */}
+      {isMobile && !isCollapsed && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setIsCollapsed(true)}
+        />
       )}
-    >
-      {/* Brand stripe */}
-      <div className="h-1 self-stretch bg-[#FFE01C]" />
 
-      {/* Navigation switch */}
-      <div className="flex px-[10px] py-3 justify-between items-center self-stretch">
-        <MailchimpLogo />
-        <button
-          className="flex w-6 h-6 justify-center items-center cursor-pointer hover:opacity-70"
-          onClick={() => setIsCollapsed(!isCollapsed)}
-        >
-          <MenuIcon />
-        </button>
-      </div>
+      <div
+        className={cn(
+          "flex flex-col items-start flex-shrink-0 self-stretch bg-[#F0F4F6] transition-all duration-300",
+          isMobile
+            ? (isCollapsed ? "w-0 overflow-hidden" : "w-60 fixed left-0 top-0 h-full z-50")
+            : "w-60",
+          className,
+        )}
+      >
+        {/* Brand stripe */}
+        <div className="h-1 self-stretch bg-[#FFE01C]" />
 
-      {/* Primary navigation */}
-      <div className="flex py-5 px-0 flex-col items-start gap-2 self-stretch">
-        {/* Create button */}
-        <div className="flex items-start self-stretch">
-          <div className="flex px-3 flex-col justify-center items-start flex-1">
-            <div className="flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp border border-[#D5DEE3] bg-white">
-              <div className="w-5 h-5 text-[#4C555B]">{navItems[0].icon}</div>
-              <div className="flex-1 text-[#4C555B] font-normal text-sm leading-5">
-                {navItems[0].label}
+        {/* Navigation switch */}
+        <div className="flex px-[10px] py-3 justify-between items-center self-stretch">
+          <MailchimpLogo />
+          <button
+            className="flex w-6 h-6 justify-center items-center cursor-pointer hover:opacity-70"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            <MenuIcon />
+          </button>
+        </div>
+
+        {/* Primary navigation */}
+        <div className="flex py-5 px-0 flex-col items-start gap-2 self-stretch">
+          {/* Create button */}
+          <div className="flex items-start self-stretch">
+            <div className="flex px-3 flex-col justify-center items-start flex-1">
+              <div className="flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp border border-[#D5DEE3] bg-white">
+                <div className="w-5 h-5 text-[#4C555B]">{navItems[0].icon}</div>
+                <div className="flex-1 text-[#4C555B] font-normal text-sm leading-5">
+                  {navItems[0].label}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Nav items */}
-        <div className="flex flex-col items-center gap-1 self-stretch">
-          {navItems.slice(1).map((item) => (
-            <div
-              key={item.id}
-              className={cn(
-                "flex flex-col items-center self-stretch",
-                item.hasSubNav && "pb-0.5",
-              )}
-            >
-              <div className="flex px-3 flex-col justify-center items-start self-stretch">
-                <div
-                  className={cn(
-                    "flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp cursor-pointer",
-                    isActive(item) ? "bg-[#E2E9ED]" : "hover:bg-[#E2E9ED]",
-                  )}
-                  onClick={() => handleNavClick(item)}
-                >
+          {/* Nav items */}
+          <div className="flex flex-col items-center gap-1 self-stretch">
+            {navItems.slice(1).map((item) => (
+              <div
+                key={item.id}
+                className={cn(
+                  "flex flex-col items-center self-stretch",
+                  item.hasSubNav && "pb-0.5",
+                )}
+              >
+                <div className="flex px-3 flex-col justify-center items-start self-stretch">
                   <div
                     className={cn(
-                      "w-5 h-5",
-                      isActive(item) ? "text-[#21262A]" : "text-[#5D686F]",
+                      "flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp cursor-pointer",
+                      isActive(item) ? "bg-[#E2E9ED]" : "hover:bg-[#E2E9ED]",
                     )}
+                    onClick={() => handleNavClick(item)}
                   >
-                    {item.icon}
-                  </div>
-                  <div
-                    className={cn(
-                      "flex-1 font-medium text-sm leading-5",
-                      isActive(item)
-                        ? "text-[#21262A] font-medium tracking-[-0.14px]"
-                        : "text-[#4C555B] font-normal",
-                    )}
-                  >
-                    {item.label}
+                    <div
+                      className={cn(
+                        "w-5 h-5",
+                        isActive(item) ? "text-[#21262A]" : "text-[#5D686F]",
+                      )}
+                    >
+                      {item.icon}
+                    </div>
+                    <div
+                      className={cn(
+                        "flex-1 font-medium text-sm leading-5",
+                        isActive(item)
+                          ? "text-[#21262A] font-medium tracking-[-0.14px]"
+                          : "text-[#4C555B] font-normal",
+                      )}
+                    >
+                      {item.label}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Sub-navigation items */}
-              {item.hasSubNav && item.subNavItems && (
-                <>
-                  {item.subNavItems.map((subItem, index) => (
-                    <div
-                      key={index}
-                      className="flex w-60 px-3 flex-col justify-center items-start"
-                    >
-                      <div className="flex py-1.5 px-1 pr-1 pl-9 justify-center items-center gap-2 self-stretch rounded-mailchimp">
-                        <div className="flex-1 text-[#4C555B] font-normal text-sm leading-5">
-                          {subItem.label}
+                {/* Sub-navigation items */}
+                {item.hasSubNav && item.subNavItems && (
+                  <>
+                    {item.subNavItems.map((subItem, index) => (
+                      <div
+                        key={index}
+                        className="flex w-60 px-3 flex-col justify-center items-start"
+                      >
+                        <div className="flex py-1.5 px-1 pr-1 pl-9 justify-center items-center gap-2 self-stretch rounded-mailchimp">
+                          <div className="flex-1 text-[#4C555B] font-normal text-sm leading-5">
+                            {subItem.label}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </>
-              )}
-            </div>
-          ))}
+                    ))}
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
