@@ -921,13 +921,12 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                       </DropdownMenu>
                     )}
                     <Button size={isMobile ? "sm" : "default"} className={cn(
-                      isMobile && "text-xs px-2"
+                      isMobile && "px-2"
                     )}>
                       <Send className={cn(
-                        "mr-2",
-                        isMobile ? "w-3 h-3" : "w-4 h-4"
+                        isMobile ? "w-4 h-4" : "w-4 h-4 mr-2"
                       )} />
-                      Send Reply
+                      {!isMobile && "Send Reply"}
                     </Button>
                   </div>
                 </div>
