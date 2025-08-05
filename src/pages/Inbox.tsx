@@ -489,28 +489,30 @@ export default function Inbox() {
   });
 
   return (
-    <div className="p-6 space-y-6 min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold text-gray-900">
-            Unified Inbox
-          </h1>
-          <p className="text-gray-600 mt-1">
-            All customer conversations across channels in one intelligent workspace
-          </p>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Button variant="outline" size="sm">
-            <Plus className="w-4 h-4 mr-2" />
-            Add filter
-          </Button>
+      <div className="px-6 pt-6 pb-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-semibold text-gray-900">
+              Unified Inbox
+            </h1>
+            <p className="text-gray-600 mt-1">
+              All customer conversations across channels in one intelligent workspace
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Button variant="outline" size="sm">
+              <Plus className="w-4 h-4 mr-2" />
+              Add filter
+            </Button>
+          </div>
         </div>
       </div>
 
       {/* Kanban Board */}
       <div className="overflow-x-auto">
-        <div className="flex pb-6" style={{gap: "var(--space-column-gap-x-small, 8px)"}}>
+        <div className="flex pb-6 pl-6" style={{gap: "var(--space-column-gap-x-small, 8px)"}}>
           {Object.entries(statusColumns).map(([status, config]) => (
             <StatusColumn
               key={status}
