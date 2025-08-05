@@ -543,7 +543,7 @@ function CustomerProfilePanel({
                 <Badge
                   key={tag}
                   variant="secondary"
-                  className="text-xs px-1 py-0"
+                  className="text-component-x-small px-1 py-0"
                 >
                   {tag}
                 </Badge>
