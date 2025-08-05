@@ -449,9 +449,9 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
       <div
         className={cn(
           "flex flex-col items-start flex-shrink-0 bg-[#F0F4F6] transition-all duration-300",
-          isMobile
-            ? (isCollapsed ? "hidden" : "w-60 fixed left-0 top-0 h-full z-50")
-            : "w-60 self-stretch",
+          // Use responsive classes for clearer behavior
+          "hidden md:flex md:w-60 md:self-stretch", // Hidden on mobile, show as sidebar on desktop
+          isMobile && !isCollapsed && "flex w-60 fixed left-0 top-0 h-full z-50", // Show as overlay when opened on mobile
           className,
         )}
       >
