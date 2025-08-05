@@ -552,7 +552,7 @@ function CustomerProfilePanel({
           </div>
         </div>
 
-        <div className="space-y-1 text-xs">
+        <div className="space-y-1 text-component-x-small">
           <div className="flex items-center gap-2 text-gray-600">
             <Mail className="w-3 h-3 flex-shrink-0" />
             <span className="truncate">{customer.email}</span>
