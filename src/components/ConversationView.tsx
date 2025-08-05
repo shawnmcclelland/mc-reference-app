@@ -115,69 +115,72 @@ const mockConversationData = {
       id: "ORD-2847",
       date: "2024-01-15",
       amount: 89.99,
-      status: "Shipped"
+      status: "Shipped",
     },
     recentOrders: [
       {
         id: "ORD-2847",
         date: "Jan 15, 2024",
         amount: 89.99,
-        products: "Premium Razor Set"
+        products: "Premium Razor Set",
       },
       {
         id: "ORD-2831",
         date: "Dec 10, 2023",
         amount: 149.99,
-        products: "Custom Engraved Set"
+        products: "Custom Engraved Set",
       },
       {
         id: "ORD-2798",
         date: "Nov 22, 2023",
         amount: 59.99,
-        products: "Starter Kit"
-      }
+        products: "Starter Kit",
+      },
     ],
     campaignHistory: [
       {
         name: "Holiday Sale 2023",
         date: "Dec 1, 2023",
-        engagement: "Opened, Clicked"
+        engagement: "Opened, Clicked",
       },
       {
         name: "Product Launch",
         date: "Oct 15, 2023",
-        engagement: "Opened"
-      }
-    ]
+        engagement: "Opened",
+      },
+    ],
   },
   messages: [
     {
       id: "msg_1",
       sender: "customer" as const,
-      content: "Hi! I placed an order for the Premium Razor Set last week (Order #RS-2847) and still haven't received any shipping updates. Can you please check the status? I need it for a trip this weekend.",
+      content:
+        "Hi! I placed an order for the Premium Razor Set last week (Order #RS-2847) and still haven't received any shipping updates. Can you please check the status? I need it for a trip this weekend.",
       timestamp: "Today 10:30 AM",
       channel: "Email",
-      sentiment: "neutral" as const
+      sentiment: "neutral" as const,
     },
     {
       id: "msg_2",
       sender: "agent" as const,
-      content: "Hi Sarah! Thank you for reaching out. I can see your order #RS-2847 for the Premium Razor Set. Let me check the shipping status for you right away. Since you're a VIP customer, I'll make sure we get this resolved quickly!",
+      content:
+        "Hi Sarah! Thank you for reaching out. I can see your order #RS-2847 for the Premium Razor Set. Let me check the shipping status for you right away. Since you're a VIP customer, I'll make sure we get this resolved quickly!",
       timestamp: "Today 10:45 AM",
       channel: "Email",
       sentiment: "positive" as const,
       agentName: "Alex Rodriguez",
-      agentInitials: "AR"
+      agentInitials: "AR",
     },
     {
       id: "msg_3",
       sender: "agent" as const,
-      content: "Good news! I've checked with our fulfillment team and your order shipped yesterday via Express shipping. Here's your tracking number: 1Z999AA1234567890. It should arrive by Thursday afternoon, well before your weekend trip!",
+      content:
+        "Good news! I've checked with our fulfillment team and your order shipped yesterday via Express shipping. Here's your tracking number: 1Z999AA1234567890. It should arrive by Thursday afternoon, well before your weekend trip!",
       timestamp: "Today 10:47 AM",
       channel: "Email",
       sentiment: "positive" as const,
       agentName: "Alex Rodriguez",
-      agentInitials: "AR"
+      agentInitials: "AR",
     },
     {
       id: "msg_4",
@@ -185,18 +188,18 @@ const mockConversationData = {
       content: "Tracking information shared with customer",
       timestamp: "Today 10:47 AM",
       channel: "System",
-      sentiment: "neutral" as const
-    }
+      sentiment: "neutral" as const,
+    },
   ],
   status: "waiting_on_customer",
   priority: "high",
-  assignedTo: "Alex Rodriguez"
+  assignedTo: "Alex Rodriguez",
 };
 
 const sentimentIcons = {
   positive: <Smile className="w-3 h-3 text-green-500" />,
   neutral: <Meh className="w-3 h-3 text-gray-400" />,
-  negative: <Frown className="w-3 h-3 text-red-500" />
+  negative: <Frown className="w-3 h-3 text-red-500" />,
 };
 
 const channelIcons = {
@@ -205,14 +208,14 @@ const channelIcons = {
   Instagram: <Instagram className="w-3 h-3" />,
   Facebook: <MessageCircle className="w-3 h-3" />,
   Chat: <MessageCircle className="w-3 h-3" />,
-  System: <Bot className="w-3 h-3" />
+  System: <Bot className="w-3 h-3" />,
 };
 
 function MessageBubble({ message }: { message: Message }) {
   const isCustomer = message.sender === "customer";
   const isSystem = message.sender === "system";
   const isAgent = message.sender === "agent";
-  
+
   if (isSystem) {
     return (
       <div className="flex justify-center my-3">
@@ -225,12 +228,14 @@ function MessageBubble({ message }: { message: Message }) {
       </div>
     );
   }
-  
+
   return (
-    <div className={cn(
-      "flex mb-4 group",
-      isCustomer ? "justify-end" : "justify-start"
-    )}>
+    <div
+      className={cn(
+        "flex mb-4 group",
+        isCustomer ? "justify-end" : "justify-start",
+      )}
+    >
       {!isCustomer && (
         <Avatar className="w-7 h-7 mr-2 mt-1 flex-shrink-0">
           <AvatarFallback className="bg-blue-100 text-blue-600 text-xs font-medium">
@@ -239,23 +244,26 @@ function MessageBubble({ message }: { message: Message }) {
         </Avatar>
       )}
 
-      <div className={cn(
-        "max-w-[70%]",
-        isCustomer ? "ml-12" : "mr-12"
-      )}>
-        <div className={cn(
-          "rounded-2xl px-3 py-2 shadow-sm",
-          isCustomer
-            ? "bg-blue-500 text-white rounded-br-md"
-            : "bg-gray-100 text-gray-900 rounded-bl-md"
-        )}>
-          <p className="text-component-small leading-relaxed">{message.content}</p>
+      <div className={cn("max-w-[70%]", isCustomer ? "ml-12" : "mr-12")}>
+        <div
+          className={cn(
+            "rounded-2xl px-3 py-2 shadow-sm",
+            isCustomer
+              ? "bg-blue-500 text-white rounded-br-md"
+              : "bg-gray-100 text-gray-900 rounded-bl-md",
+          )}
+        >
+          <p className="text-component-small leading-relaxed">
+            {message.content}
+          </p>
         </div>
 
-        <div className={cn(
-          "flex items-center gap-1 mt-1 text-xs text-gray-500",
-          isCustomer ? "justify-end" : "justify-start"
-        )}>
+        <div
+          className={cn(
+            "flex items-center gap-1 mt-1 text-xs text-gray-500",
+            isCustomer ? "justify-end" : "justify-start",
+          )}
+        >
           <div className="flex items-center gap-1">
             {channelIcons[message.channel as keyof typeof channelIcons]}
             <span>{message.channel}</span>
@@ -290,14 +298,14 @@ function AIAssistantBlock() {
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const suggestedReplies = [
     "Thank you for your patience! I'm happy to help track down your order.",
     "I apologize for the delay. Let me investigate this immediately.",
-    "Great news! Your order is on its way and should arrive soon."
+    "Great news! Your order is on its way and should arrive soon.",
   ];
 
   const smartActions = [
@@ -305,35 +313,41 @@ function AIAssistantBlock() {
       icon: <DollarSign className="w-4 h-4" />,
       label: "Issue Refund",
       description: "Customer seems frustrated",
-      confidence: "High"
+      confidence: "High",
     },
     {
       icon: <Tag className="w-4 h-4" />,
       label: "Apply 10% Discount",
       description: "For the inconvenience",
-      confidence: "Medium"
+      confidence: "Medium",
     },
     {
       icon: <Star className="w-4 h-4" />,
       label: "Upgrade to VIP",
       description: "High-value customer",
-      confidence: "High"
-    }
+      confidence: "High",
+    },
   ];
 
   // Compact collapsed view (collapsed by default on mobile)
   if (!isExpanded || isMobile) {
     return (
-      <div className={cn(
-        "p-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg",
-        isMobile ? "mb-1" : "mb-2"
-      )}>
+      <div
+        className={cn(
+          "p-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg",
+          isMobile ? "mb-1" : "mb-2",
+        )}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-blue-600" />
             <div className="flex-1">
-              <h4 className="text-component-small font-medium text-blue-900">AI Assistant</h4>
-              <p className="text-xs text-blue-700">Order resolved, customer satisfied. Ready to close.</p>
+              <h4 className="text-component-small font-medium text-blue-900">
+                AI Assistant
+              </h4>
+              <p className="text-xs text-blue-700">
+                Order resolved, customer satisfied. Ready to close.
+              </p>
             </div>
           </div>
           <button
@@ -347,14 +361,25 @@ function AIAssistantBlock() {
 
         {/* Top suggested action */}
         <div className={cn("mt-2", isMobile && "mt-1")}>
-          <button className={cn(
-            "w-full bg-white border border-blue-200 rounded text-left hover:bg-blue-50 transition-colors",
-            isMobile ? "p-1.5" : "p-2"
-          )}>
+          <button
+            className={cn(
+              "w-full bg-white border border-blue-200 rounded text-left hover:bg-blue-50 transition-colors",
+              isMobile ? "p-1.5" : "p-2",
+            )}
+          >
             <div className="flex items-center gap-2">
               <DollarSign className="w-3 h-3 text-blue-600" />
-              <span className={cn("font-medium text-gray-900", isMobile ? "text-component-x-small" : "text-component-small")}>Issue Refund</span>
-              <Badge variant="secondary" className="text-xs ml-auto">High</Badge>
+              <span
+                className={cn(
+                  "font-medium text-gray-900",
+                  isMobile ? "text-component-x-small" : "text-component-small",
+                )}
+              >
+                Issue Refund
+              </span>
+              <Badge variant="secondary" className="text-xs ml-auto">
+                High
+              </Badge>
             </div>
           </button>
         </div>
@@ -388,7 +413,8 @@ function AIAssistantBlock() {
           <Lightbulb className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
           <div className="flex-1">
             <p className="text-xs text-gray-600">
-              VIP customer order inquiry resolved. Tracking provided. Sentiment: Neutral → Positive.
+              VIP customer order inquiry resolved. Tracking provided. Sentiment:
+              Neutral → Positive.
             </p>
           </div>
         </div>
@@ -396,7 +422,9 @@ function AIAssistantBlock() {
 
       {/* Compact Smart Actions */}
       <div className="mb-2">
-        <h4 className="text-xs font-medium text-gray-700 mb-1">Top Recommendations</h4>
+        <h4 className="text-xs font-medium text-gray-700 mb-1">
+          Top Recommendations
+        </h4>
         <div className="space-y-1">
           {smartActions.slice(0, 2).map((action, index) => (
             <button
@@ -406,8 +434,12 @@ function AIAssistantBlock() {
               <div className="flex items-center gap-2">
                 <div className="text-blue-600">{action.icon}</div>
                 <div className="flex-1">
-                  <div className="font-medium text-xs text-gray-900">{action.label}</div>
-                  <div className="text-xs text-gray-500">{action.description}</div>
+                  <div className="font-medium text-xs text-gray-900">
+                    {action.label}
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    {action.description}
+                  </div>
                 </div>
                 <Badge variant="secondary" className="text-xs">
                   {action.confidence}
@@ -420,7 +452,9 @@ function AIAssistantBlock() {
 
       {/* Compact Suggested Replies */}
       <div>
-        <h4 className="text-xs font-medium text-gray-700 mb-1">Quick Replies</h4>
+        <h4 className="text-xs font-medium text-gray-700 mb-1">
+          Quick Replies
+        </h4>
         <div className="space-y-1">
           {suggestedReplies.slice(0, 2).map((reply, index) => (
             <button
@@ -429,7 +463,7 @@ function AIAssistantBlock() {
                 "w-full p-2 text-left text-xs border rounded transition-colors",
                 selectedReply === reply
                   ? "border-blue-300 bg-blue-50 text-blue-900"
-                  : "border-gray-200 hover:border-gray-300 bg-white"
+                  : "border-gray-200 hover:border-gray-300 bg-white",
               )}
               onClick={() => setSelectedReply(reply)}
             >
@@ -447,47 +481,70 @@ function AIAssistantBlock() {
   );
 }
 
-function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; isMobile?: boolean }) {
+function CustomerProfilePanel({
+  customer,
+  isMobile,
+}: {
+  customer: CustomerData;
+  isMobile?: boolean;
+}) {
   return (
-    <div className={cn(
-      "flex flex-col",
-      isMobile ? "h-auto" : "h-full"
-    )} style={{padding: isMobile ? "0 12px" : "0 var(--space-column-gap-x-small, 8px)"}}>
+    <div
+      className={cn("flex flex-col", isMobile ? "h-auto" : "h-full")}
+      style={{
+        padding: isMobile ? "0 12px" : "0 var(--space-column-gap-x-small, 8px)",
+      }}
+    >
       {/* Customer Overview - Compact */}
-      <div className={cn(
-        "bg-gray-100 rounded-lg flex-shrink-0",
-        isMobile ? "p-2 mb-3" : "p-3 mb-4"
-      )}>
-        <div className={cn(
-          "flex items-start gap-3",
-          isMobile ? "mb-2" : "mb-3"
-        )}>
-          <Avatar className={cn(
-            "flex-shrink-0",
-            isMobile ? "w-8 h-8" : "w-10 h-10"
-          )}>
+      <div
+        className={cn(
+          "bg-gray-100 rounded-lg flex-shrink-0",
+          isMobile ? "p-2 mb-3" : "p-3 mb-4",
+        )}
+      >
+        <div
+          className={cn("flex items-start gap-3", isMobile ? "mb-2" : "mb-3")}
+        >
+          <Avatar
+            className={cn("flex-shrink-0", isMobile ? "w-8 h-8" : "w-10 h-10")}
+          >
             <AvatarImage src={customer.avatar} />
             <AvatarFallback className="text-component-small font-medium">
-              {customer.name.split(' ').map(n => n[0]).join('')}
+              {customer.name
+                .split(" ")
+                .map((n) => n[0])
+                .join("")}
             </AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className={cn(
-                "font-semibold text-gray-900 truncate",
-                isMobile ? "text-component-small" : "text-body-2"
-              )}>{customer.name}</h3>
+              <h3
+                className={cn(
+                  "font-semibold text-gray-900 truncate",
+                  isMobile ? "text-component-small" : "text-body-2",
+                )}
+              >
+                {customer.name}
+              </h3>
               {customer.isVip && (
                 <Star className="w-4 h-4 text-yellow-500 fill-current flex-shrink-0" />
               )}
             </div>
-            <p className={cn(
-              "text-gray-600",
-              isMobile ? "text-xs mb-1" : "text-xs mb-2"
-            )}>{customer.loyaltyLevel} Customer</p>
+            <p
+              className={cn(
+                "text-gray-600",
+                isMobile ? "text-xs mb-1" : "text-xs mb-2",
+              )}
+            >
+              {customer.loyaltyLevel} Customer
+            </p>
             <div className="flex flex-wrap gap-1">
               {customer.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs px-1 py-0">
+                <Badge
+                  key={tag}
+                  variant="secondary"
+                  className="text-xs px-1 py-0"
+                >
                   {tag}
                 </Badge>
               ))}
@@ -516,53 +573,86 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
       </div>
 
       {/* Customer Value - Single Row */}
-      <div className={cn(
-        "bg-white border border-gray-200 rounded-lg flex-shrink-0",
-        isMobile ? "p-2 mb-3" : "p-3 mb-4"
-      )}>
+      <div
+        className={cn(
+          "bg-white border border-gray-200 rounded-lg flex-shrink-0",
+          isMobile ? "p-2 mb-3" : "p-3 mb-4",
+        )}
+      >
         <div className="flex justify-between items-center">
           <div className="text-center">
-            <div className={cn(
-              "font-bold text-green-700",
-              isMobile ? "text-body-2" : "text-body-2"
-            )}>{customer.totalOrders}</div>
+            <div
+              className={cn(
+                "font-bold text-green-700",
+                isMobile ? "text-body-2" : "text-body-2",
+              )}
+            >
+              {customer.totalOrders}
+            </div>
             <div className="text-xs text-gray-600">Orders</div>
           </div>
           <div className="text-center">
-            <div className={cn(
-              "font-bold text-blue-700",
-              isMobile ? "text-body-2" : "text-body-2"
-            )}>${customer.totalSpent.toLocaleString()}</div>
+            <div
+              className={cn(
+                "font-bold text-blue-700",
+                isMobile ? "text-body-2" : "text-body-2",
+              )}
+            >
+              ${customer.totalSpent.toLocaleString()}
+            </div>
             <div className="text-xs text-gray-600">Total Spent</div>
           </div>
         </div>
       </div>
 
       {/* Activity Feed Header */}
-      <div className={cn(
-        "flex items-center gap-2 flex-shrink-0",
-        isMobile ? "mb-2" : "mb-3"
-      )}>
+      <div
+        className={cn(
+          "flex items-center gap-2 flex-shrink-0",
+          isMobile ? "mb-2" : "mb-3",
+        )}
+      >
         <TrendingUp className="w-4 h-4 text-gray-600" />
-        <h4 className="font-medium text-gray-900 text-component-small">Activity Feed</h4>
+        <h4 className="font-medium text-gray-900 text-component-small">
+          Activity Feed
+        </h4>
       </div>
 
       {/* Activity Feed - Collapsible on mobile */}
-      <div className={cn(
-        "space-y-4",
-        isMobile ? "max-h-60 overflow-y-auto" : "flex-1 min-h-0"
-      )}>
+      <div
+        className={cn(
+          "space-y-4",
+          isMobile ? "max-h-60 overflow-y-auto" : "flex-1 min-h-0",
+        )}
+      >
         {/* Recent Orders Section */}
         <div>
-          <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>Recent Orders</h5>
+          <h5
+            className="text-xs font-medium mb-3 uppercase tracking-wide"
+            style={{
+              color:
+                "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))",
+            }}
+          >
+            Recent Orders
+          </h5>
           <div className="space-y-3">
             {customer.recentOrders.map((order) => (
-              <div key={order.id} className="pb-3 border-b border-gray-100 last:border-b-0">
+              <div
+                key={order.id}
+                className="pb-3 border-b border-gray-100 last:border-b-0"
+              >
                 <div className="flex justify-between items-start mb-1">
-                  <div className="font-medium text-component-small text-gray-900">{order.id}</div>
-                  <div className="font-semibold text-component-small text-gray-900">${order.amount}</div>
+                  <div className="font-medium text-component-small text-gray-900">
+                    {order.id}
+                  </div>
+                  <div className="font-semibold text-component-small text-gray-900">
+                    ${order.amount}
+                  </div>
                 </div>
-                <div className="text-xs text-gray-600 mb-1">{order.products}</div>
+                <div className="text-xs text-gray-600 mb-1">
+                  {order.products}
+                </div>
                 <div className="text-xs text-gray-400">{order.date}</div>
               </div>
             ))}
@@ -571,12 +661,25 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
 
         {/* Campaign Activity Section */}
         <div>
-          <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>Campaign Engagement</h5>
+          <h5
+            className="text-xs font-medium mb-3 uppercase tracking-wide"
+            style={{
+              color:
+                "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))",
+            }}
+          >
+            Campaign Engagement
+          </h5>
           <div className="space-y-3">
             {customer.campaignHistory.map((campaign, index) => (
-              <div key={index} className="pb-3 border-b border-gray-100 last:border-b-0">
+              <div
+                key={index}
+                className="pb-3 border-b border-gray-100 last:border-b-0"
+              >
                 <div className="flex justify-between items-start mb-1">
-                  <div className="font-medium text-component-small text-gray-900">{campaign.name}</div>
+                  <div className="font-medium text-component-small text-gray-900">
+                    {campaign.name}
+                  </div>
                   <Badge variant="outline" className="text-xs flex-shrink-0">
                     {campaign.engagement}
                   </Badge>
@@ -589,18 +692,32 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
 
         {/* Additional Activity Items for Demo */}
         <div>
-          <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>System Events</h5>
+          <h5
+            className="text-xs font-medium mb-3 uppercase tracking-wide"
+            style={{
+              color:
+                "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))",
+            }}
+          >
+            System Events
+          </h5>
           <div className="space-y-3">
             <div className="pb-3 border-b border-gray-100">
-              <div className="font-medium text-component-small text-gray-900 mb-1">Customer Tagged as VIP</div>
+              <div className="font-medium text-component-small text-gray-900 mb-1">
+                Customer Tagged as VIP
+              </div>
               <div className="text-xs text-gray-400">Jan 10, 2024</div>
             </div>
             <div className="pb-3 border-b border-gray-100">
-              <div className="font-medium text-component-small text-gray-900 mb-1">Profile Updated</div>
+              <div className="font-medium text-component-small text-gray-900 mb-1">
+                Profile Updated
+              </div>
               <div className="text-xs text-gray-400">Dec 28, 2023</div>
             </div>
             <div className="pb-3 border-b border-gray-100">
-              <div className="font-medium text-component-small text-gray-900 mb-1">Account Created</div>
+              <div className="font-medium text-component-small text-gray-900 mb-1">
+                Account Created
+              </div>
               <div className="text-xs text-gray-400">Nov 15, 2023</div>
             </div>
           </div>
@@ -611,14 +728,37 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
 }
 
 const availableAgents = [
-  { id: "alex", name: "Alex Rodriguez", initials: "AR", avatar: "https://i.pravatar.cc/150?img=20" },
-  { id: "sarah", name: "Sarah Kim", initials: "SK", avatar: "https://i.pravatar.cc/150?img=21" },
-  { id: "mike", name: "Mike Chen", initials: "MC", avatar: "https://i.pravatar.cc/150?img=22" },
-  { id: "emma", name: "Emma Davis", initials: "ED", avatar: "https://i.pravatar.cc/150?img=23" },
-  { id: "unassigned", name: "Unassigned", initials: "?", avatar: null }
+  {
+    id: "alex",
+    name: "Alex Rodriguez",
+    initials: "AR",
+    avatar: "https://i.pravatar.cc/150?img=20",
+  },
+  {
+    id: "sarah",
+    name: "Sarah Kim",
+    initials: "SK",
+    avatar: "https://i.pravatar.cc/150?img=21",
+  },
+  {
+    id: "mike",
+    name: "Mike Chen",
+    initials: "MC",
+    avatar: "https://i.pravatar.cc/150?img=22",
+  },
+  {
+    id: "emma",
+    name: "Emma Davis",
+    initials: "ED",
+    avatar: "https://i.pravatar.cc/150?img=23",
+  },
+  { id: "unassigned", name: "Unassigned", initials: "?", avatar: null },
 ];
 
-export function ConversationView({ messageId, onClose }: ConversationViewProps) {
+export function ConversationView({
+  messageId,
+  onClose,
+}: ConversationViewProps) {
   const [replyText, setReplyText] = useState("");
   const [status, setStatus] = useState(mockConversationData.status);
   const [assignedAgent, setAssignedAgent] = useState("alex"); // Default to Alex Rodriguez
@@ -630,7 +770,9 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
 
   // Get the most recent communication channel from the conversation
   const getRecentChannel = () => {
-    const customerMessages = conversation.messages.filter(m => m.sender === "customer");
+    const customerMessages = conversation.messages.filter(
+      (m) => m.sender === "customer",
+    );
     if (customerMessages.length > 0) {
       return customerMessages[customerMessages.length - 1].channel;
     }
@@ -644,7 +786,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
     // Check mobile on mount and resize
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     // Trigger slide up animation
     setTimeout(() => setIsVisible(true), 10);
@@ -657,7 +799,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
       }, 150);
     }
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleClose = () => {
@@ -669,66 +811,101 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
     <div
       className={cn(
         "fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end",
-        isMobile ? "pt-2.5 px-2.5" : "px-5"
+        isMobile ? "pt-2.5 px-2.5" : "px-5",
       )}
-      style={{ marginTop: "var(--space-component-inline-padding-xxx-small, 0)" }}
+      style={{
+        marginTop: "var(--space-component-inline-padding-xxx-small, 0)",
+      }}
       onClick={handleClose}
     >
       <div
         className={cn(
           "bg-white shadow-2xl w-full flex flex-col transition-transform duration-200 ease-out",
-          isMobile ? "max-h-[calc(100vh-60px)] h-[calc(100vh-60px)] rounded-t-lg" : "h-[92vh] rounded-t-xl",
-          isVisible ? "translate-y-0" : "translate-y-full"
+          isMobile
+            ? "max-h-[calc(100vh-60px)] h-[calc(100vh-60px)] rounded-t-lg"
+            : "h-[92vh] rounded-t-xl",
+          isVisible ? "translate-y-0" : "translate-y-full",
         )}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header - Simplified */}
-        <div className={cn(
-          "flex items-center justify-between border-b border-gray-100",
-          isMobile ? "p-2" : "p-3"
-        )}>
-          <div className={cn(
-            "flex items-center",
-            isMobile ? "gap-2" : "gap-4"
-          )}>
-            <Avatar className={cn(
-              isMobile ? "w-8 h-8" : "w-10 h-10"
-            )}>
+        <div
+          className={cn(
+            "flex items-center justify-between border-b border-gray-100",
+            isMobile ? "p-2" : "p-3",
+          )}
+        >
+          <div
+            className={cn("flex items-center", isMobile ? "gap-2" : "gap-4")}
+          >
+            <Avatar className={cn(isMobile ? "w-8 h-8" : "w-10 h-10")}>
               <AvatarImage src={conversation.customer.avatar} />
-              <AvatarFallback>{conversation.customer.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              <AvatarFallback>
+                {conversation.customer.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
+              </AvatarFallback>
             </Avatar>
             <div>
-              <div className={cn(
-                "flex items-center",
-                isMobile ? "gap-2" : "gap-3"
-              )}>
-                <h2 className={cn(
-                  "font-semibold text-gray-900",
-                  isMobile ? "text-body-2" : "text-body-2"
-                )}>{conversation.customer.name}</h2>
+              <div
+                className={cn(
+                  "flex items-center",
+                  isMobile ? "gap-2" : "gap-3",
+                )}
+              >
+                <h2
+                  className={cn(
+                    "font-semibold text-gray-900",
+                    isMobile ? "text-body-2" : "text-body-2",
+                  )}
+                >
+                  {conversation.customer.name}
+                </h2>
                 <div className="flex items-center gap-1">
                   <Mail className="w-4 h-4 text-gray-400" />
-                  <span className="text-component-small text-gray-500">#{conversation.id}</span>
+                  <span className="text-component-small text-gray-500">
+                    #{conversation.id}
+                  </span>
                 </div>
-                {conversation.customer.isVip && <Star className="w-4 h-4 text-yellow-500 fill-current" />}
+                {conversation.customer.isVip && (
+                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                )}
               </div>
-              <div className={cn(
-                "flex items-center mt-1",
-                isMobile ? "gap-2 flex-wrap" : "gap-3"
-              )}>
+              <div
+                className={cn(
+                  "flex items-center mt-1",
+                  isMobile ? "gap-2 flex-wrap" : "gap-3",
+                )}
+              >
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Badge variant="outline" className="cursor-pointer hover:bg-gray-50">
-                      {status.replace('_', ' ')}
+                    <Badge
+                      variant="outline"
+                      className="cursor-pointer hover:bg-gray-50"
+                    >
+                      {status.replace("_", " ")}
                       <ChevronDown className="w-3 h-3 ml-1" />
                     </Badge>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuItem onClick={() => setStatus("new")}>New</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setStatus("in_progress")}>In Progress</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setStatus("waiting_on_customer")}>Waiting on Customer</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setStatus("on_hold")}>On Hold</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setStatus("done")}>Done</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setStatus("new")}>
+                      New
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setStatus("in_progress")}>
+                      In Progress
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => setStatus("waiting_on_customer")}
+                    >
+                      Waiting on Customer
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setStatus("on_hold")}>
+                      On Hold
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setStatus("done")}>
+                      Done
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 {conversation.priority === "high" && (
@@ -743,15 +920,30 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                       <Button variant="outline" size="sm" className="h-7 px-2">
                         <div className="flex items-center gap-2">
                           <Avatar className="w-5 h-5">
-                            {availableAgents.find(a => a.id === assignedAgent)?.avatar ? (
-                              <AvatarImage src={availableAgents.find(a => a.id === assignedAgent)?.avatar} />
+                            {availableAgents.find((a) => a.id === assignedAgent)
+                              ?.avatar ? (
+                              <AvatarImage
+                                src={
+                                  availableAgents.find(
+                                    (a) => a.id === assignedAgent,
+                                  )?.avatar
+                                }
+                              />
                             ) : null}
                             <AvatarFallback className="text-xs bg-gray-100">
-                              {availableAgents.find(a => a.id === assignedAgent)?.initials}
+                              {
+                                availableAgents.find(
+                                  (a) => a.id === assignedAgent,
+                                )?.initials
+                              }
                             </AvatarFallback>
                           </Avatar>
                           <span className="text-xs">
-                            {availableAgents.find(a => a.id === assignedAgent)?.name}
+                            {
+                              availableAgents.find(
+                                (a) => a.id === assignedAgent,
+                              )?.name
+                            }
                           </span>
                           <ChevronDown className="w-3 h-3" />
                         </div>
@@ -784,29 +976,35 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
               </div>
             </div>
           </div>
-          <Button variant="ghost" size="sm" onClick={handleClose} className="text-gray-400 hover:text-gray-600">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleClose}
+            className="text-gray-400 hover:text-gray-600"
+          >
             <X className="w-5 h-5" />
           </Button>
         </div>
 
         {/* Responsive layout - stack on mobile, side-by-side on desktop */}
-        <div className={cn(
-          "flex-1 overflow-hidden",
-          isMobile ? "flex flex-col" : "flex"
-        )}>
+        <div
+          className={cn(
+            "flex-1 overflow-hidden",
+            isMobile ? "flex flex-col" : "flex",
+          )}
+        >
           {/* Main Conversation Panel */}
-          <div className={cn(
-            "flex flex-col",
-            isMobile ? "flex-1" : "flex-1"
-          )}>
-            <div ref={scrollContainerRef} className={cn(
-              "overflow-y-auto flex flex-col",
-              isMobile ? "flex-1 py-2 px-2" : "flex-1 py-4 px-2"
-            )}>
-              <div className={cn(
-                "mx-auto",
-                isMobile ? "max-w-full" : "max-w-3xl"
-              )}>
+          <div className={cn("flex flex-col", isMobile ? "flex-1" : "flex-1")}>
+            <div
+              ref={scrollContainerRef}
+              className={cn(
+                "overflow-y-auto flex flex-col",
+                isMobile ? "flex-1 py-2 px-2" : "flex-1 py-4 px-2",
+              )}
+            >
+              <div
+                className={cn("mx-auto", isMobile ? "max-w-full" : "max-w-3xl")}
+              >
                 {conversation.messages.map((message) => (
                   <MessageBubble key={message.id} message={message} />
                 ))}
@@ -819,60 +1017,81 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
             </div>
 
             {/* Reply Section - Simplified */}
-            <div className={cn(
-              "border-t border-gray-100 bg-gray-50 flex-shrink-0",
-              isMobile ? "py-2 px-2" : "py-3 px-2"
-            )}>
-              <div className={cn(
-                "mx-auto",
-                isMobile ? "max-w-full" : "max-w-3xl"
-              )}>
+            <div
+              className={cn(
+                "border-t border-gray-100 bg-gray-50 flex-shrink-0",
+                isMobile ? "py-2 px-2" : "py-3 px-2",
+              )}
+            >
+              <div
+                className={cn("mx-auto", isMobile ? "max-w-full" : "max-w-3xl")}
+              >
                 <Textarea
                   placeholder="Type your reply..."
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
                   className={cn(
                     "bg-white border-gray-200",
-                    isMobile ? "mb-2 text-component-small" : "mb-2"
+                    isMobile ? "mb-2 text-component-small" : "mb-2",
                   )}
                   rows={isMobile ? 2 : 2}
                 />
-                <div className={cn(
-                  "flex items-center",
-                  isMobile ? "flex-col gap-2" : "justify-between"
-                )}>
-                  <div className={cn(
+                <div
+                  className={cn(
                     "flex items-center",
-                    isMobile ? "gap-1 w-full justify-center" : "gap-2"
-                  )}>
+                    isMobile ? "flex-col gap-2" : "justify-between",
+                  )}
+                >
+                  <div
+                    className={cn(
+                      "flex items-center",
+                      isMobile ? "gap-1 w-full justify-center" : "gap-2",
+                    )}
+                  >
                     <span className="text-xs text-gray-500">Reply via:</span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size={isMobile ? "sm" : "sm"} className={cn(
-                          "text-gray-700",
-                          isMobile && "text-xs px-2"
-                        )}>
-                          {channelIcons[selectedChannel as keyof typeof channelIcons]}
-                          <span className={cn(
-                            isMobile ? "ml-1" : "ml-2"
-                          )}>{selectedChannel}</span>
+                        <Button
+                          variant="outline"
+                          size={isMobile ? "sm" : "sm"}
+                          className={cn(
+                            "text-gray-700",
+                            isMobile && "text-xs px-2",
+                          )}
+                        >
+                          {
+                            channelIcons[
+                              selectedChannel as keyof typeof channelIcons
+                            ]
+                          }
+                          <span className={cn(isMobile ? "ml-1" : "ml-2")}>
+                            {selectedChannel}
+                          </span>
                           <ChevronDown className="w-3 h-3 ml-1" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent>
-                        <DropdownMenuItem onClick={() => setSelectedChannel("Email")}>
+                        <DropdownMenuItem
+                          onClick={() => setSelectedChannel("Email")}
+                        >
                           <Mail className="w-4 h-4 mr-2" />
                           Email
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => setSelectedChannel("SMS")}>
+                        <DropdownMenuItem
+                          onClick={() => setSelectedChannel("SMS")}
+                        >
                           <Phone className="w-4 h-4 mr-2" />
                           SMS
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => setSelectedChannel("Instagram")}>
+                        <DropdownMenuItem
+                          onClick={() => setSelectedChannel("Instagram")}
+                        >
                           <Instagram className="w-4 h-4 mr-2" />
                           Instagram
                         </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => setSelectedChannel("Chat")}>
+                        <DropdownMenuItem
+                          onClick={() => setSelectedChannel("Chat")}
+                        >
                           <MessageCircle className="w-4 h-4 mr-2" />
                           Website Chat
                         </DropdownMenuItem>
@@ -881,17 +1100,23 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                     {!isMobile && (
                       <>
                         <span className="text-xs text-gray-400">•</span>
-                        <Button variant="ghost" size="sm" className="text-gray-600">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-gray-600"
+                        >
                           <MessageCircle className="w-4 h-4 mr-2" />
                           Internal Note
                         </Button>
                       </>
                     )}
                   </div>
-                  <div className={cn(
-                    "flex items-center",
-                    isMobile ? "gap-1 w-full justify-center" : "gap-2"
-                  )}>
+                  <div
+                    className={cn(
+                      "flex items-center",
+                      isMobile ? "gap-1 w-full justify-center" : "gap-2",
+                    )}
+                  >
                     {!isMobile && (
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -920,12 +1145,13 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                         </DropdownMenuContent>
                       </DropdownMenu>
                     )}
-                    <Button size={isMobile ? "sm" : "default"} className={cn(
-                      isMobile && "px-2"
-                    )}>
-                      <Send className={cn(
-                        isMobile ? "w-4 h-4" : "w-4 h-4 mr-2"
-                      )} />
+                    <Button
+                      size={isMobile ? "sm" : "default"}
+                      className={cn(isMobile && "px-2")}
+                    >
+                      <Send
+                        className={cn(isMobile ? "w-4 h-4" : "w-4 h-4 mr-2")}
+                      />
                       {!isMobile && "Send Reply"}
                     </Button>
                   </div>
@@ -935,13 +1161,18 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
           </div>
 
           {/* Customer Profile Panel - Below conversation on mobile, right side on desktop */}
-          <div className={cn(
-            "bg-gray-50",
-            isMobile
-              ? "border-t border-gray-100 p-2 max-h-80 overflow-y-auto"
-              : "w-80 border-l border-gray-100 p-2 overflow-y-auto"
-          )}>
-            <CustomerProfilePanel customer={conversation.customer} isMobile={isMobile} />
+          <div
+            className={cn(
+              "bg-gray-50",
+              isMobile
+                ? "border-t border-gray-100 p-2 max-h-80 overflow-y-auto"
+                : "w-80 border-l border-gray-100 p-2 overflow-y-auto",
+            )}
+          >
+            <CustomerProfilePanel
+              customer={conversation.customer}
+              isMobile={isMobile}
+            />
           </div>
         </div>
       </div>
