@@ -156,6 +156,7 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
     <div
       className={cn(
         "flex flex-col bg-mailchimp-background-tertiary",
+        isMobile ? "md:flex hidden" : "flex",
         className,
       )}
     >
