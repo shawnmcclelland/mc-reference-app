@@ -848,9 +848,14 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                     <span className="text-xs text-gray-500">Reply via:</span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="sm" className="text-gray-700">
+                        <Button variant="outline" size={isMobile ? "sm" : "sm"} className={cn(
+                          "text-gray-700",
+                          isMobile && "text-xs px-2"
+                        )}>
                           {channelIcons[selectedChannel as keyof typeof channelIcons]}
-                          <span className="ml-2">{selectedChannel}</span>
+                          <span className={cn(
+                            isMobile ? "ml-1" : "ml-2"
+                          )}>{selectedChannel}</span>
                           <ChevronDown className="w-3 h-3 ml-1" />
                         </Button>
                       </DropdownMenuTrigger>
