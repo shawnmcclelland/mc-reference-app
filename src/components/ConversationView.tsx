@@ -454,7 +454,10 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
       isMobile ? "h-auto" : "h-full"
     )} style={{padding: isMobile ? "0 12px" : "0 var(--space-column-gap-x-small, 8px)"}}>
       {/* Customer Overview - Compact */}
-      <div className="bg-gray-100 rounded-lg p-3 mb-4 flex-shrink-0">
+      <div className={cn(
+        "bg-gray-100 rounded-lg flex-shrink-0",
+        isMobile ? "p-2 mb-3" : "p-3 mb-4"
+      )}>
         <div className="flex items-start gap-3 mb-3">
           <Avatar className="w-10 h-10 flex-shrink-0">
             <AvatarImage src={customer.avatar} />
