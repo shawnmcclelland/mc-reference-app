@@ -559,8 +559,8 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
             {customer.recentOrders.map((order) => (
               <div key={order.id} className="pb-3 border-b border-gray-100 last:border-b-0">
                 <div className="flex justify-between items-start mb-1">
-                  <div className="font-medium text-sm text-gray-900">{order.id}</div>
-                  <div className="font-semibold text-sm text-gray-900">${order.amount}</div>
+                  <div className="font-medium text-component-small text-gray-900">{order.id}</div>
+                  <div className="font-semibold text-component-small text-gray-900">${order.amount}</div>
                 </div>
                 <div className="text-xs text-gray-600 mb-1">{order.products}</div>
                 <div className="text-xs text-gray-400">{order.date}</div>
