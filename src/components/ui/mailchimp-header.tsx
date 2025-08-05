@@ -148,9 +148,19 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    const handleMobileNavToggle = (event: CustomEvent) => {
+      setIsNavOpen(event.detail);
+    };
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
+    };
   }, []);
 
   return (
