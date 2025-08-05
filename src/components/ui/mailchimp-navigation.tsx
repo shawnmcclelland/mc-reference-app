@@ -440,10 +440,16 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
         <div className="h-1 self-stretch bg-[#FFE01C]" />
 
         {/* Navigation switch */}
-        <div className="flex px-[10px] py-3 justify-between items-center self-stretch">
-          <MailchimpLogo />
+        <div className={cn(
+          "flex py-3 justify-between items-center self-stretch",
+          isMobile && isCollapsed ? "px-2" : "px-[10px]"
+        )}>
+          {(!isMobile || !isCollapsed) && <MailchimpLogo />}
           <button
-            className="flex w-6 h-6 justify-center items-center cursor-pointer hover:opacity-70"
+            className={cn(
+              "flex w-6 h-6 justify-center items-center cursor-pointer hover:opacity-70",
+              isMobile && isCollapsed && "mx-auto"
+            )}
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
             <MenuIcon />
