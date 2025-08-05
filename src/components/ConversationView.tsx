@@ -362,7 +362,11 @@ function AIAssistantBlock() {
     );
   }
 
-  // Expanded view with better spacing
+  // Expanded view with better spacing (only on desktop)
+  if (isMobile) {
+    return null; // Always collapsed on mobile
+  }
+
   return (
     <div className="mb-3 p-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
       <div className="flex items-center justify-between mb-2">
