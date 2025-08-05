@@ -402,6 +402,14 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
     };
   }, []);
 
+  // Close mobile navigation when route changes
+  useEffect(() => {
+    if (isMobile && !isCollapsed) {
+      setIsCollapsed(true);
+      window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: false }));
+    }
+  }, [location.pathname, isMobile, isCollapsed]);
+
   const isActive = (item: any) => {
     if (item.href) {
       return location.pathname === item.href;
