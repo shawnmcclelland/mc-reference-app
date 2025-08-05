@@ -539,7 +539,10 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
       </div>
 
       {/* Activity Feed Header */}
-      <div className="flex items-center gap-2 mb-3 flex-shrink-0">
+      <div className={cn(
+        "flex items-center gap-2 flex-shrink-0",
+        isMobile ? "mb-2" : "mb-3"
+      )}>
         <TrendingUp className="w-4 h-4 text-gray-600" />
         <h4 className="font-medium text-gray-900 text-sm">Activity Feed</h4>
       </div>
