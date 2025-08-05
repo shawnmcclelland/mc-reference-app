@@ -430,12 +430,10 @@ function AIAssistantBlock() {
 }
 
 function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
-  const [showAllActivity, setShowAllActivity] = useState(false);
-
   return (
-    <div className="space-y-4">
+    <div className="h-full flex flex-col">
       {/* Customer Overview - Compact */}
-      <div className="bg-gray-50 rounded-lg p-3">
+      <div className="bg-gray-100 rounded-lg p-3 mb-4 flex-shrink-0">
         <div className="flex items-start gap-3 mb-3">
           <Avatar className="w-10 h-10 flex-shrink-0">
             <AvatarImage src={customer.avatar} />
@@ -482,7 +480,7 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
       </div>
 
       {/* Customer Value - Single Row */}
-      <div className="bg-white border border-gray-200 rounded-lg p-3">
+      <div className="bg-white border border-gray-200 rounded-lg p-3 mb-4 flex-shrink-0">
         <div className="flex justify-between items-center">
           <div className="text-center">
             <div className="text-lg font-bold text-green-700">{customer.totalOrders}</div>
@@ -495,56 +493,64 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
         </div>
       </div>
 
-      {/* Combined Activity Section */}
-      <div className="bg-white border border-gray-200 rounded-lg">
-        <div className="p-3 border-b border-gray-100">
-          <div className="flex items-center justify-between">
-            <h4 className="font-medium text-gray-900 text-sm flex items-center gap-2">
-              <TrendingUp className="w-4 h-4" />
-              Activity
-            </h4>
-            <button
-              onClick={() => setShowAllActivity(!showAllActivity)}
-              className="text-xs text-blue-600 hover:text-blue-800"
-            >
-              {showAllActivity ? 'Show Less' : 'Show All'}
-            </button>
+      {/* Activity Feed Header */}
+      <div className="flex items-center gap-2 mb-3 flex-shrink-0">
+        <TrendingUp className="w-4 h-4 text-gray-600" />
+        <h4 className="font-medium text-gray-900 text-sm">Activity Feed</h4>
+      </div>
+
+      {/* Full Height Activity Feed */}
+      <div className="flex-1 space-y-4 min-h-0">
+        {/* Recent Orders Section */}
+        <div>
+          <h5 className="text-xs font-medium text-gray-700 mb-3 uppercase tracking-wide">Recent Orders</h5>
+          <div className="space-y-3">
+            {customer.recentOrders.map((order) => (
+              <div key={order.id} className="pb-3 border-b border-gray-100 last:border-b-0">
+                <div className="flex justify-between items-start mb-1">
+                  <div className="font-medium text-sm text-gray-900">{order.id}</div>
+                  <div className="font-semibold text-sm text-gray-900">${order.amount}</div>
+                </div>
+                <div className="text-xs text-gray-600 mb-1">{order.products}</div>
+                <div className="text-xs text-gray-400">{order.date}</div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="max-h-48 overflow-y-auto">
-          {/* Recent Orders */}
-          <div className="p-3 border-b border-gray-50">
-            <h5 className="text-xs font-medium text-gray-700 mb-2">Recent Orders</h5>
-            <div className="space-y-2">
-              {customer.recentOrders.slice(0, showAllActivity ? customer.recentOrders.length : 2).map((order) => (
-                <div key={order.id} className="flex justify-between items-start text-xs">
-                  <div className="flex-1 min-w-0">
-                    <div className="font-medium text-gray-900">{order.id}</div>
-                    <div className="text-gray-500 truncate">{order.products}</div>
-                    <div className="text-gray-400">{order.date}</div>
-                  </div>
-                  <div className="font-semibold text-gray-900 ml-2">${order.amount}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Campaign Activity */}
-          <div className="p-3">
-            <h5 className="text-xs font-medium text-gray-700 mb-2">Campaign Engagement</h5>
-            <div className="space-y-2">
-              {customer.campaignHistory.slice(0, showAllActivity ? customer.campaignHistory.length : 2).map((campaign, index) => (
-                <div key={index} className="flex justify-between items-start text-xs">
-                  <div className="flex-1 min-w-0">
-                    <div className="font-medium text-gray-900 truncate">{campaign.name}</div>
-                    <div className="text-gray-400">{campaign.date}</div>
-                  </div>
-                  <Badge variant="outline" className="text-xs ml-2 flex-shrink-0">
+        {/* Campaign Activity Section */}
+        <div>
+          <h5 className="text-xs font-medium text-gray-700 mb-3 uppercase tracking-wide">Campaign Engagement</h5>
+          <div className="space-y-3">
+            {customer.campaignHistory.map((campaign, index) => (
+              <div key={index} className="pb-3 border-b border-gray-100 last:border-b-0">
+                <div className="flex justify-between items-start mb-1">
+                  <div className="font-medium text-sm text-gray-900">{campaign.name}</div>
+                  <Badge variant="outline" className="text-xs flex-shrink-0">
                     {campaign.engagement}
                   </Badge>
                 </div>
-              ))}
+                <div className="text-xs text-gray-400">{campaign.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional Activity Items for Demo */}
+        <div>
+          <h5 className="text-xs font-medium text-gray-700 mb-3 uppercase tracking-wide">System Events</h5>
+          <div className="space-y-3">
+            <div className="pb-3 border-b border-gray-100">
+              <div className="font-medium text-sm text-gray-900 mb-1">Customer Tagged as VIP</div>
+              <div className="text-xs text-gray-400">Jan 10, 2024</div>
+            </div>
+            <div className="pb-3 border-b border-gray-100">
+              <div className="font-medium text-sm text-gray-900 mb-1">Profile Updated</div>
+              <div className="text-xs text-gray-400">Dec 28, 2023</div>
+            </div>
+            <div className="pb-3 border-b border-gray-100">
+              <div className="font-medium text-sm text-gray-900 mb-1">Account Created</div>
+              <div className="text-xs text-gray-400">Nov 15, 2023</div>
             </div>
           </div>
         </div>
