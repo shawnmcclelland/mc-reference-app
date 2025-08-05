@@ -222,12 +222,14 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
         </div>
         {/* Always show hamburger button on mobile */}
         <button
-          className="p-2 hover:bg-gray-200 rounded"
+          className="p-2 hover:bg-gray-200 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           onClick={() => {
             setIsNavOpen(!isNavOpen);
             // Dispatch custom event to communicate with navigation
             window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: !isNavOpen }));
           }}
+          aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isNavOpen}
         >
           <svg
             width="24"
