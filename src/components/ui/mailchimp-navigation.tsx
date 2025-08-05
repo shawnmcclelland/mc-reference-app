@@ -450,14 +450,15 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
               <div className="flex px-3 flex-col justify-center items-start self-stretch">
                 <div
                   className={cn(
-                    "flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp",
-                    item.isActive ? "bg-[#E2E9ED]" : "hover:bg-[#E2E9ED]",
+                    "flex py-1.5 px-1 pr-1 pl-2 items-center gap-2 self-stretch rounded-mailchimp cursor-pointer",
+                    isActive(item) ? "bg-[#E2E9ED]" : "hover:bg-[#E2E9ED]",
                   )}
+                  onClick={() => handleNavClick(item)}
                 >
                   <div
                     className={cn(
                       "w-5 h-5",
-                      item.isActive ? "text-[#21262A]" : "text-[#5D686F]",
+                      isActive(item) ? "text-[#21262A]" : "text-[#5D686F]",
                     )}
                   >
                     {item.icon}
@@ -465,7 +466,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
                   <div
                     className={cn(
                       "flex-1 font-medium text-sm leading-5",
-                      item.isActive
+                      isActive(item)
                         ? "text-[#21262A] font-medium tracking-[-0.14px]"
                         : "text-[#4C555B] font-normal",
                     )}
