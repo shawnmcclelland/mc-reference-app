@@ -321,10 +321,13 @@ function AIAssistantBlock() {
     }
   ];
 
-  // Compact collapsed view
-  if (!isExpanded) {
+  // Compact collapsed view (collapsed by default on mobile)
+  if (!isExpanded || isMobile) {
     return (
-      <div className="mb-2 p-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
+      <div className={cn(
+        "p-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg",
+        isMobile ? "mb-1" : "mb-2"
+      )}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-blue-600" />
