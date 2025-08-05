@@ -147,7 +147,11 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      console.log('Mobile check:', mobile, 'Width:', window.innerWidth);
+      setIsMobile(mobile);
+    };
 
     const handleMobileNavToggle = (event: CustomEvent) => {
       setIsNavOpen(event.detail);
