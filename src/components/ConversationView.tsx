@@ -576,7 +576,7 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
             {customer.campaignHistory.map((campaign, index) => (
               <div key={index} className="pb-3 border-b border-gray-100 last:border-b-0">
                 <div className="flex justify-between items-start mb-1">
-                  <div className="font-medium text-sm text-gray-900">{campaign.name}</div>
+                  <div className="font-medium text-component-small text-gray-900">{campaign.name}</div>
                   <Badge variant="outline" className="text-xs flex-shrink-0">
                     {campaign.engagement}
                   </Badge>
