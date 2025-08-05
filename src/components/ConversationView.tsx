@@ -623,6 +623,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
   const [status, setStatus] = useState(mockConversationData.status);
   const [assignedAgent, setAssignedAgent] = useState("alex"); // Default to Alex Rodriguez
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const conversation = mockConversationData;
