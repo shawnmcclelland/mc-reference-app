@@ -306,20 +306,30 @@ const channelColors = {
 };
 
 const statusColumns = {
-  new: { 
-    title: "New", 
+  new: {
+    title: "🆕 New",
     count: 4,
-    bgColor: "bg-gray-50"
+    bgColor: "bg-blue-50"
   },
-  waiting_on_you: { 
-    title: "Waiting on You", 
-    count: 3,
+  waiting_on_you: {
+    title: "🔄 In Progress",
+    count: 1,
+    bgColor: "bg-purple-50"
+  },
+  waiting_on_customer: {
+    title: "⏰ Waiting on Customer",
+    count: 4,
     bgColor: "bg-orange-50"
   },
-  waiting_on_customer: { 
-    title: "Waiting on Customer", 
-    count: 1,
-    bgColor: "bg-blue-50"
+  on_hold: {
+    title: "⏸️ On Hold",
+    count: 2,
+    bgColor: "bg-gray-50"
+  },
+  done: {
+    title: "✅ Done",
+    count: 4,
+    bgColor: "bg-green-50"
   }
 };
 
