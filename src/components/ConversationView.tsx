@@ -524,7 +524,7 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
           <div className="text-center">
             <div className={cn(
               "font-bold text-green-700",
-              isMobile ? "text-base" : "text-lg"
+              isMobile ? "text-body-2" : "text-body-2"
             )}>{customer.totalOrders}</div>
             <div className="text-xs text-gray-600">Orders</div>
           </div>
