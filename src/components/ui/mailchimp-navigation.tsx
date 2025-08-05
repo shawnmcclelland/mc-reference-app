@@ -434,7 +434,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
       {/* Mobile overlay when navigation menu is open */}
       {isMobile && !isCollapsed && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 animate-in fade-in duration-200"
           onClick={() => {
             setIsCollapsed(true);
             // Dispatch event to hide navigation and show hamburger again
