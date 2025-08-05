@@ -419,21 +419,23 @@ function MessageCard({ message, onClick }: { message: InboxMessage; onClick: () 
   );
 }
 
-function StatusColumn({ 
-  status, 
-  messages, 
-  title, 
+function StatusColumn({
+  status,
+  messages,
+  title,
   count,
-  bgColor
-}: { 
+  bgColor,
+  onMessageClick
+}: {
   status: string;
   messages: InboxMessage[];
   title: string;
   count: number;
   bgColor: string;
+  onMessageClick: (messageId: string) => void;
 }) {
   const statusMessages = messages.filter(m => m.status === status);
-  
+
   return (
     <div className={cn("flex-shrink-0 w-80 min-w-80 rounded-lg h-fit", bgColor)} style={{padding: "16px var(--space-column-gap-x-small, 8px)"}}>
       <div className="flex items-center justify-between mb-4">
@@ -447,12 +449,16 @@ function StatusColumn({
         </div>
         <ChevronDown className="w-4 h-4 text-gray-400" />
       </div>
-      
+
       <div className="flex flex-col" style={{gap: "var(--space-column-gap-xx-small, 4px)"}}>
         {statusMessages.map((message) => (
-          <MessageCard key={message.id} message={message} />
+          <MessageCard
+            key={message.id}
+            message={message}
+            onClick={() => onMessageClick(message.id)}
+          />
         ))}
-        
+
         {statusMessages.length === 0 && (
           <div className="text-center py-8 text-gray-400">
             <div className="text-lg mb-2">✨</div>
