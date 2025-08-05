@@ -713,7 +713,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Conversation Panel */}
           <div className="flex-1 flex flex-col">
-            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto py-4 px-2">
+            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto py-4 px-2 flex flex-col">
               <div className="max-w-3xl mx-auto">
                 {conversation.messages.map((message) => (
                   <MessageBubble key={message.id} message={message} />
