@@ -430,105 +430,123 @@ function AIAssistantBlock() {
 }
 
 function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
+  const [showAllActivity, setShowAllActivity] = useState(false);
+
   return (
-    <div className="space-y-6">
-      {/* Customer Overview */}
-      <div className="bg-gray-50 rounded-xl p-5">
-        <div className="flex items-start gap-4 mb-4">
-          <Avatar className="w-14 h-14">
+    <div className="space-y-4">
+      {/* Customer Overview - Compact */}
+      <div className="bg-gray-50 rounded-lg p-3">
+        <div className="flex items-start gap-3 mb-3">
+          <Avatar className="w-10 h-10 flex-shrink-0">
             <AvatarImage src={customer.avatar} />
-            <AvatarFallback className="text-lg font-semibold">
+            <AvatarFallback className="text-sm font-medium">
               {customer.name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">
-              <h3 className="font-semibold text-lg text-gray-900">{customer.name}</h3>
+              <h3 className="font-semibold text-base text-gray-900 truncate">{customer.name}</h3>
               {customer.isVip && (
-                <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                <Star className="w-4 h-4 text-yellow-500 fill-current flex-shrink-0" />
               )}
             </div>
-            <p className="text-sm text-gray-600 mb-2">{customer.loyaltyLevel} Customer</p>
+            <p className="text-xs text-gray-600 mb-2">{customer.loyaltyLevel} Customer</p>
             <div className="flex flex-wrap gap-1">
               {customer.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-xs">
+                <Badge key={tag} variant="secondary" className="text-xs px-1 py-0">
                   {tag}
                 </Badge>
               ))}
             </div>
           </div>
         </div>
-        
-        <div className="space-y-3 text-sm">
+
+        <div className="space-y-1 text-xs">
           <div className="flex items-center gap-2 text-gray-600">
-            <Mail className="w-4 h-4" />
-            <span>{customer.email}</span>
+            <Mail className="w-3 h-3 flex-shrink-0" />
+            <span className="truncate">{customer.email}</span>
           </div>
           {customer.phone && (
             <div className="flex items-center gap-2 text-gray-600">
-              <Phone className="w-4 h-4" />
+              <Phone className="w-3 h-3 flex-shrink-0" />
               <span>{customer.phone}</span>
             </div>
           )}
           {customer.location && (
             <div className="flex items-center gap-2 text-gray-600">
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-3 h-3 flex-shrink-0" />
               <span>{customer.location}</span>
             </div>
           )}
         </div>
       </div>
 
-      {/* Customer Value */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="text-center p-4 bg-green-50 rounded-lg">
-          <div className="text-2xl font-bold text-green-700">{customer.totalOrders}</div>
-          <div className="text-sm text-green-600">Orders</div>
-        </div>
-        <div className="text-center p-4 bg-blue-50 rounded-lg">
-          <div className="text-2xl font-bold text-blue-700">${customer.totalSpent.toLocaleString()}</div>
-          <div className="text-sm text-blue-600">Total Spent</div>
-        </div>
-      </div>
-
-      {/* Recent Activity */}
-      <div>
-        <h4 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
-          <TrendingUp className="w-4 h-4" />
-          Recent Activity
-        </h4>
-        <div className="space-y-3">
-          {customer.recentOrders.slice(0, 3).map((order) => (
-            <div key={order.id} className="flex justify-between items-start text-sm bg-white p-3 rounded-lg border border-gray-100">
-              <div>
-                <div className="font-medium text-gray-900">{order.id}</div>
-                <div className="text-gray-500">{order.products}</div>
-                <div className="text-xs text-gray-400">{order.date}</div>
-              </div>
-              <div className="font-semibold text-gray-900">${order.amount}</div>
-            </div>
-          ))}
+      {/* Customer Value - Single Row */}
+      <div className="bg-white border border-gray-200 rounded-lg p-3">
+        <div className="flex justify-between items-center">
+          <div className="text-center">
+            <div className="text-lg font-bold text-green-700">{customer.totalOrders}</div>
+            <div className="text-xs text-gray-600">Orders</div>
+          </div>
+          <div className="text-center">
+            <div className="text-lg font-bold text-blue-700">${customer.totalSpent.toLocaleString()}</div>
+            <div className="text-xs text-gray-600">Total Spent</div>
+          </div>
         </div>
       </div>
 
-      {/* Marketing Engagement */}
-      <div>
-        <h4 className="font-medium text-gray-900 mb-3 flex items-center gap-2">
-          <MessageSquare className="w-4 h-4" />
-          Campaign Activity
-        </h4>
-        <div className="space-y-2">
-          {customer.campaignHistory.map((campaign, index) => (
-            <div key={index} className="flex justify-between items-center text-sm p-2 hover:bg-gray-50 rounded">
-              <div>
-                <div className="font-medium text-gray-900">{campaign.name}</div>
-                <div className="text-xs text-gray-500">{campaign.date}</div>
-              </div>
-              <Badge variant="outline" className="text-xs">
-                {campaign.engagement}
-              </Badge>
+      {/* Combined Activity Section */}
+      <div className="bg-white border border-gray-200 rounded-lg">
+        <div className="p-3 border-b border-gray-100">
+          <div className="flex items-center justify-between">
+            <h4 className="font-medium text-gray-900 text-sm flex items-center gap-2">
+              <TrendingUp className="w-4 h-4" />
+              Activity
+            </h4>
+            <button
+              onClick={() => setShowAllActivity(!showAllActivity)}
+              className="text-xs text-blue-600 hover:text-blue-800"
+            >
+              {showAllActivity ? 'Show Less' : 'Show All'}
+            </button>
+          </div>
+        </div>
+
+        <div className="max-h-48 overflow-y-auto">
+          {/* Recent Orders */}
+          <div className="p-3 border-b border-gray-50">
+            <h5 className="text-xs font-medium text-gray-700 mb-2">Recent Orders</h5>
+            <div className="space-y-2">
+              {customer.recentOrders.slice(0, showAllActivity ? customer.recentOrders.length : 2).map((order) => (
+                <div key={order.id} className="flex justify-between items-start text-xs">
+                  <div className="flex-1 min-w-0">
+                    <div className="font-medium text-gray-900">{order.id}</div>
+                    <div className="text-gray-500 truncate">{order.products}</div>
+                    <div className="text-gray-400">{order.date}</div>
+                  </div>
+                  <div className="font-semibold text-gray-900 ml-2">${order.amount}</div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Campaign Activity */}
+          <div className="p-3">
+            <h5 className="text-xs font-medium text-gray-700 mb-2">Campaign Engagement</h5>
+            <div className="space-y-2">
+              {customer.campaignHistory.slice(0, showAllActivity ? customer.campaignHistory.length : 2).map((campaign, index) => (
+                <div key={index} className="flex justify-between items-start text-xs">
+                  <div className="flex-1 min-w-0">
+                    <div className="font-medium text-gray-900 truncate">{campaign.name}</div>
+                    <div className="text-gray-400">{campaign.date}</div>
+                  </div>
+                  <Badge variant="outline" className="text-xs ml-2 flex-shrink-0">
+                    {campaign.engagement}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
