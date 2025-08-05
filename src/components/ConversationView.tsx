@@ -687,8 +687,13 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
           "flex items-center justify-between border-b border-gray-100",
           isMobile ? "p-2" : "p-3"
         )}>
-          <div className="flex items-center gap-4">
-            <Avatar className="w-10 h-10">
+          <div className={cn(
+            "flex items-center",
+            isMobile ? "gap-2" : "gap-4"
+          )}>
+            <Avatar className={cn(
+              isMobile ? "w-8 h-8" : "w-10 h-10"
+            )}>
               <AvatarImage src={conversation.customer.avatar} />
               <AvatarFallback>{conversation.customer.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
             </Avatar>
