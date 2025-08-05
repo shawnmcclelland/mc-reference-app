@@ -441,7 +441,7 @@ function AIAssistantBlock() {
                     {action.description}
                   </div>
                 </div>
-                <Badge variant="secondary" className="text-xs">
+                <Badge variant="secondary" className="text-component-x-small">
                   {action.confidence}
                 </Badge>
               </div>
