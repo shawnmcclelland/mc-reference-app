@@ -431,7 +431,7 @@ function AIAssistantBlock() {
 
 function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
   return (
-    <div className="h-full flex flex-col">
+    <div className="h-full flex flex-col" style={{padding: "0 var(--space-column-gap-x-small, 8px)"}}>
       {/* Customer Overview - Compact */}
       <div className="bg-gray-100 rounded-lg p-3 mb-4 flex-shrink-0">
         <div className="flex items-start gap-3 mb-3">
