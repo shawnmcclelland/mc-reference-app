@@ -431,7 +431,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
         className={cn(
           "flex flex-col items-start flex-shrink-0 self-stretch bg-[#F0F4F6] transition-all duration-300",
           isMobile
-            ? (isCollapsed ? "w-0 overflow-hidden" : "w-60 fixed left-0 top-0 h-full z-50")
+            ? "w-60 fixed left-0 top-0 h-full z-50"
             : "w-60",
           className,
         )}
