@@ -600,7 +600,7 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
               <div className="text-xs text-gray-400">Dec 28, 2023</div>
             </div>
             <div className="pb-3 border-b border-gray-100">
-              <div className="font-medium text-sm text-gray-900 mb-1">Account Created</div>
+              <div className="font-medium text-component-small text-gray-900 mb-1">Account Created</div>
               <div className="text-xs text-gray-400">Nov 15, 2023</div>
             </div>
           </div>
