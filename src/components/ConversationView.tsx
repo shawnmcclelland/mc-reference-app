@@ -538,8 +538,20 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
 export function ConversationView({ messageId, onClose }: ConversationViewProps) {
   const [replyText, setReplyText] = useState("");
   const [status, setStatus] = useState(mockConversationData.status);
-  
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   const conversation = mockConversationData;
+
+  // Auto-scroll to bottom when component mounts
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const scrollContainer = scrollContainerRef.current;
+      // Small delay to ensure content is rendered
+      setTimeout(() => {
+        scrollContainer.scrollTop = scrollContainer.scrollHeight;
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
