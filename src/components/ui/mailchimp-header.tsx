@@ -177,7 +177,7 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
       <div className="h-1 bg-mailchimp-cavendish" />
 
       {/* Mobile header with logo and hamburger */}
-      <div className="flex md:hidden items-center justify-between p-3 bg-[#F0F4F6] border-b border-gray-200">
+      <div className="flex md:hidden items-center justify-between p-3 bg-[#F0F4F6] border-b border-gray-200 shadow-sm">
         <div className="flex items-center gap-3">
           {/* Use same Mailchimp logo as desktop navigation */}
           <svg
