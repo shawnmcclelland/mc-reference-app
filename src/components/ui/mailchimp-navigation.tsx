@@ -433,7 +433,11 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
       {isMobile && !isCollapsed && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsCollapsed(true)}
+          onClick={() => {
+            setIsCollapsed(true);
+            // Dispatch event to hide navigation and show hamburger again
+            window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: false }));
+          }}
         />
       )}
 
