@@ -23,8 +23,7 @@ import {
   Phone,
   ShoppingBag,
   ChevronDown,
-  Slack,
-  Hash,
+
   ExternalLink,
 } from "lucide-react";
 
