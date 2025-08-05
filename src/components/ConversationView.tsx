@@ -472,7 +472,7 @@ function AIAssistantBlock() {
           ))}
         </div>
         {suggestedReplies.length > 2 && (
-          <button className="w-full mt-1 p-1 text-xs text-blue-600 hover:text-blue-800">
+          <button className="w-full mt-1 p-1 text-component-x-small text-blue-600 hover:text-blue-800">
             +{suggestedReplies.length - 2} more replies
           </button>
         )}
