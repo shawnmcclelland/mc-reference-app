@@ -810,7 +810,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
           </div>
 
           {/* Customer Profile Panel */}
-          <div className="w-80 border-l border-gray-100 p-3 overflow-y-auto bg-gray-50">
+          <div className="w-80 border-l border-gray-100 p-2 overflow-y-auto bg-gray-50">
             <CustomerProfilePanel customer={conversation.customer} />
           </div>
         </div>
