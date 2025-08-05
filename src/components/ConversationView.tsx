@@ -833,7 +833,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                   onChange={(e) => setReplyText(e.target.value)}
                   className={cn(
                     "bg-white border-gray-200",
-                    isMobile ? "mb-2 text-sm" : "mb-2"
+                    isMobile ? "mb-2 text-component-small" : "mb-2"
                   )}
                   rows={isMobile ? 2 : 2}
                 />
