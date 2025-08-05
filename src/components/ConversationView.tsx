@@ -632,6 +632,51 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                     Urgent
                   </Badge>
                 )}
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-gray-500">Assigned to:</span>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="outline" size="sm" className="h-7 px-2">
+                        <div className="flex items-center gap-2">
+                          <Avatar className="w-5 h-5">
+                            {availableAgents.find(a => a.id === assignedAgent)?.avatar ? (
+                              <AvatarImage src={availableAgents.find(a => a.id === assignedAgent)?.avatar} />
+                            ) : null}
+                            <AvatarFallback className="text-xs bg-gray-100">
+                              {availableAgents.find(a => a.id === assignedAgent)?.initials}
+                            </AvatarFallback>
+                          </Avatar>
+                          <span className="text-xs">
+                            {availableAgents.find(a => a.id === assignedAgent)?.name}
+                          </span>
+                          <ChevronDown className="w-3 h-3" />
+                        </div>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      {availableAgents.map((agent) => (
+                        <DropdownMenuItem
+                          key={agent.id}
+                          onClick={() => setAssignedAgent(agent.id)}
+                          className="flex items-center gap-2"
+                        >
+                          <Avatar className="w-6 h-6">
+                            {agent.avatar ? (
+                              <AvatarImage src={agent.avatar} />
+                            ) : null}
+                            <AvatarFallback className="text-xs bg-gray-100">
+                              {agent.initials}
+                            </AvatarFallback>
+                          </Avatar>
+                          <span>{agent.name}</span>
+                          {assignedAgent === agent.id && (
+                            <CheckCircle className="w-4 h-4 text-green-600 ml-auto" />
+                          )}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
               </div>
             </div>
           </div>
