@@ -383,15 +383,12 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
   useEffect(() => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
-      console.log('Navigation mobile check:', mobile, 'Width:', window.innerWidth);
       setIsMobile(mobile);
-      // On mobile, start collapsed, but always show the header area
+      // On mobile, start collapsed
       setIsCollapsed(mobile);
-      console.log('Navigation collapsed set to:', mobile);
     };
 
     const handleMobileNavToggle = (event: CustomEvent) => {
-      console.log('Navigation toggle event:', event.detail);
       setIsCollapsed(!event.detail);
     };
 
