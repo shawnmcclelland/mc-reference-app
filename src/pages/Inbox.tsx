@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ConversationView } from "@/components/ConversationView";
 import {
   Mail,
   MessageCircle,
