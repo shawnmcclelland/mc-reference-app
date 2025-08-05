@@ -285,6 +285,14 @@ function MessageBubble({ message }: { message: Message }) {
 function AIAssistantBlock() {
   const [selectedReply, setSelectedReply] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const suggestedReplies = [
     "Thank you for your patience! I'm happy to help track down your order.",
