@@ -680,11 +680,11 @@ function CustomerProfilePanel({
                   <div className="font-medium text-component-small text-gray-900">
                     {campaign.name}
                   </div>
-                  <Badge variant="outline" className="text-xs flex-shrink-0">
+                  <Badge variant="outline" className="text-component-x-small flex-shrink-0">
                     {campaign.engagement}
                   </Badge>
                 </div>
-                <div className="text-xs text-gray-400">{campaign.date}</div>
+                <div className="text-component-x-small text-gray-400">{campaign.date}</div>
               </div>
             ))}
           </div>
