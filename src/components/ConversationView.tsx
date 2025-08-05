@@ -650,10 +650,10 @@ function CustomerProfilePanel({
                     ${order.amount}
                   </div>
                 </div>
-                <div className="text-xs text-gray-600 mb-1">
+                <div className="text-component-x-small text-gray-600 mb-1">
                   {order.products}
                 </div>
-                <div className="text-xs text-gray-400">{order.date}</div>
+                <div className="text-component-x-small text-gray-400">{order.date}</div>
               </div>
             ))}
           </div>
