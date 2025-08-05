@@ -382,7 +382,8 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
 
   useEffect(() => {
     const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
+      // Use getComputedStyle to check if we're in mobile view
+      const mobile = window.getComputedStyle(document.documentElement).getPropertyValue('--screen-md') === '' ? window.innerWidth < 768 : window.innerWidth < 768;
       console.log('checkMobile: window.innerWidth =', window.innerWidth, 'mobile =', mobile);
       setIsMobile(mobile);
       // On mobile, start collapsed
