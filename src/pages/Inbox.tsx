@@ -32,7 +32,7 @@ interface InboxMessage {
   id: string;
   customerName: string;
   customerAvatar?: string;
-  channel: "email" | "sms" | "instagram" | "facebook" | "chat" | "review" | "slack";
+  channel: "email" | "sms" | "instagram" | "facebook" | "chat" | "review";
   subject: string;
   preview: string;
   timestamp: string;
