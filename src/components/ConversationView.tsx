@@ -352,7 +352,7 @@ function AIAssistantBlock() {
           </div>
           <button
             onClick={() => setIsExpanded(true)}
-            className="flex items-center gap-1 text-xs font-medium text-blue-700 hover:text-blue-800"
+            className="flex items-center gap-1 text-component-x-small font-medium text-blue-700 hover:text-blue-800"
           >
             Show More
             <ChevronDown className="w-3 h-3" />
