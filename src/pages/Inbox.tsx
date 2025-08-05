@@ -578,7 +578,7 @@ export default function Inbox() {
 
       {/* Kanban Board */}
       <div className="overflow-x-auto">
-        <div className="flex space-x-6 pb-6 min-w-max">
+        <div className="flex pb-6 min-w-max" style={{gap: "var(--space-column-gap-x-small, 8px)"}}>
           {Object.entries(statusColumns).map(([status, config]) => (
             <StatusColumn
               key={status}
