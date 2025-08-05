@@ -460,7 +460,7 @@ function AIAssistantBlock() {
             <button
               key={index}
               className={cn(
-                "w-full p-2 text-left text-xs border rounded transition-colors",
+                "w-full p-2 text-left text-component-x-small border rounded transition-colors",
                 selectedReply === reply
                   ? "border-blue-300 bg-blue-50 text-blue-900"
                   : "border-gray-200 hover:border-gray-300 bg-white",
