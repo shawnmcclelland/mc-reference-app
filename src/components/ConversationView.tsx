@@ -698,8 +698,14 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
               <AvatarFallback>{conversation.customer.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
             </Avatar>
             <div>
-              <div className="flex items-center gap-3">
-                <h2 className="text-lg font-semibold text-gray-900">{conversation.customer.name}</h2>
+              <div className={cn(
+                "flex items-center",
+                isMobile ? "gap-2" : "gap-3"
+              )}>
+                <h2 className={cn(
+                  "font-semibold text-gray-900",
+                  isMobile ? "text-base" : "text-lg"
+                )}>{conversation.customer.name}</h2>
                 <div className="flex items-center gap-1">
                   <Mail className="w-4 h-4 text-gray-400" />
                   <span className="text-sm text-gray-500">#{conversation.id}</span>
