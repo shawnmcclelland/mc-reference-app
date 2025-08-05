@@ -960,7 +960,7 @@ export function ConversationView({
                             {agent.avatar ? (
                               <AvatarImage src={agent.avatar} />
                             ) : null}
-                            <AvatarFallback className="text-xs bg-gray-100">
+                            <AvatarFallback className="text-component-x-small bg-gray-100">
                               {agent.initials}
                             </AvatarFallback>
                           </Avatar>
