@@ -291,8 +291,7 @@ const channelIcons = {
   instagram: <Instagram className="w-3 h-3" />,
   facebook: <MessageCircle className="w-3 h-3" />,
   chat: <MessageCircle className="w-3 h-3" />,
-  review: <Star className="w-3 h-3" />,
-  slack: <Slack className="w-3 h-3" />
+  review: <Star className="w-3 h-3" />
 };
 
 const channelColors = {
@@ -301,8 +300,7 @@ const channelColors = {
   instagram: "bg-pink-500",
   facebook: "bg-blue-600",
   chat: "bg-purple-500",
-  review: "bg-yellow-500",
-  slack: "bg-indigo-500"
+  review: "bg-yellow-500"
 };
 
 const statusColumns = {
