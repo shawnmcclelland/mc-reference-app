@@ -704,7 +704,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
               )}>
                 <h2 className={cn(
                   "font-semibold text-gray-900",
-                  isMobile ? "text-base" : "text-lg"
+                  isMobile ? "text-body-2" : "text-body-2"
                 )}>{conversation.customer.name}</h2>
                 <div className="flex items-center gap-1">
                   <Mail className="w-4 h-4 text-gray-400" />
