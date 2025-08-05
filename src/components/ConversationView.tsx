@@ -434,10 +434,10 @@ function AIAssistantBlock() {
               <div className="flex items-center gap-2">
                 <div className="text-blue-600">{action.icon}</div>
                 <div className="flex-1">
-                  <div className="font-medium text-xs text-gray-900">
+                  <div className="font-medium text-component-x-small text-gray-900">
                     {action.label}
                   </div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-component-x-small text-gray-500">
                     {action.description}
                   </div>
                 </div>
