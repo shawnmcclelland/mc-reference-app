@@ -11,6 +11,7 @@ import { MailchimpHeader } from "@/components/ui/mailchimp-header";
 import CampaignReport from "./pages/CampaignReport";
 import Index from "./pages/Index";
 import Audience from "./pages/Audience";
+import Inbox from "./pages/Inbox";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
