@@ -628,7 +628,7 @@ function CustomerProfilePanel({
         {/* Recent Orders Section */}
         <div>
           <h5
-            className="text-xs font-medium mb-3 uppercase tracking-wide"
+            className="text-component-x-small font-medium mb-3 uppercase tracking-wide"
             style={{
               color:
                 "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))",
@@ -662,7 +662,7 @@ function CustomerProfilePanel({
         {/* Campaign Activity Section */}
         <div>
           <h5
-            className="text-xs font-medium mb-3 uppercase tracking-wide"
+            className="text-component-x-small font-medium mb-3 uppercase tracking-wide"
             style={{
               color:
                 "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))",
@@ -693,7 +693,7 @@ function CustomerProfilePanel({
         {/* Additional Activity Items for Demo */}
         <div>
           <h5
-            className="text-xs font-medium mb-3 uppercase tracking-wide"
+            className="text-component-x-small font-medium mb-3 uppercase tracking-wide"
             style={{
               color:
                 "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))",
