@@ -935,9 +935,14 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
             </div>
           </div>
 
-          {/* Customer Profile Panel */}
-          <div className="w-80 border-l border-gray-100 p-2 overflow-y-auto bg-gray-50">
-            <CustomerProfilePanel customer={conversation.customer} />
+          {/* Customer Profile Panel - Below conversation on mobile, right side on desktop */}
+          <div className={cn(
+            "bg-gray-50",
+            isMobile
+              ? "border-t border-gray-100 p-2 max-h-80 overflow-y-auto"
+              : "w-80 border-l border-gray-100 p-2 overflow-y-auto"
+          )}>
+            <CustomerProfilePanel customer={conversation.customer} isMobile={isMobile} />
           </div>
         </div>
       </div>
