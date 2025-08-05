@@ -677,7 +677,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
       <div
         className={cn(
           "bg-white shadow-2xl w-full flex flex-col transition-transform duration-200 ease-out",
-          isMobile ? "max-h-[calc(100vh-80px)] h-[calc(100vh-80px)] rounded-t-lg" : "h-[92vh] rounded-t-xl",
+          isMobile ? "max-h-[calc(100vh-60px)] h-[calc(100vh-60px)] rounded-t-lg" : "h-[92vh] rounded-t-xl",
           isVisible ? "translate-y-0" : "translate-y-full"
         )}
         onClick={(e) => e.stopPropagation()}
