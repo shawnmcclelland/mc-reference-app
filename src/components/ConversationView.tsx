@@ -789,12 +789,24 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
           </Button>
         </div>
 
-        {/* Two-pane layout */}
-        <div className="flex-1 flex overflow-hidden">
+        {/* Responsive layout - stack on mobile, side-by-side on desktop */}
+        <div className={cn(
+          "flex-1 overflow-hidden",
+          isMobile ? "flex flex-col" : "flex"
+        )}>
           {/* Main Conversation Panel */}
-          <div className="flex-1 flex flex-col">
-            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto py-4 px-2 flex flex-col">
-              <div className="max-w-3xl mx-auto">
+          <div className={cn(
+            "flex flex-col",
+            isMobile ? "flex-1" : "flex-1"
+          )}>
+            <div ref={scrollContainerRef} className={cn(
+              "overflow-y-auto flex flex-col",
+              isMobile ? "flex-1 py-2 px-2" : "flex-1 py-4 px-2"
+            )}>
+              <div className={cn(
+                "mx-auto",
+                isMobile ? "max-w-full" : "max-w-3xl"
+              )}>
                 {conversation.messages.map((message) => (
                   <MessageBubble key={message.id} message={message} />
                 ))}
