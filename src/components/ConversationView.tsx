@@ -718,7 +718,7 @@ function CustomerProfilePanel({
               <div className="font-medium text-component-small text-gray-900 mb-1">
                 Account Created
               </div>
-              <div className="text-xs text-gray-400">Nov 15, 2023</div>
+              <div className="text-component-x-small text-gray-400">Nov 15, 2023</div>
             </div>
           </div>
         </div>
