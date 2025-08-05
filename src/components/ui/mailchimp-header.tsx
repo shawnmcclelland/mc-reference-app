@@ -144,6 +144,7 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
   const location = useLocation();
   const isInboxPage = location.pathname === "/inbox";
   const [isMobile, setIsMobile] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
