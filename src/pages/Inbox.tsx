@@ -430,7 +430,7 @@ function StatusColumn({
   const statusMessages = messages.filter(m => m.status === status);
   
   return (
-    <div className={cn("flex-shrink-0 w-80 rounded-lg h-fit", bgColor)} style={{padding: "16px var(--space-column-gap-x-small, 8px)"}}>
+    <div className={cn("flex-shrink-0 w-80 min-w-80 rounded-lg h-fit", bgColor)} style={{padding: "16px var(--space-column-gap-x-small, 8px)"}}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">
           <h3 className="font-medium text-sm text-gray-900">
