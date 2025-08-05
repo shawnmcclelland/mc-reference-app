@@ -669,7 +669,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
     <div
       className={cn(
         "fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end",
-        isMobile ? "p-2.5" : "px-5"
+        isMobile ? "pt-2.5 px-2.5" : "px-5"
       )}
       style={{ marginTop: "var(--space-component-inline-padding-xxx-small, 0)" }}
       onClick={handleClose}
