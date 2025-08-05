@@ -389,8 +389,9 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
     };
 
     const handleMobileNavToggle = (event: CustomEvent) => {
-      setIsCollapsed(!event.detail);
-    };
+    // event.detail is true when the nav should be open, false when closed
+    setIsCollapsed(!event.detail);
+  };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
