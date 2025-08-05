@@ -452,7 +452,7 @@ function AIAssistantBlock() {
 
       {/* Compact Suggested Replies */}
       <div>
-        <h4 className="text-xs font-medium text-gray-700 mb-1">
+        <h4 className="text-component-x-small font-medium text-gray-700 mb-1">
           Quick Replies
         </h4>
         <div className="space-y-1">
