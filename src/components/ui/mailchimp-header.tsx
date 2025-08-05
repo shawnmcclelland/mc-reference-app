@@ -143,26 +143,16 @@ interface MailchimpHeaderProps {
 export function MailchimpHeader({ className }: MailchimpHeaderProps) {
   const location = useLocation();
   const isInboxPage = location.pathname === "/inbox";
-  const [isMobile, setIsMobile] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
-      console.log('Header checkMobile: window.innerWidth =', window.innerWidth, 'mobile =', mobile);
-      setIsMobile(mobile);
-    };
-
     const handleMobileNavToggle = (event: CustomEvent) => {
       setIsNavOpen(event.detail);
     };
 
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
     window.addEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
     };
   }, []);
