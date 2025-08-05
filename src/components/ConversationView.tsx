@@ -219,7 +219,7 @@ function MessageBubble({ message }: { message: Message }) {
   if (isSystem) {
     return (
       <div className="flex justify-center my-3">
-        <div className="flex items-center gap-2 px-3 py-1 bg-yellow-50 border border-yellow-200 rounded-full text-xs text-yellow-700">
+        <div className="flex items-center gap-2 px-3 py-1 bg-yellow-50 border border-yellow-200 rounded-full text-component-x-small text-yellow-700">
           <Bot className="w-3 h-3" />
           <span>{message.content}</span>
           <span className="text-yellow-500">•</span>
