@@ -377,7 +377,7 @@ function AIAssistantBlock() {
               >
                 Issue Refund
               </span>
-              <Badge variant="secondary" className="text-xs ml-auto">
+              <Badge variant="secondary" className="text-component-x-small ml-auto">
                 High
               </Badge>
             </div>
