@@ -185,7 +185,11 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
           </div>
           <button
             className="p-2 hover:bg-gray-200 rounded"
-            onClick={() => setIsNavOpen(!isNavOpen)}
+            onClick={() => {
+              setIsNavOpen(!isNavOpen);
+              // Dispatch custom event to communicate with navigation
+              window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: !isNavOpen }));
+            }}
           >
             <svg
               width="24"
