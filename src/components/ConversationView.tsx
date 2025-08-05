@@ -909,7 +909,7 @@ export function ConversationView({
                   </DropdownMenuContent>
                 </DropdownMenu>
                 {conversation.priority === "high" && (
-                  <Badge variant="destructive" className="text-xs">
+                  <Badge variant="destructive" className="text-component-x-small">
                     Urgent
                   </Badge>
                 )}
