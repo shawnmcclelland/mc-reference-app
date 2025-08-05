@@ -19,7 +19,7 @@ const queryClient = new QueryClient();
 const MailchimpLayout = ({ children }: { children: React.ReactNode }) => (
   <div className="flex min-h-screen bg-mailchimp-background-tertiary">
     <MailchimpNavigation />
-    <div className="flex-1 flex flex-col">
+    <div className="flex-1 flex flex-col min-w-0">
       <MailchimpHeader />
       <main className="flex-1 overflow-auto bg-mailchimp-background-tertiary">
         {children}
