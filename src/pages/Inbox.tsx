@@ -334,7 +334,7 @@ function MessageCard({ message }: { message: InboxMessage }) {
   const channelColor = channelColors[message.channel];
   
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 mb-3 hover:shadow-md transition-shadow cursor-pointer">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow cursor-pointer" style={{marginBottom: "var(--space-component-inline-padding-xxx-small, 0)"}}>
       {/* Header with avatar and channel */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center space-x-3">
