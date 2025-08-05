@@ -451,7 +451,10 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
         </div>
 
         {/* Primary navigation */}
-        <div className="flex py-5 px-0 flex-col items-start gap-2 self-stretch">
+        <div className={cn(
+          "flex py-5 px-0 flex-col items-start gap-2 self-stretch transition-all duration-300",
+          isMobile && isCollapsed ? "h-0 overflow-hidden opacity-0" : "h-auto opacity-100"
+        )}>
           {/* Create button */}
           <div className="flex items-start self-stretch">
             <div className="flex px-3 flex-col justify-center items-start flex-1">
