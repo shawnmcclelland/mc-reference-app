@@ -535,9 +535,18 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
   );
 }
 
+const availableAgents = [
+  { id: "alex", name: "Alex Rodriguez", initials: "AR", avatar: "https://i.pravatar.cc/150?img=20" },
+  { id: "sarah", name: "Sarah Kim", initials: "SK", avatar: "https://i.pravatar.cc/150?img=21" },
+  { id: "mike", name: "Mike Chen", initials: "MC", avatar: "https://i.pravatar.cc/150?img=22" },
+  { id: "emma", name: "Emma Davis", initials: "ED", avatar: "https://i.pravatar.cc/150?img=23" },
+  { id: "unassigned", name: "Unassigned", initials: "?", avatar: null }
+];
+
 export function ConversationView({ messageId, onClose }: ConversationViewProps) {
   const [replyText, setReplyText] = useState("");
   const [status, setStatus] = useState(mockConversationData.status);
+  const [assignedAgent, setAssignedAgent] = useState("alex"); // Default to Alex Rodriguez
   const [isVisible, setIsVisible] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
