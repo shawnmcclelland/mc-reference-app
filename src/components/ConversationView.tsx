@@ -238,7 +238,7 @@ function MessageBubble({ message }: { message: Message }) {
     >
       {!isCustomer && (
         <Avatar className="w-7 h-7 mr-2 mt-1 flex-shrink-0">
-          <AvatarFallback className="bg-blue-100 text-blue-600 text-xs font-medium">
+          <AvatarFallback className="bg-blue-100 text-blue-600 text-component-x-small font-medium">
             {message.agentInitials || "AG"}
           </AvatarFallback>
         </Avatar>
