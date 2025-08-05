@@ -458,8 +458,14 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
         "bg-gray-100 rounded-lg flex-shrink-0",
         isMobile ? "p-2 mb-3" : "p-3 mb-4"
       )}>
-        <div className="flex items-start gap-3 mb-3">
-          <Avatar className="w-10 h-10 flex-shrink-0">
+        <div className={cn(
+          "flex items-start gap-3",
+          isMobile ? "mb-2" : "mb-3"
+        )}>
+          <Avatar className={cn(
+            "flex-shrink-0",
+            isMobile ? "w-8 h-8" : "w-10 h-10"
+          )}>
             <AvatarImage src={customer.avatar} />
             <AvatarFallback className="text-sm font-medium">
               {customer.name.split(' ').map(n => n[0]).join('')}
