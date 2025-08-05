@@ -412,7 +412,7 @@ function AIAssistantBlock() {
         <div className="flex items-start gap-2">
           <Lightbulb className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
           <div className="flex-1">
-            <p className="text-xs text-gray-600">
+            <p className="text-component-x-small text-gray-600">
               VIP customer order inquiry resolved. Tracking provided. Sentiment:
               Neutral → Positive.
             </p>
