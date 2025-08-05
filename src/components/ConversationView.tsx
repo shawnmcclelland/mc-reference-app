@@ -1,3 +1,4 @@
+// Mobile-responsive conversation view with design system compliance
 import React, { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
