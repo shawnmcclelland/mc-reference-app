@@ -497,7 +497,7 @@ export default function Inbox() {
       </div>
 
       {/* Toolbar */}
-      <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg">
+      <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg" style={{marginTop: "var(--space-column-gap-small, 16px)"}}>
         <div className="flex items-center space-x-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
