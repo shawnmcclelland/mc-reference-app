@@ -405,8 +405,9 @@ function MessageCard({ message }: { message: InboxMessage }) {
           ))}
         </div>
         <div className="flex items-center space-x-1">
-          {message.channel === 'email' && <Mail className="w-3 h-3 text-gray-400" />}
-          {message.channel === 'slack' && <Hash className="w-3 h-3 text-gray-400" />}
+          {message.urgency === "high" && (
+            <AlertCircle className="w-3 h-3 text-red-500" />
+          )}
         </div>
       </div>
     </div>
