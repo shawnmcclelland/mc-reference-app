@@ -110,30 +110,6 @@ const navItems = [
     ),
   },
   {
-    id: "inbox",
-    label: "Inbox",
-    icon: (
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M2.5 3.75A1.25 1.25 0 013.75 2.5h12.5A1.25 1.25 0 0117.5 3.75v12.5a1.25 1.25 0 01-1.25 1.25H3.75A1.25 1.25 0 012.5 16.25V3.75zm1.25 0v12.5h12.5V3.75H3.75z"
-          fill="currentColor"
-        />
-        <path
-          d="M3.75 5h12.5v1.25H3.75V5zM6.25 8.75h7.5v1.25h-7.5v-1.25zM6.25 11.25h5v1.25h-5v-1.25z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
-  },
-  {
     id: "campaigns",
     label: "Campaigns",
     icon: (
