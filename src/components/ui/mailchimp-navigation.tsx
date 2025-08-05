@@ -466,6 +466,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
           ) : "",
           className,
         )}
+        data-debug={`isMobile: ${isMobile}, isCollapsed: ${isCollapsed}`}
       >
         {/* Brand stripe */}
         <div className="h-1 self-stretch bg-[#FFE01C]" />
