@@ -930,7 +930,7 @@ export function ConversationView({
                                 }
                               />
                             ) : null}
-                            <AvatarFallback className="text-xs bg-gray-100">
+                            <AvatarFallback className="text-component-x-small bg-gray-100">
                               {
                                 availableAgents.find(
                                   (a) => a.id === assignedAgent,
