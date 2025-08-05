@@ -574,7 +574,10 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center"
+      style={{ marginTop: "var(--space-component-inline-padding-xxx-small, 0)" }}
+    >
       <div
         className={cn(
           "bg-white rounded-t-xl shadow-2xl w-full max-w-6xl h-[92vh] flex flex-col transition-transform duration-200 ease-out",
