@@ -708,7 +708,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                 )}>{conversation.customer.name}</h2>
                 <div className="flex items-center gap-1">
                   <Mail className="w-4 h-4 text-gray-400" />
-                  <span className="text-sm text-gray-500">#{conversation.id}</span>
+                  <span className="text-component-small text-gray-500">#{conversation.id}</span>
                 </div>
                 {conversation.customer.isVip && <Star className="w-4 h-4 text-yellow-500 fill-current" />}
               </div>
