@@ -377,7 +377,10 @@ function AIAssistantBlock() {
               >
                 Issue Refund
               </span>
-              <Badge variant="secondary" className="text-component-x-small ml-auto">
+              <Badge
+                variant="secondary"
+                className="text-component-x-small ml-auto"
+              >
                 High
               </Badge>
             </div>
@@ -533,7 +536,9 @@ function CustomerProfilePanel({
             <p
               className={cn(
                 "text-gray-600",
-                isMobile ? "text-component-x-small mb-1" : "text-component-x-small mb-2",
+                isMobile
+                  ? "text-component-x-small mb-1"
+                  : "text-component-x-small mb-2",
               )}
             >
               {customer.loyaltyLevel} Customer
@@ -600,7 +605,9 @@ function CustomerProfilePanel({
             >
               ${customer.totalSpent.toLocaleString()}
             </div>
-            <div className="text-component-x-small text-gray-600">Total Spent</div>
+            <div className="text-component-x-small text-gray-600">
+              Total Spent
+            </div>
           </div>
         </div>
       </div>
@@ -653,7 +660,9 @@ function CustomerProfilePanel({
                 <div className="text-component-x-small text-gray-600 mb-1">
                   {order.products}
                 </div>
-                <div className="text-component-x-small text-gray-400">{order.date}</div>
+                <div className="text-component-x-small text-gray-400">
+                  {order.date}
+                </div>
               </div>
             ))}
           </div>
@@ -680,11 +689,16 @@ function CustomerProfilePanel({
                   <div className="font-medium text-component-small text-gray-900">
                     {campaign.name}
                   </div>
-                  <Badge variant="outline" className="text-component-x-small flex-shrink-0">
+                  <Badge
+                    variant="outline"
+                    className="text-component-x-small flex-shrink-0"
+                  >
                     {campaign.engagement}
                   </Badge>
                 </div>
-                <div className="text-component-x-small text-gray-400">{campaign.date}</div>
+                <div className="text-component-x-small text-gray-400">
+                  {campaign.date}
+                </div>
               </div>
             ))}
           </div>
@@ -706,19 +720,25 @@ function CustomerProfilePanel({
               <div className="font-medium text-component-small text-gray-900 mb-1">
                 Customer Tagged as VIP
               </div>
-              <div className="text-component-x-small text-gray-400">Jan 10, 2024</div>
+              <div className="text-component-x-small text-gray-400">
+                Jan 10, 2024
+              </div>
             </div>
             <div className="pb-3 border-b border-gray-100">
               <div className="font-medium text-component-small text-gray-900 mb-1">
                 Profile Updated
               </div>
-              <div className="text-component-x-small text-gray-400">Dec 28, 2023</div>
+              <div className="text-component-x-small text-gray-400">
+                Dec 28, 2023
+              </div>
             </div>
             <div className="pb-3 border-b border-gray-100">
               <div className="font-medium text-component-small text-gray-900 mb-1">
                 Account Created
               </div>
-              <div className="text-component-x-small text-gray-400">Nov 15, 2023</div>
+              <div className="text-component-x-small text-gray-400">
+                Nov 15, 2023
+              </div>
             </div>
           </div>
         </div>
@@ -909,12 +929,17 @@ export function ConversationView({
                   </DropdownMenuContent>
                 </DropdownMenu>
                 {conversation.priority === "high" && (
-                  <Badge variant="destructive" className="text-component-x-small">
+                  <Badge
+                    variant="destructive"
+                    className="text-component-x-small"
+                  >
                     Urgent
                   </Badge>
                 )}
                 <div className="flex items-center gap-2">
-                  <span className="text-component-x-small text-gray-500">Assigned to:</span>
+                  <span className="text-component-x-small text-gray-500">
+                    Assigned to:
+                  </span>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="outline" size="sm" className="h-7 px-2">
@@ -1048,7 +1073,9 @@ export function ConversationView({
                       isMobile ? "gap-1 w-full justify-center" : "gap-2",
                     )}
                   >
-                    <span className="text-component-x-small text-gray-500">Reply via:</span>
+                    <span className="text-component-x-small text-gray-500">
+                      Reply via:
+                    </span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button
@@ -1099,7 +1126,9 @@ export function ConversationView({
                     </DropdownMenu>
                     {!isMobile && (
                       <>
-                        <span className="text-component-x-small text-gray-400">•</span>
+                        <span className="text-component-x-small text-gray-400">
+                          •
+                        </span>
                         <Button
                           variant="ghost"
                           size="sm"
