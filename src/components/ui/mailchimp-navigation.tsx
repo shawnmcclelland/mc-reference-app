@@ -377,42 +377,25 @@ interface MailchimpNavigationProps {
 export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
   const location = useLocation();
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      // Use getComputedStyle to check if we're in mobile view
-      const mobile = window.getComputedStyle(document.documentElement).getPropertyValue('--screen-md') === '' ? window.innerWidth < 768 : window.innerWidth < 768;
-      console.log('checkMobile: window.innerWidth =', window.innerWidth, 'mobile =', mobile);
-      setIsMobile(mobile);
-      // On mobile, start collapsed
-      setIsCollapsed(mobile);
+    const handleMobileNavToggle = (event: CustomEvent) => {
+      setIsOpen(event.detail);
     };
 
-    const handleMobileNavToggle = (event: CustomEvent) => {
-    // event.detail is true when the nav should be open, false when closed
-    console.log('Navigation received toggle event:', event.detail, 'will set isCollapsed to:', !event.detail);
-    setIsCollapsed(!event.detail);
-  };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
     window.addEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
     };
   }, []);
 
   // Close mobile navigation when route changes
   useEffect(() => {
-    if (isMobile && !isCollapsed) {
-      setIsCollapsed(true);
-      window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: false }));
-    }
-  }, [location.pathname, isMobile, isCollapsed]);
+    setIsOpen(false);
+    window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: false }));
+  }, [location.pathname]);
 
   const isActive = (item: any) => {
     if (item.href) {
