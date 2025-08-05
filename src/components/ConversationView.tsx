@@ -721,7 +721,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
             </div>
 
             {/* Reply Section - Simplified */}
-            <div className="border-t border-gray-100 p-4 bg-gray-50">
+            <div className="border-t border-gray-100 py-3 px-2 bg-gray-50">
               <div className="max-w-3xl mx-auto">
                 <Textarea
                   placeholder="Type your reply..."
