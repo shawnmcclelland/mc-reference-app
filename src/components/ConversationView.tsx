@@ -600,7 +600,7 @@ function CustomerProfilePanel({
             >
               ${customer.totalSpent.toLocaleString()}
             </div>
-            <div className="text-xs text-gray-600">Total Spent</div>
+            <div className="text-component-x-small text-gray-600">Total Spent</div>
           </div>
         </div>
       </div>
