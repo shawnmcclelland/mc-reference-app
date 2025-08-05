@@ -4,19 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
 import {
   Mail,
   MessageCircle,
@@ -30,6 +22,9 @@ import {
   Plus,
   Phone,
   ShoppingBag,
+  ChevronDown,
+  Slack,
+  Hash,
   ExternalLink,
 } from "lucide-react";
 
@@ -37,247 +32,255 @@ interface InboxMessage {
   id: string;
   customerName: string;
   customerAvatar?: string;
-  channel: "email" | "sms" | "instagram" | "facebook" | "chat" | "review";
+  channel: "email" | "sms" | "instagram" | "facebook" | "chat" | "review" | "slack";
   subject: string;
   preview: string;
   timestamp: string;
   isVip: boolean;
   urgency: "low" | "medium" | "high";
   tags: string[];
+  ticketNumber?: string;
   orderHistory?: {
     totalOrders: number;
     totalSpent: number;
     lastOrder: string;
   };
-  status: "new" | "in_progress" | "waiting_customer" | "on_hold" | "done";
+  status: "new" | "waiting_on_you" | "waiting_on_customer" | "on_hold" | "done";
 }
 
 const mockMessages: InboxMessage[] = [
   {
     id: "1",
-    customerName: "Sarah Chen",
+    customerName: "Richard Jeffries",
     customerAvatar: "https://i.pravatar.cc/150?img=1",
     channel: "email",
-    subject: "Where's my order?",
-    preview: "Hi! I ordered my custom razor last week and haven't received any updates...",
-    timestamp: "2 minutes ago",
-    isVip: true,
-    urgency: "high",
-    tags: ["Order Inquiry", "VIP"],
-    orderHistory: {
-      totalOrders: 5,
-      totalSpent: 245.00,
-      lastOrder: "Order #1234 - Premium Razor Set"
-    },
+    subject: "Inability to Save Changes in Profile Settings",
+    preview: "I've encountered an issue where changes made to my profile settings are not being saved...",
+    timestamp: "24 minutes ago",
+    ticketNumber: "#5081",
+    isVip: false,
+    urgency: "medium",
+    tags: ["Bug Report"],
     status: "new"
   },
   {
     id: "2",
-    customerName: "Mike Rodriguez",
+    customerName: "Robert Eng",
     customerAvatar: "https://i.pravatar.cc/150?img=2",
-    channel: "chat",
-    subject: "Product arrived damaged",
-    preview: "The razor I received has a crack in the handle. Can I get a replacement?",
-    timestamp: "15 minutes ago",
+    channel: "slack",
+    subject: "Walmart subscription renewal discussion",
+    preview: "Hi there, I wanted to discuss our upcoming subscription renewal. Can you help me review the renewal options...",
+    timestamp: "29 minutes ago",
+    ticketNumber: "#5079",
     isVip: false,
-    urgency: "high",
-    tags: ["Damaged Product", "Replacement"],
-    orderHistory: {
-      totalOrders: 1,
-      totalSpent: 89.99,
-      lastOrder: "Order #1235 - Starter Kit"
-    },
+    urgency: "low",
+    tags: ["Subscription"],
     status: "new"
   },
   {
     id: "3",
-    customerName: "Emily Watson",
+    customerName: "George Gershwin",
     customerAvatar: "https://i.pravatar.cc/150?img=3",
-    channel: "instagram",
-    subject: "DM: Love the new design!",
-    preview: "Just saw your latest post - the midnight black finish looks amazing! Do you have this in stock?",
-    timestamp: "1 hour ago",
+    channel: "chat",
+    subject: "Spotify integration support request",
+    preview: "Hi! I just wanted to take a moment to say that your support team is incredible. Every time I've had an issue...",
+    timestamp: "31 minutes ago",
+    ticketNumber: "#5078",
     isVip: false,
-    urgency: "medium",
-    tags: ["Product Inquiry", "Social"],
+    urgency: "low",
+    tags: ["Integration"],
     status: "new"
   },
   {
     id: "4",
-    customerName: "David Kim",
+    customerName: "Brian Chesky",
     customerAvatar: "https://i.pravatar.cc/150?img=4",
     channel: "email",
-    subject: "Custom engraving request",
-    preview: "Working on your custom engraving - should be ready for shipping by Friday...",
-    timestamp: "3 hours ago",
-    isVip: true,
-    urgency: "medium",
-    tags: ["Custom Order", "VIP", "In Production"],
-    orderHistory: {
-      totalOrders: 8,
-      totalSpent: 567.50,
-      lastOrder: "Order #1230 - Custom Engraved Set"
-    },
-    status: "in_progress"
+    subject: "Frontend errors - something broken?",
+    preview: "There are errors on the frontend - is something broken?",
+    timestamp: "37 minutes ago",
+    ticketNumber: "#5073",
+    isVip: false,
+    urgency: "high",
+    tags: ["Bug", "Frontend"],
+    status: "new"
   },
   {
     id: "5",
-    customerName: "Jessica Park",
+    customerName: "Lebron James",
     customerAvatar: "https://i.pravatar.cc/150?img=5",
-    channel: "sms",
-    subject: "SMS: Sizing question",
-    preview: "Thanks for the sizing guide! I think I need a Medium. Can you confirm this will fit?",
-    timestamp: "2 hours ago",
-    isVip: false,
-    urgency: "low",
-    tags: ["Sizing", "Follow-up"],
-    status: "waiting_customer"
+    channel: "email",
+    subject: "Dark Mode on the Dashboard",
+    preview: "I would love to see a dark mode option for the dashboard. It would make it easier on the eyes...",
+    timestamp: "15 minutes ago",
+    ticketNumber: "#5083",
+    isVip: true,
+    urgency: "medium",
+    tags: ["Feature Request"],
+    status: "waiting_on_you"
   },
   {
     id: "6",
-    customerName: "Alex Thompson",
-    customerAvatar: "https://i.pravatar.cc/150?img=6",
+    customerName: "Richard Jeffries",
+    customerAvatar: "https://i.pravatar.cc/150?img=1",
     channel: "email",
-    subject: "Out of stock notification",
-    preview: "Thank you for your patience. Your backordered item will be available next week...",
-    timestamp: "1 day ago",
+    subject: "Cancellation of Zendesk Subscription",
+    preview: "I hope this message finds you well. I am writing to request the cancellation of my Zendesk subscription...",
+    timestamp: "33 minutes ago",
+    ticketNumber: "#5077",
     isVip: false,
-    urgency: "low",
-    tags: ["Backorder", "Notification"],
-    status: "on_hold"
+    urgency: "medium",
+    tags: ["Cancellation"],
+    status: "waiting_on_you"
   },
   {
     id: "7",
-    customerName: "Maria Garcia",
-    customerAvatar: "https://i.pravatar.cc/150?img=7",
-    channel: "review",
-    subject: "5-star review response",
-    preview: "Thank you so much for the amazing review! We've added you to our VIP program...",
-    timestamp: "2 days ago",
-    isVip: true,
+    customerName: "Brian Chesky",
+    customerAvatar: "https://i.pravatar.cc/150?img=4",
+    channel: "slack",
+    subject: "Netflix pricing confirmation",
+    preview: "Did you get confirmation on pricing?",
+    timestamp: "37 minutes ago",
+    ticketNumber: "#5074",
+    isVip: false,
     urgency: "low",
-    tags: ["Review Response", "VIP Program"],
-    status: "done"
+    tags: ["Pricing"],
+    status: "waiting_on_you"
+  },
+  {
+    id: "8",
+    customerName: "Brian Chen",
+    customerAvatar: "https://i.pravatar.cc/150?img=6",
+    channel: "email",
+    subject: "Sales inquiry follow up",
+    preview: "When is the Sales segment going to be released?",
+    timestamp: "45 minutes ago",
+    ticketNumber: "#5072",
+    isVip: false,
+    urgency: "medium",
+    tags: ["Sales"],
+    status: "waiting_on_customer"
   }
 ];
 
 const channelIcons = {
-  email: <Mail className="w-4 h-4" />,
-  sms: <Phone className="w-4 h-4" />,
-  instagram: <Instagram className="w-4 h-4" />,
-  facebook: <MessageCircle className="w-4 h-4" />,
-  chat: <MessageCircle className="w-4 h-4" />,
-  review: <Star className="w-4 h-4" />
+  email: <Mail className="w-3 h-3" />,
+  sms: <Phone className="w-3 h-3" />,
+  instagram: <Instagram className="w-3 h-3" />,
+  facebook: <MessageCircle className="w-3 h-3" />,
+  chat: <MessageCircle className="w-3 h-3" />,
+  review: <Star className="w-3 h-3" />,
+  slack: <Slack className="w-3 h-3" />
 };
 
-const urgencyColors = {
-  low: "bg-green-100 text-green-800 border-green-200",
-  medium: "bg-yellow-100 text-yellow-800 border-yellow-200",
-  high: "bg-red-100 text-red-800 border-red-200"
+const channelColors = {
+  email: "bg-blue-500",
+  sms: "bg-green-500",
+  instagram: "bg-pink-500",
+  facebook: "bg-blue-600",
+  chat: "bg-purple-500",
+  review: "bg-yellow-500",
+  slack: "bg-indigo-500"
 };
 
 const statusColumns = {
-  new: { title: "🆕 New", color: "bg-blue-50 border-blue-200" },
-  in_progress: { title: "🔄 In Progress", color: "bg-purple-50 border-purple-200" },
-  waiting_customer: { title: "⏰ Waiting on Customer", color: "bg-orange-50 border-orange-200" },
-  on_hold: { title: "⏸️ On Hold", color: "bg-gray-50 border-gray-200" },
-  done: { title: "✅ Done", color: "bg-green-50 border-green-200" }
+  new: { 
+    title: "New", 
+    count: 4,
+    bgColor: "bg-gray-50"
+  },
+  waiting_on_you: { 
+    title: "Waiting on You", 
+    count: 3,
+    bgColor: "bg-orange-50"
+  },
+  waiting_on_customer: { 
+    title: "Waiting on Customer", 
+    count: 1,
+    bgColor: "bg-blue-50"
+  }
 };
 
 function MessageCard({ message }: { message: InboxMessage }) {
+  const channelColor = channelColors[message.channel];
+  
   return (
-    <Card className="mb-3 hover:shadow-md transition-shadow cursor-pointer">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between">
-          <div className="flex items-center space-x-3">
-            <Avatar className="h-10 w-10">
+    <div className="bg-white rounded-lg border border-gray-200 p-4 mb-3 hover:shadow-md transition-shadow cursor-pointer">
+      {/* Header with avatar and channel */}
+      <div className="flex items-start justify-between mb-3">
+        <div className="flex items-center space-x-3">
+          <div className="relative">
+            <Avatar className="h-8 w-8">
               <AvatarImage src={message.customerAvatar} />
-              <AvatarFallback>{message.customerName.slice(0, 2)}</AvatarFallback>
+              <AvatarFallback className="text-xs">
+                {message.customerName.split(' ').map(n => n[0]).join('')}
+              </AvatarFallback>
             </Avatar>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center space-x-2">
-                <h4 className="font-medium text-sm text-mailchimp-text-primary truncate">
-                  {message.customerName}
-                </h4>
-                {message.isVip && (
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                )}
-              </div>
-              <div className="flex items-center space-x-2 mt-1">
-                <div className="text-mailchimp-text-secondary">
-                  {channelIcons[message.channel]}
-                </div>
-                <span className="text-xs text-mailchimp-text-quaternary">
-                  {message.timestamp}
-                </span>
+            <div className={cn("absolute -bottom-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center", channelColor)}>
+              <div className="text-white">
+                {channelIcons[message.channel]}
               </div>
             </div>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                <MoreHorizontal className="w-4 h-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem>Reply</DropdownMenuItem>
-              <DropdownMenuItem>Assign to teammate</DropdownMenuItem>
-              <DropdownMenuItem>Add tags</DropdownMenuItem>
-              <DropdownMenuItem>Mark as done</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center space-x-2">
+              <span className="font-medium text-sm text-gray-900">
+                {message.customerName}
+              </span>
+              <span className="text-xs text-gray-500">
+                {message.ticketNumber}
+              </span>
+            </div>
+            <div className="text-xs text-gray-500">
+              {message.timestamp}
+            </div>
+          </div>
         </div>
-      </CardHeader>
-      <CardContent className="pt-0">
-        <h5 className="font-medium text-sm text-mailchimp-text-primary mb-2">
-          {message.subject}
-        </h5>
-        <p className="text-sm text-mailchimp-text-secondary mb-3 line-clamp-2">
-          {message.preview}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-3">
-          <Badge 
-            variant="outline" 
-            className={cn("text-xs", urgencyColors[message.urgency])}
-          >
-            {message.urgency === "high" && <AlertCircle className="w-3 h-3 mr-1" />}
-            {message.urgency === "medium" && <Clock className="w-3 h-3 mr-1" />}
-            {message.urgency.charAt(0).toUpperCase() + message.urgency.slice(1)}
-          </Badge>
-          {message.tags.slice(0, 2).map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+              <MoreHorizontal className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem>Reply</DropdownMenuItem>
+            <DropdownMenuItem>Assign</DropdownMenuItem>
+            <DropdownMenuItem>Change status</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+
+      {/* Subject */}
+      <h4 className="font-medium text-sm text-gray-900 mb-2 line-clamp-2">
+        {message.subject}
+      </h4>
+
+      {/* Preview */}
+      <p className="text-xs text-gray-600 mb-3 line-clamp-3 leading-relaxed">
+        {message.preview}
+      </p>
+
+      {/* Footer with tags and indicators */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          {message.urgency === "high" && (
+            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+          )}
+          {message.isVip && (
+            <Star className="w-3 h-3 text-yellow-500 fill-current" />
+          )}
+          {message.tags.slice(0, 1).map((tag) => (
+            <Badge key={tag} variant="secondary" className="text-xs px-2 py-0.5">
               {tag}
             </Badge>
           ))}
-          {message.tags.length > 2 && (
-            <Badge variant="outline" className="text-xs">
-              +{message.tags.length - 2}
-            </Badge>
-          )}
         </div>
-
-        {message.orderHistory && (
-          <div className="bg-mailchimp-background-primary rounded-lg p-3 border">
-            <div className="flex items-center justify-between text-xs">
-              <div className="flex items-center space-x-1">
-                <ShoppingBag className="w-3 h-3 text-mailchimp-text-quaternary" />
-                <span className="text-mailchimp-text-secondary">
-                  {message.orderHistory.totalOrders} orders • ${message.orderHistory.totalSpent}
-                </span>
-              </div>
-              <Button variant="ghost" size="sm" className="h-6 px-2 text-xs">
-                View profile
-                <ExternalLink className="w-3 h-3 ml-1" />
-              </Button>
-            </div>
-            <p className="text-xs text-mailchimp-text-quaternary mt-1">
-              Latest: {message.orderHistory.lastOrder}
-            </p>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+        <div className="flex items-center space-x-1">
+          {message.channel === 'email' && <Mail className="w-3 h-3 text-gray-400" />}
+          {message.channel === 'slack' && <Hash className="w-3 h-3 text-gray-400" />}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -285,33 +288,40 @@ function StatusColumn({
   status, 
   messages, 
   title, 
-  color 
+  count,
+  bgColor
 }: { 
   status: string;
   messages: InboxMessage[];
   title: string;
-  color: string;
+  count: number;
+  bgColor: string;
 }) {
   const statusMessages = messages.filter(m => m.status === status);
   
   return (
-    <div className={cn("flex-1 min-w-80 rounded-lg border-2 border-dashed p-4", color)}>
+    <div className={cn("flex-shrink-0 w-80 rounded-lg p-4 h-fit", bgColor)}>
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-medium text-sm text-mailchimp-text-primary">
-          {title}
-        </h3>
-        <Badge variant="secondary" className="text-xs">
-          {statusMessages.length}
-        </Badge>
+        <div className="flex items-center space-x-2">
+          <h3 className="font-medium text-sm text-gray-900">
+            {title}
+          </h3>
+          <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-white">
+            {count}
+          </Badge>
+        </div>
+        <ChevronDown className="w-4 h-4 text-gray-400" />
       </div>
-      <div className="space-y-3">
+      
+      <div className="space-y-0">
         {statusMessages.map((message) => (
           <MessageCard key={message.id} message={message} />
         ))}
+        
         {statusMessages.length === 0 && (
-          <div className="text-center py-8 text-mailchimp-text-quaternary">
-            <div className="text-2xl mb-2">✨</div>
-            <p className="text-sm">All clear here!</p>
+          <div className="text-center py-8 text-gray-400">
+            <div className="text-lg mb-2">✨</div>
+            <p className="text-sm">No items</p>
           </div>
         )}
       </div>
@@ -337,152 +347,119 @@ export default function Inbox() {
   });
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6 min-h-screen bg-white">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-semibold text-mailchimp-text-primary">
+          <h1 className="text-2xl font-semibold text-gray-900">
             Unified Inbox
           </h1>
-          <p className="text-mailchimp-text-secondary mt-1">
+          <p className="text-gray-600 mt-1">
             All customer conversations across channels in one intelligent workspace
           </p>
         </div>
         <div className="flex items-center space-x-3">
           <Button variant="outline" size="sm">
-            <Filter className="w-4 h-4 mr-2" />
-            Filters
-          </Button>
-          <Button size="sm">
             <Plus className="w-4 h-4 mr-2" />
-            New message
+            Add filter
           </Button>
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <Mail className="w-4 h-4 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-2xl font-semibold text-mailchimp-text-primary">
-                  {mockMessages.filter(m => m.status === "new").length}
-                </p>
-                <p className="text-xs text-mailchimp-text-secondary">New messages</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
-              <div className="p-2 bg-red-100 rounded-lg">
-                <AlertCircle className="w-4 h-4 text-red-600" />
-              </div>
-              <div>
-                <p className="text-2xl font-semibold text-mailchimp-text-primary">
-                  {mockMessages.filter(m => m.urgency === "high").length}
-                </p>
-                <p className="text-xs text-mailchimp-text-secondary">Urgent items</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      {/* Toolbar */}
+      <div className="flex items-center justify-between bg-gray-50 p-4 rounded-lg">
+        <div className="flex items-center space-x-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Sort By
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Date created</DropdownMenuItem>
+              <DropdownMenuItem>Priority</DropdownMenuItem>
+              <DropdownMenuItem>Customer name</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
-              <div className="p-2 bg-yellow-100 rounded-lg">
-                <Star className="w-4 h-4 text-yellow-600" />
-              </div>
-              <div>
-                <p className="text-2xl font-semibold text-mailchimp-text-primary">
-                  {mockMessages.filter(m => m.isVip).length}
-                </p>
-                <p className="text-xs text-mailchimp-text-secondary">VIP customers</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Date Range
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Today</DropdownMenuItem>
+              <DropdownMenuItem>This week</DropdownMenuItem>
+              <DropdownMenuItem>This month</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
-              <div className="p-2 bg-green-100 rounded-lg">
-                <Clock className="w-4 h-4 text-green-600" />
-              </div>
-              <div>
-                <p className="text-2xl font-semibold text-mailchimp-text-primary">
-                  2.4h
-                </p>
-                <p className="text-xs text-mailchimp-text-secondary">Avg response time</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Account Owner
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>All owners</DropdownMenuItem>
+              <DropdownMenuItem>Me</DropdownMenuItem>
+              <DropdownMenuItem>Unassigned</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
-      {/* Search and filters */}
-      <div className="flex items-center space-x-4">
-        <div className="flex-1 relative">
-          <Search className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-mailchimp-text-quaternary" />
-          <input
-            type="text"
-            placeholder="Search conversations..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-mailchimp-border-primary rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Assignee
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>All assignees</DropdownMenuItem>
+              <DropdownMenuItem>Me</DropdownMenuItem>
+              <DropdownMenuItem>Unassigned</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm">
+                Account
+                <ChevronDown className="w-4 h-4 ml-2" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>All accounts</DropdownMenuItem>
+              <DropdownMenuItem>Premium</DropdownMenuItem>
+              <DropdownMenuItem>Basic</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline">
-              <Filter className="w-4 h-4 mr-2" />
-              {selectedFilter === "all" ? "All channels" : selectedFilter}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem onClick={() => setSelectedFilter("all")}>
-              All channels
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setSelectedFilter("email")}>
-              Email
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setSelectedFilter("sms")}>
-              SMS
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setSelectedFilter("instagram")}>
-              Instagram
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setSelectedFilter("chat")}>
-              Website Chat
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setSelectedFilter("vip")}>
-              VIP Only
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setSelectedFilter("urgent")}>
-              Urgent Only
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+
+        <Button variant="outline" size="sm">
+          <Plus className="w-4 h-4 mr-2" />
+          Add filter
+        </Button>
       </div>
 
       {/* Kanban Board */}
-      <div className="flex space-x-6 overflow-x-auto pb-6">
-        {Object.entries(statusColumns).map(([status, config]) => (
-          <StatusColumn
-            key={status}
-            status={status}
-            messages={filteredMessages}
-            title={config.title}
-            color={config.color}
-          />
-        ))}
+      <div className="overflow-x-auto">
+        <div className="flex space-x-6 pb-6 min-w-max">
+          {Object.entries(statusColumns).map(([status, config]) => (
+            <StatusColumn
+              key={status}
+              status={status}
+              messages={filteredMessages}
+              title={config.title}
+              count={config.count}
+              bgColor={config.bgColor}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
