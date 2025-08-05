@@ -215,88 +215,67 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
         </div>
       )}
 
-      {/* Header content */}
-      <div className={cn(
-        "flex items-center justify-between",
-        isMobile ? "h-12 px-2" : "h-13 px-4"
-      )}>
-        {/* Breadcrumbs section */}
-        <div className="flex items-center gap-2.5">
-          {isInboxPage ? (
-            <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
-              <span className="text-component-x-small text-mailchimp-text-primary">
-                Inbox
-              </span>
-            </div>
-          ) : (
-            <>
-              <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
-                <span className="text-component-x-small text-mailchimp-text-primary">
-                  Audience
-                </span>
-              </div>
-              <SlashIcon />
+      {/* Desktop Header content */}
+      {!isMobile && (
+        <div className="flex h-13 items-center justify-between px-4">
+          {/* Breadcrumbs section */}
+          <div className="flex items-center gap-2.5">
+            {isInboxPage ? (
               <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
                 <span className="text-component-x-small text-mailchimp-text-primary">
-                  Contacts
+                  Inbox
                 </span>
               </div>
-            </>
-          )}
-        </div>
+            ) : (
+              <>
+                <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
+                  <span className="text-component-x-small text-mailchimp-text-primary">
+                    Audience
+                  </span>
+                </div>
+                <SlashIcon />
+                <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
+                  <span className="text-component-x-small text-mailchimp-text-primary">
+                    Contacts
+                  </span>
+                </div>
+              </>
+            )}
+          </div>
 
-        {/* Search bar */}
-        <div className={cn(
-          "flex items-center gap-1.5 rounded-mailchimp border border-mailchimp-input-border bg-mailchimp-background-primary px-2.5 py-1.5",
-          isMobile ? "h-7 min-w-[120px] flex-1 mx-2" : "h-8 min-w-[200px] flex-1 mx-4"
-        )}>
-          <SearchIcon />
-          <input
-            type="text"
-            placeholder={isMobile ? "Ask..." : "Ask anything..."}
-            className="flex-1 text-component-x-small text-mailchimp-text-quaternary bg-transparent border-0 outline-none placeholder-mailchimp-text-quaternary"
-          />
-          {!isMobile && (
-            <>
-              <div className="h-6 w-px bg-mailchimp-border-primary" />
-              <HelpIcon />
-            </>
-          )}
-        </div>
+          {/* Search bar */}
+          <div className="flex h-8 min-w-[200px] flex-1 items-center gap-1.5 rounded-mailchimp border border-mailchimp-input-border bg-mailchimp-background-primary px-2.5 py-1.5 mx-4">
+            <SearchIcon />
+            <input
+              type="text"
+              placeholder="Ask anything..."
+              className="flex-1 text-component-x-small text-mailchimp-text-quaternary bg-transparent border-0 outline-none placeholder-mailchimp-text-quaternary"
+            />
+            <div className="h-6 w-px bg-mailchimp-border-primary" />
+            <HelpIcon />
+          </div>
 
-        {/* Utilities */}
-        <div className={cn(
-          "flex items-center justify-end gap-3",
-          isMobile ? "w-auto px-1" : "w-96 px-2"
-        )}>
-          {!isMobile && (
-            <>
-              <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
-                <TaskIcon />
-              </button>
-              <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
-                <DotsNineIcon />
-              </button>
-              <button className="flex h-8 items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1.5">
-                <span className="text-component-small text-mailchimp-text-primary">
-                  Live expert help
-                </span>
-              </button>
-            </>
-          )}
-          <div className={cn(
-            "flex items-center justify-center rounded-full border border-mailchimp-border-secondary bg-[#AE7B65]",
-            isMobile ? "h-7 w-7" : "h-8 w-8"
-          )}>
-            <span className={cn(
-              "font-medium text-mailchimp-text-inverse",
-              isMobile ? "text-xs" : "text-sm"
-            )}>
-              M
-            </span>
+          {/* Utilities */}
+          <div className="flex w-96 items-center justify-end gap-3 px-2">
+            <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
+              <TaskIcon />
+            </button>
+            <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
+              <DotsNineIcon />
+            </button>
+            <button className="flex h-8 items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1.5">
+              <span className="text-component-small text-mailchimp-text-primary">
+                Live expert help
+              </span>
+            </button>
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-mailchimp-border-secondary bg-[#AE7B65]">
+              <span className="text-sm font-medium text-mailchimp-text-inverse">
+                M
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
