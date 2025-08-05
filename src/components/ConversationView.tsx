@@ -878,41 +878,55 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
-                    <span className="text-xs text-gray-400">•</span>
-                    <Button variant="ghost" size="sm" className="text-gray-600">
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      Internal Note
-                    </Button>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="sm">
-                          <MoreHorizontal className="w-4 h-4 mr-2" />
-                          More
+                    {!isMobile && (
+                      <>
+                        <span className="text-xs text-gray-400">•</span>
+                        <Button variant="ghost" size="sm" className="text-gray-600">
+                          <MessageCircle className="w-4 h-4 mr-2" />
+                          Internal Note
                         </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>
-                          <Users className="w-4 h-4 mr-2" />
-                          Assign to teammate
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <FileText className="w-4 h-4 mr-2" />
-                          Add internal note
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <DollarSign className="w-4 h-4 mr-2" />
-                          Issue refund
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Zap className="w-4 h-4 mr-2" />
-                          Create automation
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                    <Button>
-                      <Send className="w-4 h-4 mr-2" />
+                      </>
+                    )}
+                  </div>
+                  <div className={cn(
+                    "flex items-center",
+                    isMobile ? "gap-1 w-full justify-center" : "gap-2"
+                  )}>
+                    {!isMobile && (
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="outline" size="sm">
+                            <MoreHorizontal className="w-4 h-4 mr-2" />
+                            More
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuItem>
+                            <Users className="w-4 h-4 mr-2" />
+                            Assign to teammate
+                          </DropdownMenuItem>
+                          <DropdownMenuItem>
+                            <FileText className="w-4 h-4 mr-2" />
+                            Add internal note
+                          </DropdownMenuItem>
+                          <DropdownMenuItem>
+                            <DollarSign className="w-4 h-4 mr-2" />
+                            Issue refund
+                          </DropdownMenuItem>
+                          <DropdownMenuItem>
+                            <Zap className="w-4 h-4 mr-2" />
+                            Create automation
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    )}
+                    <Button size={isMobile ? "sm" : "default"} className={cn(
+                      isMobile && "text-xs px-2"
+                    )}>
+                      <Send className={cn(
+                        "mr-2",
+                        isMobile ? "w-3 h-3" : "w-4 h-4"
+                      )} />
                       Send Reply
                     </Button>
                   </div>
