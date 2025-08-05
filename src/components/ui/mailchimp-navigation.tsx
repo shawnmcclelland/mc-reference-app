@@ -458,12 +458,10 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
       <div
         className={cn(
           "flex flex-col items-start flex-shrink-0 bg-[#F0F4F6] transition-all duration-300",
-          // Base mobile styles - hidden by default
-          "hidden",
-          // Desktop: show as sidebar
-          "md:flex md:w-60 md:self-stretch",
-          // Mobile: override hidden when nav is open
-          isMobile && !isCollapsed && "!flex w-60 fixed left-0 top-0 h-full z-50 animate-in slide-in-from-left duration-300",
+          // For screens 768px and up (md:), show as sidebar
+          "hidden md:flex md:w-60 md:self-stretch",
+          // For mobile screens, only show when not collapsed
+          !isCollapsed && "flex w-60 fixed left-0 top-0 h-full z-50 md:static md:h-auto animate-in slide-in-from-left duration-300 md:animate-none",
           className,
         )}
         data-debug={`isMobile: ${isMobile}, isCollapsed: ${isCollapsed}`}
