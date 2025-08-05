@@ -346,11 +346,14 @@ function AIAssistantBlock() {
         </div>
 
         {/* Top suggested action */}
-        <div className="mt-2">
-          <button className="w-full p-2 bg-white border border-blue-200 rounded text-left hover:bg-blue-50 transition-colors">
+        <div className={cn("mt-2", isMobile && "mt-1")}>
+          <button className={cn(
+            "w-full bg-white border border-blue-200 rounded text-left hover:bg-blue-50 transition-colors",
+            isMobile ? "p-1.5" : "p-2"
+          )}>
             <div className="flex items-center gap-2">
               <DollarSign className="w-3 h-3 text-blue-600" />
-              <span className="text-sm font-medium text-gray-900">Issue Refund</span>
+              <span className={cn("font-medium text-gray-900", isMobile ? "text-xs" : "text-sm")}>Issue Refund</span>
               <Badge variant="secondary" className="text-xs ml-auto">High</Badge>
             </div>
           </button>
