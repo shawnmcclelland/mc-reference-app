@@ -387,9 +387,19 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
       // On mobile, start collapsed, but always show the header area
       setIsCollapsed(mobile);
     };
+
+    const handleMobileNavToggle = (event: CustomEvent) => {
+      setIsCollapsed(!event.detail);
+    };
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
+    };
   }, []);
 
   const isActive = (item: any) => {
