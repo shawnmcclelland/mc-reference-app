@@ -193,15 +193,22 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
         </div>
 
         {/* Search bar */}
-        <div className="flex h-8 min-w-[200px] flex-1 items-center gap-1.5 rounded-mailchimp border border-mailchimp-input-border bg-mailchimp-background-primary px-2.5 py-1.5 mx-4">
+        <div className={cn(
+          "flex items-center gap-1.5 rounded-mailchimp border border-mailchimp-input-border bg-mailchimp-background-primary px-2.5 py-1.5",
+          isMobile ? "h-7 min-w-[120px] flex-1 mx-2" : "h-8 min-w-[200px] flex-1 mx-4"
+        )}>
           <SearchIcon />
           <input
             type="text"
-            placeholder="Ask anything..."
+            placeholder={isMobile ? "Ask..." : "Ask anything..."}
             className="flex-1 text-component-x-small text-mailchimp-text-quaternary bg-transparent border-0 outline-none placeholder-mailchimp-text-quaternary"
           />
-          <div className="h-6 w-px bg-mailchimp-border-primary" />
-          <HelpIcon />
+          {!isMobile && (
+            <>
+              <div className="h-6 w-px bg-mailchimp-border-primary" />
+              <HelpIcon />
+            </>
+          )}
         </div>
 
         {/* Utilities */}
