@@ -707,7 +707,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Conversation Panel */}
           <div className="flex-1 flex flex-col">
-            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-6">
+            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-4">
               <div className="max-w-3xl mx-auto">
                 {conversation.messages.map((message) => (
                   <MessageBubble key={message.id} message={message} />
@@ -716,12 +716,12 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                 <AIAssistantBlock />
 
                 {/* Bottom spacer to ensure messages stay visible above AI Assistant */}
-                <div className="h-4"></div>
+                <div className="h-2"></div>
               </div>
             </div>
 
             {/* Reply Section - Simplified */}
-            <div className="border-t border-gray-100 p-5 bg-gray-50">
+            <div className="border-t border-gray-100 p-4 bg-gray-50">
               <div className="max-w-3xl mx-auto">
                 <Textarea
                   placeholder="Type your reply..."
