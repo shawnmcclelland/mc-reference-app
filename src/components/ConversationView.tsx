@@ -574,8 +574,13 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-6xl h-[90vh] flex flex-col">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end justify-center">
+      <div
+        className={cn(
+          "bg-white rounded-t-xl shadow-2xl w-full max-w-6xl h-[92vh] flex flex-col transition-transform duration-200 ease-out",
+          isVisible ? "translate-y-0" : "translate-y-full"
+        )}
+      >
         {/* Header - Simplified */}
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
           <div className="flex items-center gap-4">
