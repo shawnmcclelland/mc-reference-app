@@ -519,10 +519,19 @@ export default function Inbox() {
               title={config.title}
               count={config.count}
               bgColor={config.bgColor}
+              onMessageClick={setSelectedConversation}
             />
           ))}
         </div>
       </div>
+
+      {/* Conversation View Modal */}
+      {selectedConversation && (
+        <ConversationView
+          messageId={selectedConversation}
+          onClose={() => setSelectedConversation(null)}
+        />
+      )}
     </div>
   );
 }
