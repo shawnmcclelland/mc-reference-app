@@ -383,6 +383,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
   useEffect(() => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
+      console.log('checkMobile: window.innerWidth =', window.innerWidth, 'mobile =', mobile);
       setIsMobile(mobile);
       // On mobile, start collapsed
       setIsCollapsed(mobile);
