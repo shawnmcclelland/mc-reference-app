@@ -443,7 +443,7 @@ function StatusColumn({
         <ChevronDown className="w-4 h-4 text-gray-400" />
       </div>
       
-      <div className="space-y-0">
+      <div className="flex flex-col" style={{gap: "var(--space-column-gap-xx-small, 4px)"}}>
         {statusMessages.map((message) => (
           <MessageCard key={message.id} message={message} />
         ))}
