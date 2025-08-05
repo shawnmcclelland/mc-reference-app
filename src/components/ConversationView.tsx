@@ -712,7 +712,7 @@ function CustomerProfilePanel({
               <div className="font-medium text-component-small text-gray-900 mb-1">
                 Profile Updated
               </div>
-              <div className="text-xs text-gray-400">Dec 28, 2023</div>
+              <div className="text-component-x-small text-gray-400">Dec 28, 2023</div>
             </div>
             <div className="pb-3 border-b border-gray-100">
               <div className="font-medium text-component-small text-gray-900 mb-1">
