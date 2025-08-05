@@ -914,7 +914,7 @@ export function ConversationView({
                   </Badge>
                 )}
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-500">Assigned to:</span>
+                  <span className="text-component-x-small text-gray-500">Assigned to:</span>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="outline" size="sm" className="h-7 px-2">
