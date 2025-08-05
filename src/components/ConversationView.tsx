@@ -345,7 +345,7 @@ function AIAssistantBlock() {
               <h4 className="text-component-small font-medium text-blue-900">
                 AI Assistant
               </h4>
-              <p className="text-xs text-blue-700">
+              <p className="text-component-x-small text-blue-700">
                 Order resolved, customer satisfied. Ready to close.
               </p>
             </div>
