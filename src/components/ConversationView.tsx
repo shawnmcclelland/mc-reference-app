@@ -1099,7 +1099,7 @@ export function ConversationView({
                     </DropdownMenu>
                     {!isMobile && (
                       <>
-                        <span className="text-xs text-gray-400">•</span>
+                        <span className="text-component-x-small text-gray-400">•</span>
                         <Button
                           variant="ghost"
                           size="sm"
