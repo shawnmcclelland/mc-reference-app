@@ -538,7 +538,7 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
 
         {/* Additional Activity Items for Demo */}
         <div>
-          <h5 className="text-xs font-medium text-gray-700 mb-3 uppercase tracking-wide">System Events</h5>
+          <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>System Events</h5>
           <div className="space-y-3">
             <div className="pb-3 border-b border-gray-100">
               <div className="font-medium text-sm text-gray-900 mb-1">Customer Tagged as VIP</div>
