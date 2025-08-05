@@ -212,20 +212,33 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
         </div>
 
         {/* Utilities */}
-        <div className="flex w-96 items-center justify-end gap-3 px-2">
-          <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
-            <TaskIcon />
-          </button>
-          <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
-            <DotsNineIcon />
-          </button>
-          <button className="flex h-8 items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1.5">
-            <span className="text-component-small text-mailchimp-text-primary">
-              Live expert help
-            </span>
-          </button>
-          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-mailchimp-border-secondary bg-[#AE7B65]">
-            <span className="text-sm font-medium text-mailchimp-text-inverse">
+        <div className={cn(
+          "flex items-center justify-end gap-3",
+          isMobile ? "w-auto px-1" : "w-96 px-2"
+        )}>
+          {!isMobile && (
+            <>
+              <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
+                <TaskIcon />
+              </button>
+              <button className="flex h-8 w-8 items-center justify-center rounded-mailchimp bg-transparent p-1.5">
+                <DotsNineIcon />
+              </button>
+              <button className="flex h-8 items-center gap-1 rounded-mailchimp border border-mailchimp-border-secondary bg-mailchimp-background-primary px-3 py-1.5">
+                <span className="text-component-small text-mailchimp-text-primary">
+                  Live expert help
+                </span>
+              </button>
+            </>
+          )}
+          <div className={cn(
+            "flex items-center justify-center rounded-full border border-mailchimp-border-secondary bg-[#AE7B65]",
+            isMobile ? "h-7 w-7" : "h-8 w-8"
+          )}>
+            <span className={cn(
+              "font-medium text-mailchimp-text-inverse",
+              isMobile ? "text-xs" : "text-sm"
+            )}>
               M
             </span>
           </div>
