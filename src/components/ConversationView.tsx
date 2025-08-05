@@ -819,14 +819,23 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
             </div>
 
             {/* Reply Section - Simplified */}
-            <div className="border-t border-gray-100 py-3 px-2 bg-gray-50">
-              <div className="max-w-3xl mx-auto">
+            <div className={cn(
+              "border-t border-gray-100 bg-gray-50",
+              isMobile ? "py-2 px-2" : "py-3 px-2"
+            )}>
+              <div className={cn(
+                "mx-auto",
+                isMobile ? "max-w-full" : "max-w-3xl"
+              )}>
                 <Textarea
                   placeholder="Type your reply..."
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
-                  className="mb-2 bg-white border-gray-200"
-                  rows={2}
+                  className={cn(
+                    "bg-white border-gray-200",
+                    isMobile ? "mb-2 text-sm" : "mb-2"
+                  )}
+                  rows={isMobile ? 2 : 2}
                 />
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
