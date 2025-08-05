@@ -621,7 +621,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
               </div>
             </div>
           </div>
-          <Button variant="ghost" size="sm" onClick={onClose} className="text-gray-400 hover:text-gray-600">
+          <Button variant="ghost" size="sm" onClick={handleClose} className="text-gray-400 hover:text-gray-600">
             <X className="w-5 h-5" />
           </Button>
         </div>
