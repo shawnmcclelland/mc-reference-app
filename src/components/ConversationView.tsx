@@ -503,7 +503,7 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
       <div className="flex-1 space-y-4 min-h-0">
         {/* Recent Orders Section */}
         <div>
-          <h5 className="text-xs font-medium text-gray-700 mb-3 uppercase tracking-wide">Recent Orders</h5>
+          <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>Recent Orders</h5>
           <div className="space-y-3">
             {customer.recentOrders.map((order) => (
               <div key={order.id} className="pb-3 border-b border-gray-100 last:border-b-0">
