@@ -353,7 +353,7 @@ function AIAssistantBlock() {
           )}>
             <div className="flex items-center gap-2">
               <DollarSign className="w-3 h-3 text-blue-600" />
-              <span className={cn("font-medium text-gray-900", isMobile ? "text-xs" : "text-sm")}>Issue Refund</span>
+              <span className={cn("font-medium text-gray-900", isMobile ? "text-component-x-small" : "text-component-small")}>Issue Refund</span>
               <Badge variant="secondary" className="text-xs ml-auto">High</Badge>
             </div>
           </button>
