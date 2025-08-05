@@ -655,10 +655,35 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                 />
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="sm" className="text-gray-600">
-                      <Mail className="w-4 h-4 mr-2" />
-                      Email
-                    </Button>
+                    <span className="text-xs text-gray-500">Reply via:</span>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="outline" size="sm" className="text-gray-700">
+                          {channelIcons[selectedChannel as keyof typeof channelIcons]}
+                          <span className="ml-2">{selectedChannel}</span>
+                          <ChevronDown className="w-3 h-3 ml-1" />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent>
+                        <DropdownMenuItem onClick={() => setSelectedChannel("Email")}>
+                          <Mail className="w-4 h-4 mr-2" />
+                          Email
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => setSelectedChannel("SMS")}>
+                          <Phone className="w-4 h-4 mr-2" />
+                          SMS
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => setSelectedChannel("Instagram")}>
+                          <Instagram className="w-4 h-4 mr-2" />
+                          Instagram
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => setSelectedChannel("Chat")}>
+                          <MessageCircle className="w-4 h-4 mr-2" />
+                          Website Chat
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                    <span className="text-xs text-gray-400">•</span>
                     <Button variant="ghost" size="sm" className="text-gray-600">
                       <MessageCircle className="w-4 h-4 mr-2" />
                       Internal Note
