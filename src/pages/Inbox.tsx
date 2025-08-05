@@ -331,11 +331,15 @@ const statusColumns = {
   }
 };
 
-function MessageCard({ message }: { message: InboxMessage }) {
+function MessageCard({ message, onClick }: { message: InboxMessage; onClick: () => void }) {
   const channelColor = channelColors[message.channel];
-  
+
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow cursor-pointer" style={{marginBottom: "var(--space-component-inline-padding-xxx-small, 0)"}}>
+    <div
+      className="bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md transition-shadow cursor-pointer"
+      style={{marginBottom: "var(--space-component-inline-padding-xxx-small, 0)"}}
+      onClick={onClick}
+    >
       {/* Header with avatar and channel */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center space-x-3">
