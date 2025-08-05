@@ -568,6 +568,11 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
     }
   }, []);
 
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(onClose, 200); // Wait for animation to complete
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-6xl h-[90vh] flex flex-col">
