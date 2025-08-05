@@ -727,8 +727,8 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                   placeholder="Type your reply..."
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
-                  className="mb-3 bg-white border-gray-200"
-                  rows={3}
+                  className="mb-2 bg-white border-gray-200"
+                  rows={2}
                 />
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
