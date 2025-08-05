@@ -463,6 +463,7 @@ function StatusColumn({
 export default function Inbox() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("all");
+  const [selectedConversation, setSelectedConversation] = useState<string | null>(null);
 
   const filteredMessages = mockMessages.filter(message => {
     const matchesSearch = message.customerName.toLowerCase().includes(searchQuery.toLowerCase()) ||
