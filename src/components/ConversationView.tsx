@@ -522,11 +522,17 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
       )}>
         <div className="flex justify-between items-center">
           <div className="text-center">
-            <div className="text-lg font-bold text-green-700">{customer.totalOrders}</div>
+            <div className={cn(
+              "font-bold text-green-700",
+              isMobile ? "text-base" : "text-lg"
+            )}>{customer.totalOrders}</div>
             <div className="text-xs text-gray-600">Orders</div>
           </div>
           <div className="text-center">
-            <div className="text-lg font-bold text-blue-700">${customer.totalSpent.toLocaleString()}</div>
+            <div className={cn(
+              "font-bold text-blue-700",
+              isMobile ? "text-base" : "text-lg"
+            )}>${customer.totalSpent.toLocaleString()}</div>
             <div className="text-xs text-gray-600">Total Spent</div>
           </div>
         </div>
