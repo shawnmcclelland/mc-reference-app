@@ -228,32 +228,32 @@ function MessageBubble({ message }: { message: Message }) {
   
   return (
     <div className={cn(
-      "flex mb-6 group",
+      "flex mb-4 group",
       isCustomer ? "justify-end" : "justify-start"
     )}>
       {!isCustomer && (
-        <Avatar className="w-8 h-8 mr-3 mt-1 flex-shrink-0">
+        <Avatar className="w-7 h-7 mr-2 mt-1 flex-shrink-0">
           <AvatarFallback className="bg-blue-100 text-blue-600 text-xs font-medium">
             {message.agentInitials || "AG"}
           </AvatarFallback>
         </Avatar>
       )}
-      
+
       <div className={cn(
         "max-w-[70%]",
-        isCustomer ? "ml-16" : "mr-16"
+        isCustomer ? "ml-12" : "mr-12"
       )}>
         <div className={cn(
-          "rounded-2xl px-4 py-3 shadow-sm",
-          isCustomer 
-            ? "bg-blue-500 text-white rounded-br-md" 
+          "rounded-2xl px-3 py-2 shadow-sm",
+          isCustomer
+            ? "bg-blue-500 text-white rounded-br-md"
             : "bg-gray-100 text-gray-900 rounded-bl-md"
         )}>
           <p className="text-sm leading-relaxed">{message.content}</p>
         </div>
-        
+
         <div className={cn(
-          "flex items-center gap-2 mt-2 text-xs text-gray-500",
+          "flex items-center gap-1 mt-1 text-xs text-gray-500",
           isCustomer ? "justify-end" : "justify-start"
         )}>
           <div className="flex items-center gap-1">
@@ -271,9 +271,9 @@ function MessageBubble({ message }: { message: Message }) {
           )}
         </div>
       </div>
-      
+
       {isCustomer && (
-        <Avatar className="w-8 h-8 ml-3 mt-1 flex-shrink-0">
+        <Avatar className="w-7 h-7 ml-2 mt-1 flex-shrink-0">
           <AvatarImage src={mockConversationData.customer.avatar} />
           <AvatarFallback>SC</AvatarFallback>
         </Avatar>
