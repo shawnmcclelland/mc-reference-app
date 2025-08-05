@@ -409,6 +409,11 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
     } else if (item.id === "audience") {
       navigate("/audience");
     }
+
+    // Close mobile menu after navigation
+    if (isMobile) {
+      setIsCollapsed(true);
+    }
   };
 
   return (
