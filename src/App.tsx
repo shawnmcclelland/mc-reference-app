@@ -17,7 +17,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const MailchimpLayout = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex min-h-screen bg-mailchimp-background-tertiary">
+  <div className="flex min-h-screen bg-mailchimp-background-tertiary relative">
     <MailchimpNavigation />
     <div className="flex-1 flex flex-col min-w-0">
       <MailchimpHeader />
