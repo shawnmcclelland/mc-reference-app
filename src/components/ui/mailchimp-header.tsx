@@ -141,6 +141,9 @@ interface MailchimpHeaderProps {
 }
 
 export function MailchimpHeader({ className }: MailchimpHeaderProps) {
+  const location = useLocation();
+  const isInboxPage = location.pathname === "/inbox";
+
   return (
     <div
       className={cn(
