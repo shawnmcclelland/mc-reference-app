@@ -592,7 +592,7 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
           <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>System Events</h5>
           <div className="space-y-3">
             <div className="pb-3 border-b border-gray-100">
-              <div className="font-medium text-sm text-gray-900 mb-1">Customer Tagged as VIP</div>
+              <div className="font-medium text-component-small text-gray-900 mb-1">Customer Tagged as VIP</div>
               <div className="text-xs text-gray-400">Jan 10, 2024</div>
             </div>
             <div className="pb-3 border-b border-gray-100">
