@@ -143,6 +143,14 @@ interface MailchimpHeaderProps {
 export function MailchimpHeader({ className }: MailchimpHeaderProps) {
   const location = useLocation();
   const isInboxPage = location.pathname === "/inbox";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div
