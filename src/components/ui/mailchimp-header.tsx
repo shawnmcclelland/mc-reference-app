@@ -158,17 +158,27 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
       <div className="flex h-13 items-center justify-between px-4">
         {/* Breadcrumbs section */}
         <div className="flex items-center gap-2.5">
-          <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
-            <span className="text-component-x-small text-mailchimp-text-primary">
-              Audience
-            </span>
-          </div>
-          <SlashIcon />
-          <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
-            <span className="text-component-x-small text-mailchimp-text-primary">
-              Contacts
-            </span>
-          </div>
+          {isInboxPage ? (
+            <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
+              <span className="text-component-x-small text-mailchimp-text-primary">
+                Inbox
+              </span>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
+                <span className="text-component-x-small text-mailchimp-text-primary">
+                  Audience
+                </span>
+              </div>
+              <SlashIcon />
+              <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
+                <span className="text-component-x-small text-mailchimp-text-primary">
+                  Contacts
+                </span>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Search bar */}
