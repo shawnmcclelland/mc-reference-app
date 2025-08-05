@@ -667,13 +667,17 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end px-5"
+      className={cn(
+        "fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end",
+        isMobile ? "px-0" : "px-5"
+      )}
       style={{ marginTop: "var(--space-component-inline-padding-xxx-small, 0)" }}
       onClick={handleClose}
     >
       <div
         className={cn(
-          "bg-white rounded-t-xl shadow-2xl w-full h-[92vh] flex flex-col transition-transform duration-200 ease-out",
+          "bg-white shadow-2xl w-full flex flex-col transition-transform duration-200 ease-out",
+          isMobile ? "h-full rounded-none" : "h-[92vh] rounded-t-xl",
           isVisible ? "translate-y-0" : "translate-y-full"
         )}
         onClick={(e) => e.stopPropagation()}
