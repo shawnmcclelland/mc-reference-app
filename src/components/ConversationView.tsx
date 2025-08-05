@@ -284,8 +284,8 @@ function MessageBubble({ message }: { message: Message }) {
 
 function AIAssistantBlock() {
   const [selectedReply, setSelectedReply] = useState("");
-  const [isExpanded, setIsExpanded] = useState(true);
-  
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const suggestedReplies = [
     "Thank you for your patience! I'm happy to help track down your order.",
     "I apologize for the delay. Let me investigate this immediately.",
@@ -293,47 +293,68 @@ function AIAssistantBlock() {
   ];
 
   const smartActions = [
-    { 
-      icon: <DollarSign className="w-4 h-4" />, 
-      label: "Issue Refund", 
+    {
+      icon: <DollarSign className="w-4 h-4" />,
+      label: "Issue Refund",
       description: "Customer seems frustrated",
       confidence: "High"
     },
-    { 
-      icon: <Tag className="w-4 h-4" />, 
-      label: "Apply 10% Discount", 
+    {
+      icon: <Tag className="w-4 h-4" />,
+      label: "Apply 10% Discount",
       description: "For the inconvenience",
       confidence: "Medium"
     },
-    { 
-      icon: <Star className="w-4 h-4" />, 
-      label: "Upgrade to VIP", 
+    {
+      icon: <Star className="w-4 h-4" />,
+      label: "Upgrade to VIP",
       description: "High-value customer",
       confidence: "High"
     }
   ];
 
+  // Compact collapsed view
   if (!isExpanded) {
     return (
-      <div className="mb-4 p-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
-        <button
-          onClick={() => setIsExpanded(true)}
-          className="flex items-center gap-2 text-sm font-medium text-blue-700 hover:text-blue-800"
-        >
-          <Sparkles className="w-4 h-4" />
-          Show AI Insights
-          <ChevronDown className="w-4 h-4" />
-        </button>
+      <div className="mb-3 p-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-blue-600" />
+            <div className="flex-1">
+              <h4 className="text-sm font-medium text-blue-900">AI Assistant</h4>
+              <p className="text-xs text-blue-700">Order resolved, customer satisfied. Ready to close.</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setIsExpanded(true)}
+            className="flex items-center gap-1 text-xs font-medium text-blue-700 hover:text-blue-800"
+          >
+            Show More
+            <ChevronDown className="w-3 h-3" />
+          </button>
+        </div>
+
+        {/* Top suggested action */}
+        <div className="mt-2">
+          <button className="w-full p-2 bg-white border border-blue-200 rounded text-left hover:bg-blue-50 transition-colors">
+            <div className="flex items-center gap-2">
+              <DollarSign className="w-3 h-3 text-blue-600" />
+              <span className="text-sm font-medium text-gray-900">Issue Refund</span>
+              <Badge variant="secondary" className="text-xs ml-auto">High</Badge>
+            </div>
+          </button>
+        </div>
       </div>
     );
   }
 
+  // Expanded view with better spacing
   return (
-    <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-xl">
-      <div className="flex items-center justify-between mb-4">
+    <div className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
+      <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5 text-blue-600" />
-          <h3 className="font-semibold text-blue-900">AI Assistant</h3>
+          <Sparkles className="w-4 h-4 text-blue-600" />
+          <h3 className="font-medium text-blue-900">AI Assistant</h3>
         </div>
         <button
           onClick={() => setIsExpanded(false)}
@@ -343,33 +364,31 @@ function AIAssistantBlock() {
         </button>
       </div>
 
-      {/* Thread Summary */}
-      <div className="mb-4 p-3 bg-white rounded-lg border border-blue-100">
-        <div className="flex items-start gap-2 mb-2">
-          <Lightbulb className="w-4 h-4 text-blue-600 mt-0.5" />
+      {/* Compact Thread Summary */}
+      <div className="mb-3 p-2 bg-white rounded border border-blue-100">
+        <div className="flex items-start gap-2">
+          <Lightbulb className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
           <div className="flex-1">
-            <h4 className="text-sm font-medium text-gray-900">Thread Summary</h4>
-            <p className="text-sm text-gray-600 mt-1">
-              VIP customer Sarah inquired about delayed order. Issue resolved with tracking provided. 
-              Sentiment improved from neutral to positive. Customer satisfied with quick response.
+            <p className="text-xs text-gray-600">
+              VIP customer order inquiry resolved. Tracking provided. Sentiment: Neutral → Positive.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Smart Actions */}
-      <div className="mb-4">
-        <h4 className="text-sm font-medium text-gray-900 mb-2">Recommended Actions</h4>
-        <div className="space-y-2">
-          {smartActions.map((action, index) => (
+      {/* Compact Smart Actions */}
+      <div className="mb-3">
+        <h4 className="text-xs font-medium text-gray-700 mb-2">Top Recommendations</h4>
+        <div className="space-y-1">
+          {smartActions.slice(0, 2).map((action, index) => (
             <button
               key={index}
-              className="w-full p-3 bg-white border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors text-left"
+              className="w-full p-2 bg-white border border-gray-200 rounded hover:border-blue-300 hover:bg-blue-50 transition-colors text-left"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <div className="text-blue-600">{action.icon}</div>
                 <div className="flex-1">
-                  <div className="font-medium text-sm text-gray-900">{action.label}</div>
+                  <div className="font-medium text-xs text-gray-900">{action.label}</div>
                   <div className="text-xs text-gray-500">{action.description}</div>
                 </div>
                 <Badge variant="secondary" className="text-xs">
@@ -381,17 +400,17 @@ function AIAssistantBlock() {
         </div>
       </div>
 
-      {/* Suggested Replies */}
+      {/* Compact Suggested Replies */}
       <div>
-        <h4 className="text-sm font-medium text-gray-900 mb-2">Suggested Replies</h4>
-        <div className="space-y-2">
-          {suggestedReplies.map((reply, index) => (
+        <h4 className="text-xs font-medium text-gray-700 mb-2">Quick Replies</h4>
+        <div className="space-y-1">
+          {suggestedReplies.slice(0, 2).map((reply, index) => (
             <button
               key={index}
               className={cn(
-                "w-full p-3 text-left text-sm border rounded-lg transition-colors",
-                selectedReply === reply 
-                  ? "border-blue-300 bg-blue-50 text-blue-900" 
+                "w-full p-2 text-left text-xs border rounded transition-colors",
+                selectedReply === reply
+                  ? "border-blue-300 bg-blue-50 text-blue-900"
                   : "border-gray-200 hover:border-gray-300 bg-white"
               )}
               onClick={() => setSelectedReply(reply)}
@@ -400,6 +419,11 @@ function AIAssistantBlock() {
             </button>
           ))}
         </div>
+        {suggestedReplies.length > 2 && (
+          <button className="w-full mt-1 p-1 text-xs text-blue-600 hover:text-blue-800">
+            +{suggestedReplies.length - 2} more replies
+          </button>
+        )}
       </div>
     </div>
   );
