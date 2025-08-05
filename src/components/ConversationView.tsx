@@ -584,6 +584,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
           "bg-white rounded-t-xl shadow-2xl w-full h-[92vh] flex flex-col transition-transform duration-200 ease-out",
           isVisible ? "translate-y-0" : "translate-y-full"
         )}
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Header - Simplified */}
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
