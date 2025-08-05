@@ -837,8 +837,14 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                   )}
                   rows={isMobile ? 2 : 2}
                 />
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
+                <div className={cn(
+                  "flex items-center",
+                  isMobile ? "flex-col gap-2" : "justify-between"
+                )}>
+                  <div className={cn(
+                    "flex items-center",
+                    isMobile ? "gap-1 w-full justify-center" : "gap-2"
+                  )}>
                     <span className="text-xs text-gray-500">Reply via:</span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
