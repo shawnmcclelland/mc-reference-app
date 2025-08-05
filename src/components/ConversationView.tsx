@@ -520,7 +520,7 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
 
         {/* Campaign Activity Section */}
         <div>
-          <h5 className="text-xs font-medium text-gray-700 mb-3 uppercase tracking-wide">Campaign Engagement</h5>
+          <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>Campaign Engagement</h5>
           <div className="space-y-3">
             {customer.campaignHistory.map((campaign, index) => (
               <div key={index} className="pb-3 border-b border-gray-100 last:border-b-0">
