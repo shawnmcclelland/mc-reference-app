@@ -467,7 +467,7 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
             isMobile ? "w-8 h-8" : "w-10 h-10"
           )}>
             <AvatarImage src={customer.avatar} />
-            <AvatarFallback className="text-sm font-medium">
+            <AvatarFallback className="text-component-small font-medium">
               {customer.name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
