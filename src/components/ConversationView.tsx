@@ -589,7 +589,7 @@ function CustomerProfilePanel({
             >
               {customer.totalOrders}
             </div>
-            <div className="text-xs text-gray-600">Orders</div>
+            <div className="text-component-x-small text-gray-600">Orders</div>
           </div>
           <div className="text-center">
             <div
