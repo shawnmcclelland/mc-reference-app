@@ -1048,7 +1048,7 @@ export function ConversationView({
                       isMobile ? "gap-1 w-full justify-center" : "gap-2",
                     )}
                   >
-                    <span className="text-xs text-gray-500">Reply via:</span>
+                    <span className="text-component-x-small text-gray-500">Reply via:</span>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button
