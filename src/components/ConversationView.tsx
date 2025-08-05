@@ -712,7 +712,10 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
                 </div>
                 {conversation.customer.isVip && <Star className="w-4 h-4 text-yellow-500 fill-current" />}
               </div>
-              <div className="flex items-center gap-3 mt-1">
+              <div className={cn(
+                "flex items-center mt-1",
+                isMobile ? "gap-2 flex-wrap" : "gap-3"
+              )}>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Badge variant="outline" className="cursor-pointer hover:bg-gray-50">
