@@ -820,7 +820,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
 
             {/* Reply Section - Simplified */}
             <div className={cn(
-              "border-t border-gray-100 bg-gray-50",
+              "border-t border-gray-100 bg-gray-50 flex-shrink-0",
               isMobile ? "py-2 px-2" : "py-3 px-2"
             )}>
               <div className={cn(
