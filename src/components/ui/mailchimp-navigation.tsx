@@ -382,6 +382,29 @@ interface MailchimpNavigationProps {
 }
 
 export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isActive = (item: any) => {
+    if (item.href) {
+      return location.pathname === item.href;
+    }
+    if (item.id === "audience") {
+      return location.pathname.startsWith("/audience") || location.pathname === "/";
+    }
+    return false;
+  };
+
+  const handleNavClick = (item: any) => {
+    if (item.href) {
+      navigate(item.href);
+    } else if (item.id === "home") {
+      navigate("/home");
+    } else if (item.id === "audience") {
+      navigate("/audience");
+    }
+  };
+
   return (
     <div
       className={cn(
