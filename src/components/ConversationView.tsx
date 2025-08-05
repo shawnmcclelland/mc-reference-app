@@ -547,8 +547,11 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
         <h4 className="font-medium text-gray-900 text-sm">Activity Feed</h4>
       </div>
 
-      {/* Full Height Activity Feed */}
-      <div className="flex-1 space-y-4 min-h-0">
+      {/* Activity Feed - Collapsible on mobile */}
+      <div className={cn(
+        "space-y-4",
+        isMobile ? "max-h-60 overflow-y-auto" : "flex-1 min-h-0"
+      )}>
         {/* Recent Orders Section */}
         <div>
           <h5 className="text-xs font-medium mb-3 uppercase tracking-wide" style={{color: "var(--color-action-complementary-active, rgba(107, 108, 114, 0.75))"}}>Recent Orders</h5>
