@@ -384,6 +384,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
+      // On mobile, start collapsed, but always show the header area
       setIsCollapsed(mobile);
     };
     checkMobile();
