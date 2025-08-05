@@ -451,12 +451,6 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
         {/* Navigation switch */}
         <div className="flex px-[10px] py-3 justify-between items-center self-stretch">
           <MailchimpLogo />
-          <button
-            className="flex w-6 h-6 justify-center items-center cursor-pointer hover:opacity-70"
-            onClick={() => setIsCollapsed(!isCollapsed)}
-          >
-            <MenuIcon />
-          </button>
         </div>
 
         {/* Primary navigation */}
