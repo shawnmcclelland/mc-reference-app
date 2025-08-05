@@ -605,13 +605,16 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
         <div className="flex-1 flex overflow-hidden">
           {/* Main Conversation Panel */}
           <div className="flex-1 flex flex-col">
-            <div className="flex-1 overflow-y-auto p-6">
+            <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-6">
               <div className="max-w-3xl mx-auto">
                 {conversation.messages.map((message) => (
                   <MessageBubble key={message.id} message={message} />
                 ))}
-                
+
                 <AIAssistantBlock />
+
+                {/* Bottom spacer to ensure messages stay visible above AI Assistant */}
+                <div className="h-4"></div>
               </div>
             </div>
 
