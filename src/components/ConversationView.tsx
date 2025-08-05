@@ -1056,7 +1056,7 @@ export function ConversationView({
                           size={isMobile ? "sm" : "sm"}
                           className={cn(
                             "text-gray-700",
-                            isMobile && "text-xs px-2",
+                            isMobile && "text-component-x-small px-2",
                           )}
                         >
                           {
