@@ -516,7 +516,10 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
       </div>
 
       {/* Customer Value - Single Row */}
-      <div className="bg-white border border-gray-200 rounded-lg p-3 mb-4 flex-shrink-0">
+      <div className={cn(
+        "bg-white border border-gray-200 rounded-lg flex-shrink-0",
+        isMobile ? "p-2 mb-3" : "p-3 mb-4"
+      )}>
         <div className="flex justify-between items-center">
           <div className="text-center">
             <div className="text-lg font-bold text-green-700">{customer.totalOrders}</div>
