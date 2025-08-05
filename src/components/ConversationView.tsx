@@ -350,8 +350,8 @@ function AIAssistantBlock() {
 
   // Expanded view with better spacing
   return (
-    <div className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
-      <div className="flex items-center justify-between mb-3">
+    <div className="mb-3 p-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-lg">
+      <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-blue-600" />
           <h3 className="font-medium text-blue-900">AI Assistant</h3>
@@ -365,7 +365,7 @@ function AIAssistantBlock() {
       </div>
 
       {/* Compact Thread Summary */}
-      <div className="mb-3 p-2 bg-white rounded border border-blue-100">
+      <div className="mb-2 p-2 bg-white rounded border border-blue-100">
         <div className="flex items-start gap-2">
           <Lightbulb className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
           <div className="flex-1">
@@ -377,8 +377,8 @@ function AIAssistantBlock() {
       </div>
 
       {/* Compact Smart Actions */}
-      <div className="mb-3">
-        <h4 className="text-xs font-medium text-gray-700 mb-2">Top Recommendations</h4>
+      <div className="mb-2">
+        <h4 className="text-xs font-medium text-gray-700 mb-1">Top Recommendations</h4>
         <div className="space-y-1">
           {smartActions.slice(0, 2).map((action, index) => (
             <button
@@ -402,7 +402,7 @@ function AIAssistantBlock() {
 
       {/* Compact Suggested Replies */}
       <div>
-        <h4 className="text-xs font-medium text-gray-700 mb-2">Quick Replies</h4>
+        <h4 className="text-xs font-medium text-gray-700 mb-1">Quick Replies</h4>
         <div className="space-y-1">
           {suggestedReplies.slice(0, 2).map((reply, index) => (
             <button
