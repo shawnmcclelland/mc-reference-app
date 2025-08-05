@@ -249,7 +249,7 @@ function MessageBubble({ message }: { message: Message }) {
             ? "bg-blue-500 text-white rounded-br-md"
             : "bg-gray-100 text-gray-900 rounded-bl-md"
         )}>
-          <p className="text-sm leading-relaxed">{message.content}</p>
+          <p className="text-component-small leading-relaxed">{message.content}</p>
         </div>
 
         <div className={cn(
