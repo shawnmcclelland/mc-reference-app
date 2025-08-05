@@ -614,7 +614,7 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header - Simplified */}
-        <div className="flex items-center justify-between p-5 border-b border-gray-100">
+        <div className="flex items-center justify-between p-3 border-b border-gray-100">
           <div className="flex items-center gap-4">
             <Avatar className="w-10 h-10">
               <AvatarImage src={conversation.customer.avatar} />
