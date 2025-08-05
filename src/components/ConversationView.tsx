@@ -332,7 +332,7 @@ function AIAssistantBlock() {
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-blue-600" />
             <div className="flex-1">
-              <h4 className="text-sm font-medium text-blue-900">AI Assistant</h4>
+              <h4 className="text-component-small font-medium text-blue-900">AI Assistant</h4>
               <p className="text-xs text-blue-700">Order resolved, customer satisfied. Ready to close.</p>
             </div>
           </div>
