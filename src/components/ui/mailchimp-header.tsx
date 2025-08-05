@@ -149,7 +149,6 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
   useEffect(() => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
-      console.log('Mobile check:', mobile, 'Width:', window.innerWidth);
       setIsMobile(mobile);
     };
 
