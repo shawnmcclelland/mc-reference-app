@@ -163,7 +163,10 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
       <div className="h-1 bg-mailchimp-cavendish" />
 
       {/* Header content */}
-      <div className="flex h-13 items-center justify-between px-4">
+      <div className={cn(
+        "flex items-center justify-between",
+        isMobile ? "h-12 px-2" : "h-13 px-4"
+      )}>
         {/* Breadcrumbs section */}
         <div className="flex items-center gap-2.5">
           {isInboxPage ? (
