@@ -417,11 +417,8 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
     }
 
     // Close mobile menu after navigation
-    if (isMobile) {
-      setIsCollapsed(true);
-      // Dispatch event to communicate menu is closed
-      window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: false }));
-    }
+    setIsOpen(false);
+    window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: false }));
   };
 
   return (
