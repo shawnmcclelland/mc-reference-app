@@ -938,7 +938,7 @@ export function ConversationView({
                               }
                             </AvatarFallback>
                           </Avatar>
-                          <span className="text-xs">
+                          <span className="text-component-x-small">
                             {
                               availableAgents.find(
                                 (a) => a.id === assignedAgent,
