@@ -390,6 +390,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
 
     const handleMobileNavToggle = (event: CustomEvent) => {
     // event.detail is true when the nav should be open, false when closed
+    console.log('Navigation received toggle event:', event.detail, 'will set isCollapsed to:', !event.detail);
     setIsCollapsed(!event.detail);
   };
 
