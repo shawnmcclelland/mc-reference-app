@@ -45,7 +45,7 @@ const badgeVariants = cva(
 
         // Secondary variant
         secondary: [
-          "bg-[var(--color-container-background-secondary)]",
+          "bg-[var(--color-action-passive-subtle-active,#E2E9ED)]",
           "text-[var(--color-text-secondary)]",
           "border-0",
         ].join(" "),
