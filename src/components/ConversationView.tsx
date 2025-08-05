@@ -641,6 +641,11 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
 
   // Auto-scroll to bottom when component mounts and trigger slide up animation
   useEffect(() => {
+    // Check mobile on mount and resize
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     // Trigger slide up animation
     setTimeout(() => setIsVisible(true), 10);
 
@@ -651,6 +656,8 @@ export function ConversationView({ messageId, onClose }: ConversationViewProps) 
         scrollContainer.scrollTop = scrollContainer.scrollHeight;
       }, 150);
     }
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const handleClose = () => {
