@@ -481,7 +481,10 @@ function CustomerProfilePanel({ customer, isMobile }: { customer: CustomerData; 
                 <Star className="w-4 h-4 text-yellow-500 fill-current flex-shrink-0" />
               )}
             </div>
-            <p className="text-xs text-gray-600 mb-2">{customer.loyaltyLevel} Customer</p>
+            <p className={cn(
+              "text-gray-600",
+              isMobile ? "text-xs mb-1" : "text-xs mb-2"
+            )}>{customer.loyaltyLevel} Customer</p>
             <div className="flex flex-wrap gap-1">
               {customer.tags.map((tag) => (
                 <Badge key={tag} variant="secondary" className="text-xs px-1 py-0">
