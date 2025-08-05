@@ -419,7 +419,7 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
 
   return (
     <>
-      {/* Mobile overlay when navigation is open */}
+      {/* Mobile overlay when navigation menu is open */}
       {isMobile && !isCollapsed && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40"
@@ -429,10 +429,10 @@ export function MailchimpNavigation({ className }: MailchimpNavigationProps) {
 
       <div
         className={cn(
-          "flex flex-col items-start flex-shrink-0 self-stretch bg-[#F0F4F6] transition-all duration-300",
+          "flex flex-col items-start flex-shrink-0 bg-[#F0F4F6] transition-all duration-300",
           isMobile
-            ? "w-60 fixed left-0 top-0 h-full z-50"
-            : "w-60",
+            ? (isCollapsed ? "w-16 fixed left-0 top-0 h-full z-50" : "w-60 fixed left-0 top-0 h-full z-50")
+            : "w-60 self-stretch",
           className,
         )}
       >
