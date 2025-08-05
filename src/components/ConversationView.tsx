@@ -538,18 +538,33 @@ function CustomerProfilePanel({ customer }: { customer: CustomerData }) {
 export function ConversationView({ messageId, onClose }: ConversationViewProps) {
   const [replyText, setReplyText] = useState("");
   const [status, setStatus] = useState(mockConversationData.status);
+  const [isVisible, setIsVisible] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const conversation = mockConversationData;
 
-  // Auto-scroll to bottom when component mounts
+  // Get the most recent communication channel from the conversation
+  const getRecentChannel = () => {
+    const customerMessages = conversation.messages.filter(m => m.sender === "customer");
+    if (customerMessages.length > 0) {
+      return customerMessages[customerMessages.length - 1].channel;
+    }
+    return "Email"; // fallback
+  };
+
+  const [selectedChannel, setSelectedChannel] = useState(getRecentChannel());
+
+  // Auto-scroll to bottom when component mounts and trigger slide up animation
   useEffect(() => {
+    // Trigger slide up animation
+    setTimeout(() => setIsVisible(true), 10);
+
     if (scrollContainerRef.current) {
       const scrollContainer = scrollContainerRef.current;
       // Small delay to ensure content is rendered
       setTimeout(() => {
         scrollContainer.scrollTop = scrollContainer.scrollHeight;
-      }, 100);
+      }, 150);
     }
   }, []);
 
