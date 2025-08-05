@@ -260,7 +260,7 @@ function MessageBubble({ message }: { message: Message }) {
 
         <div
           className={cn(
-            "flex items-center gap-1 mt-1 text-xs text-gray-500",
+            "flex items-center gap-1 mt-1 text-component-x-small text-gray-500",
             isCustomer ? "justify-end" : "justify-start",
           )}
         >
