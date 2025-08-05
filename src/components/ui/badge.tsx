@@ -45,7 +45,7 @@ const badgeVariants = cva(
 
         // Secondary variant
         secondary: [
-          "bg-[var(--color-container-background-secondary)]",
+          "bg-[var(--color-action-passive-subtle-active,#E2E9ED)]",
           "text-[var(--color-text-secondary)]",
           "border-0",
         ].join(" "),
@@ -74,19 +74,24 @@ export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
 
-function Badge({ className, variant, size, ...props }: BadgeProps) {
-  return (
-    <div
-      className={cn(badgeVariants({ variant, size }), className)}
-      style={{
-        padding:
-          "var(--space-component-stack-padding-x-small) var(--space-component-inline-padding-small)",
-        borderRadius: "var(--radius-action)",
-        font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
-      }}
-      {...props}
-    />
-  );
-}
+const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(badgeVariants({ variant, size }), className)}
+        style={{
+          padding:
+            "var(--space-component-stack-padding-x-small) var(--space-component-inline-padding-small)",
+          borderRadius: "var(--radius-action)",
+          font: "400 var(--font-size-component-x-small, 12px)/16px var(--font-family-component, Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans-serif), sans-serif",
+        }}
+        {...props}
+      />
+    );
+  }
+);
+
+Badge.displayName = "Badge";
 
 export { Badge, badgeVariants };

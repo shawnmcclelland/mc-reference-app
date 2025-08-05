@@ -11,14 +11,15 @@ import { MailchimpHeader } from "@/components/ui/mailchimp-header";
 import CampaignReport from "./pages/CampaignReport";
 import Index from "./pages/Index";
 import Audience from "./pages/Audience";
+import Inbox from "./pages/Inbox";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const MailchimpLayout = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex min-h-screen bg-mailchimp-background-tertiary">
+  <div className="flex min-h-screen bg-mailchimp-background-tertiary relative">
     <MailchimpNavigation />
-    <div className="flex-1 flex flex-col">
+    <div className="flex-1 flex flex-col min-w-0 w-full md:w-auto">
       <MailchimpHeader />
       <main className="flex-1 overflow-auto bg-mailchimp-background-tertiary">
         {children}
@@ -71,6 +72,14 @@ const App = () => (
             element={
               <MailchimpLayout>
                 <Audience />
+              </MailchimpLayout>
+            }
+          />
+          <Route
+            path="/inbox"
+            element={
+              <MailchimpLayout>
+                <Inbox />
               </MailchimpLayout>
             }
           />

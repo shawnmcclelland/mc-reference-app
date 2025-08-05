@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { useLocation } from "react-router-dom";
 
 const SearchIcon = () => (
   <svg
@@ -140,6 +141,22 @@ interface MailchimpHeaderProps {
 }
 
 export function MailchimpHeader({ className }: MailchimpHeaderProps) {
+  const location = useLocation();
+  const isInboxPage = location.pathname === "/inbox";
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  useEffect(() => {
+    const handleMobileNavToggle = (event: CustomEvent) => {
+      setIsNavOpen(event.detail);
+    };
+
+    window.addEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
+
+    return () => {
+      window.removeEventListener('toggleMobileNav', handleMobileNavToggle as EventListener);
+    };
+  }, []);
+
   return (
     <div
       className={cn(
@@ -150,21 +167,109 @@ export function MailchimpHeader({ className }: MailchimpHeaderProps) {
       {/* Brand stripe */}
       <div className="h-1 bg-mailchimp-cavendish" />
 
-      {/* Header content */}
-      <div className="flex h-13 items-center justify-between px-4">
+      {/* Mobile header with logo and hamburger */}
+      <div className="flex md:hidden items-center justify-between p-3 bg-[#F0F4F6] border-b border-gray-200 shadow-sm">
+        <div className="flex items-center gap-3">
+          {/* Use same Mailchimp logo as desktop navigation */}
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M28.9039 19.9049C28.8914 19.86 28.8061 19.5558 28.6913 19.1887C28.5753 18.8217 28.4559 18.5635 28.4559 18.5635C28.9209 17.8766 28.9289 17.2626 28.8675 16.9147C28.8016 16.4836 28.6196 16.1155 28.2535 15.7361C27.8874 15.3567 27.1369 14.9672 26.084 14.6754C25.9635 14.6417 25.5667 14.534 25.5314 14.5239C25.5291 14.5014 25.5018 13.2375 25.478 12.6943C25.4609 12.3025 25.4268 11.6897 25.2335 11.0869C25.0038 10.2709 24.6047 9.55593 24.1056 9.09909C25.4825 7.69043 26.3421 6.13809 26.3398 4.80687C26.3364 2.24657 23.1504 1.47209 19.2253 3.07606C19.2208 3.0783 18.3998 3.42177 18.3942 3.42514C18.3908 3.42177 16.891 1.96933 16.8682 1.94913C12.3906 -1.90535 -1.60308 13.4486 2.8712 17.1773L3.84906 17.9945C3.5955 18.6432 3.49544 19.3863 3.57731 20.1855C3.68192 21.2114 4.2186 22.1958 5.0873 22.9557C5.9128 23.6774 6.99754 24.1342 8.05045 24.1331C9.79127 28.0931 13.7698 30.5232 18.434 30.6601C23.437 30.8072 27.6372 28.4893 29.3962 24.3262C29.5111 24.0343 30 22.7177 30 21.556C30 20.3942 29.3314 19.9037 28.905 19.9037L28.9039 19.9049Z"
+              fill="#21262A"
+            />
+            <path
+              d="M9.05219 21.0206C8.99306 21.034 8.92711 21.0497 8.85434 21.0486C8.69857 21.0453 8.56553 20.9802 8.49162 20.8668C8.39497 20.7198 8.40066 20.5009 8.50754 20.2506C8.52232 20.2169 8.53938 20.1799 8.55757 20.1383C8.72813 19.7612 9.01353 19.1292 8.69288 18.5276C8.45183 18.0742 8.05955 17.7924 7.58653 17.7329C7.13285 17.6757 6.66553 17.8418 6.36762 18.1662C5.89802 18.678 5.82411 19.3739 5.91507 19.6209C5.94805 19.7107 6.00035 19.7365 6.03788 19.741C6.11747 19.7511 6.23572 19.6938 6.30963 19.4974C6.31532 19.4828 6.32214 19.4615 6.33123 19.4334C6.36421 19.329 6.42561 19.136 6.52681 18.9811C6.64847 18.7936 6.83722 18.6646 7.05894 18.6185C7.28522 18.5703 7.51604 18.6129 7.70933 18.7386C8.03794 18.9508 8.16529 19.3492 8.0243 19.7298C7.95153 19.9262 7.83327 20.3022 7.85942 20.6109C7.91173 21.2361 8.30174 21.4864 8.65081 21.5133C8.99079 21.5257 9.22843 21.3371 9.28869 21.2002C9.32394 21.1182 9.29438 21.0688 9.27505 21.0475C9.22274 20.9824 9.13519 21.0026 9.05105 21.0217L9.05219 21.0206Z"
+              fill="#21262A"
+            />
+            <path
+              d="M23.545 15.8618C23.3324 15.8584 23.1561 16.0886 23.1516 16.3759C23.147 16.6632 23.3153 16.899 23.5268 16.9034C23.7394 16.9068 23.9157 16.6767 23.9202 16.3894C23.9248 16.102 23.7565 15.8663 23.545 15.8618Z"
+              fill="#21262A"
+            />
+            <path
+              d="M21.8633 17.312C22.1248 17.4388 22.4125 17.3895 22.5069 17.2009C22.6012 17.0123 22.4648 16.7575 22.2033 16.6307C21.9417 16.5039 21.6541 16.5532 21.5597 16.7418C21.4665 16.9304 21.6018 17.1852 21.8633 17.312Z"
+              fill="#21262A"
+            />
+            <path
+              d="M18.9183 16.0818C18.5329 16.1413 18.3214 16.267 18.1849 16.3838C18.069 16.4836 17.9962 16.5948 17.9973 16.6733C17.9973 16.7104 18.0144 16.7317 18.0269 16.7429C18.044 16.7586 18.0656 16.7665 18.0906 16.7665C18.177 16.7665 18.3726 16.6891 18.3726 16.6891C18.9081 16.4994 19.2617 16.5229 19.6119 16.5622C19.8052 16.5835 19.8973 16.5959 19.9394 16.5297C19.9519 16.5106 19.9667 16.4702 19.928 16.4084C19.8382 16.2636 19.4493 16.0201 18.9183 16.0818Z"
+              fill="#21262A"
+            />
+            <path
+              d="M19.5142 15.7473C19.8098 15.8753 19.9917 15.9606 20.0622 15.8865C20.1077 15.8405 20.094 15.7518 20.0236 15.6384C19.878 15.4039 19.5778 15.1648 19.2595 15.0312C18.6079 14.754 17.8313 14.846 17.2321 15.2714C17.0343 15.414 16.8466 15.6126 16.8739 15.7327C16.883 15.772 16.9126 15.8012 16.9819 15.8102C17.1445 15.8281 17.7153 15.5442 18.3714 15.5049C18.8353 15.4768 19.2185 15.6194 19.5142 15.7484V15.7473Z"
+              fill="#21262A"
+            />
+            <path
+              d="M23.0617 15.1951C23.2789 15.1693 23.487 15.1681 23.6769 15.1951C23.7872 14.9448 23.8065 14.5138 23.7064 14.0435C23.5586 13.3453 23.3585 12.9233 22.9458 12.9884C22.533 13.0546 22.5171 13.5597 22.6649 14.2578C22.7479 14.6507 22.8957 14.9863 23.0606 15.194L23.0617 15.1951Z"
+              fill="#21262A"
+            />
+          </svg>
+          <span className="text-lg font-semibold text-gray-900">
+            {isInboxPage ? "Inbox" : "Audience"}
+          </span>
+        </div>
+        {/* Always show hamburger button on mobile */}
+        <button
+          className="p-2 hover:bg-gray-200 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          onClick={() => {
+            const newNavOpen = !isNavOpen;
+            setIsNavOpen(newNavOpen);
+            window.dispatchEvent(new CustomEvent('toggleMobileNav', { detail: newNavOpen }));
+          }}
+          aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isNavOpen}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.025 7.99397L4.02499 7.96997C3.75977 7.96997 3.50542 7.86461 3.31788 7.67708C3.13034 7.48954 3.02499 7.23519 3.02499 6.96997C3.02499 6.70475 3.13034 6.4504 3.31788 6.26286C3.50542 6.07533 3.75977 5.96997 4.02499 5.96997L20.025 5.99397C20.2902 5.99397 20.5446 6.09933 20.7321 6.28686C20.9196 6.4744 21.025 6.72875 21.025 6.99397C21.025 7.25919 20.9196 7.51354 20.7321 7.70108C20.5446 7.88861 20.2902 7.99397 20.025 7.99397Z"
+              fill="#21262A"
+            />
+            <path
+              d="M20.018 12.994L4.01799 12.97C3.75277 12.97 3.49842 12.8646 3.31088 12.6771C3.12334 12.4895 3.01799 12.2352 3.01799 11.97C3.01799 11.7048 3.12334 11.4504 3.31088 11.2629C3.49842 11.0753 3.75277 10.97 4.01799 10.97L20.018 10.994C20.2832 10.994 20.5376 11.0993 20.7251 11.2869C20.9126 11.4744 21.018 11.7288 21.018 11.994C21.018 12.2592 20.9126 12.5135 20.7251 12.7011C20.5376 12.8886 20.2832 12.994 20.018 12.994Z"
+              fill="#21262A"
+            />
+            <path
+              d="M20.011 17.994L4.01099 17.97C3.74577 17.97 3.49142 17.8646 3.30388 17.6771C3.11634 17.4895 3.01099 17.2352 3.01099 16.97C3.01099 16.7048 3.11634 16.4504 3.30388 16.2629C3.49142 16.0753 3.74577 15.97 4.01099 15.97L20.011 15.994C20.2762 15.994 20.5306 16.0993 20.7181 16.2869C20.9056 16.4744 21.011 16.7288 21.011 16.994C21.011 17.2592 20.9056 17.5135 20.7181 17.7011C20.5306 17.8886 20.2762 17.994 20.011 17.994Z"
+              fill="#21262A"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Desktop Header content */}
+      <div className="hidden md:flex h-13 items-center justify-between px-4">
         {/* Breadcrumbs section */}
         <div className="flex items-center gap-2.5">
-          <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
-            <span className="text-component-x-small text-mailchimp-text-primary">
-              Audience
-            </span>
-          </div>
-          <SlashIcon />
-          <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
-            <span className="text-component-x-small text-mailchimp-text-primary">
-              Contacts
-            </span>
-          </div>
+          {isInboxPage ? (
+            <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
+              <span className="text-component-x-small text-mailchimp-text-primary">
+                Inbox
+              </span>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-center gap-1 rounded-mailchimp bg-transparent px-2 py-1">
+                <span className="text-component-x-small text-mailchimp-text-primary">
+                  Audience
+                </span>
+              </div>
+              <SlashIcon />
+              <div className="flex items-center gap-1 rounded-mailchimp bg-mailchimp-active-bg px-2 py-1">
+                <span className="text-component-x-small text-mailchimp-text-primary">
+                  Contacts
+                </span>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Search bar */}
