@@ -533,7 +533,7 @@ function CustomerProfilePanel({
             <p
               className={cn(
                 "text-gray-600",
-                isMobile ? "text-xs mb-1" : "text-xs mb-2",
+                isMobile ? "text-component-x-small mb-1" : "text-component-x-small mb-2",
               )}
             >
               {customer.loyaltyLevel} Customer
